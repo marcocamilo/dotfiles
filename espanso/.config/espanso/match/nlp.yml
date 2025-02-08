@@ -1,0 +1,216 @@
+matches:
+#  ────────────────────────────────────────────────────────────────────
+#   TEXT PREPROCESSING                                                 
+#  ────────────────────────────────────────────────────────────────────
+  - trigger: ";textprep"
+    replace: |
+      import re
+      from bs4 import BeautifulSoup
+      from unidecode import unidecode
+      import contractions
+      
+      def preprocessing(text):
+          # HTML decoding
+          soup = BeautifulSoup(text, "html.parser")
+          cleaned_text = soup.get_text()
+          # Special characters removal
+          cleaned_text = unidecode(cleaned_text)
+          # Expand contractions
+          cleaned_text = contractions.fix(cleaned_text)
+          # Punctuation removal
+          cleaned_text = re.sub('[^\w\s]', '', cleaned_text)
+          # Line breaks removal
+          cleaned_text = re.sub('\n', ' ', cleaned_text)
+          # Excessive spacing removal
+          cleaned_text = re.sub('\s+', ' ', cleaned_text).strip()
+          # URL removal
+          cleaned_text = re.sub('http\S+', '', cleaned_text)
+          # Lowercase conversion
+          cleaned_text = cleaned_text.lower()
+      
+          return cleaned_text
+
+#  ────────────────────────────────────────────────────────────────────
+#   PYTORCH                                                            
+#  ────────────────────────────────────────────────────────────────────
+
+#   DATASET
+  - trigger: ";torchdata"
+    replace: |
+      class Data(nn.Module):
+        def __init__(self, *args):
+            super().__init__(*args)
+            self.x
+            self.y
+
+        def __len__(self):
+            return len(self.x)
+
+        def __getitem__(self, idx):
+            return self.x[idx], self.y[idx]
+  - trigger: ";torchcol"
+    replace: |
+      def collate_fn(batch):
+          sequences, labels = zip(*batch)
+          sequences_padded = pad_sequence(sequences, batch_first=True, padding_value=0)
+          labels = torch.tensor(labels, dtype=torch.long)
+          return sequences_padded, labels
+
+#   ENCODER MODEL
+  - trigger: ";torchtok"
+    replace: |
+      def tokenization(texts, tokenizer_type='basic_english', specials=['<unk>']):
+          tokenizer = get_tokenizer(tokenizer_type)
+          tokens = [tokenizer(text) for text in texts]
+          vocab = build_vocab_from_iterator(tokens, specials=specials)
+          vocab.set_default_index(vocab['<unk>'])
+
+          tokenized_texts = [torch.tensor([vocab[token] for token in text], dtype=torch.int64) for text in tokens] 
+
+          return tokenized_texts, vocab
+  - trigger: ";torchemb"
+    replace: |
+      class EmbeddingLayer(nn.Module):
+        def __init__(self, vocab_size, embed_dim):
+            super(EmbeddingLayer, self).__init__()
+            self.embedding = nn.Embedding(vocab_size, embed_dim)
+            self.embed_dim = embed_dim
+
+        def forward(self, x):
+            return self.embedding(x) * np.sqrt(self.embed_dim)
+  - trigger: ";torchpos"
+    replace: |
+      class PositionalEmbedding(nn.Module):
+          def __init__(self, vocab_size: int, d_model: int, dropout: float = 0.1):
+              super().__init__()
+              self.dropout = nn.Dropout(dropout)
+
+              # Initialize positional embedding matrix (vocab_size, d_model)
+              pe = torch.zeros(vocab_size, d_model)
+              # Positional vector (vocab_size, 1)
+              position = torch.arange(0, vocab_size).unsqueeze(1)
+              # Frequency term
+              div_term = torch.exp(torch.arange(0, d_model, 2).float() * -(math.log(10000) / d_model))
+              # Sinusoidal functions
+              pe[:, 0::2] = torch.sin(position * div_term)
+              pe[:, 1::2] = torch.cos(position * div_term)
+              # Add batch dimension
+              pe = pe.unsqueeze(0)
+              # Save to class
+              self.register_buffer('pe', pe)
+
+          def forward(self, x):
+              x = x + self.pe[:, :x.size(1), :]
+              return self.dropout(x)
+  - trigger: ";torchnorm"
+    replace : |
+      class LayerNorm(nn.Module):
+          def __init__(self, d_model: int, eps: float = 1e-6):
+              super().__init__()
+              # Learnable parameters
+              self.gamma = nn.Parameter(torch.ones(d_model))
+              self.beta = nn.Parameter(torch.ones(d_model))
+              # Numerical stability in case of 0 denominator
+              self.eps = eps
+
+          def forward(self, x):
+              mean = x.mean(-1, keepdim=True)
+              std = x.std(-1, keepdim=True)
+              # Linear combination of layer norm with parameters gamma and beta
+              return self.gamma * (x - mean) / (std + self.eps) + self.beta
+  - trigger: ";torchres"
+    replace: |
+      class ResidualConnection(nn.Module):
+          def __init__(self, d_model: int, dropout: float = 0.1):
+              super().__init__()
+              self.norm = LayerNorm(d_model)
+              self.dropout = nn.Dropout(dropout)
+
+          def forward(self, x1, x2):
+              return self.dropout(self.norm(x1 + x2))
+  - trigger: ";torchff"
+    replace: |
+      class FeedForward(nn.Module):
+          def __init__(self, d_model: int, hidden_dim: int, dropout: float = 0.1):
+              super().__init__()
+              self.linear1 = nn.Linear(d_model, hidden_dim)
+              self.linear2 = nn.Linear(hidden_dim, d_model)
+              self.dropout = nn.Dropout(dropout)
+
+          def forward(self, x):
+              x = F.relu(self.linear1(x))
+              x = self.dropout(x)
+              x = self.linear2(x)
+              return x
+  - trigger: ";torchmha"
+    replace: |
+      class MultiHeadAttention(nn.Module):
+          def __init__(self, d_model: int, num_heads: int, dropout: float =0.1, qkv_bias: bool = False, is_causal: bool = False):
+              super().__init__()
+              assert d_model % num_heads == 0,  "d_model is not divisible by num_heads"
+              self.d_model = d_model
+              self.num_heads = num_heads
+              self.head_dim = d_model // num_heads
+              self.dropout = dropout
+              self.is_causal = is_causal
+
+              self.qkv = nn.Linear(d_model, 3 * d_model, bias=qkv_bias)
+              self.linear = nn.Linear(num_heads * self.head_dim, d_model)
+              self.dropout_layer = nn.Dropout(dropout)
+
+          def forward(self, x, mask=None):
+              batch_size, seq_length = x.shape[:2]
+
+              # Linear transformation and split into query, key, and value
+              qkv = self.qkv(x)  # (batch_size, seq_length, 3 * embed_dim)
+              qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, self.head_dim)  # (batch_size, seq_length, 3, num_heads, head_dim)
+              qkv = qkv.permute(2, 0, 3, 1, 4)  # (3, batch_size, num_heads, seq_length, head_dim)
+              queries, keys, values = qkv  # 3 * (batch_size, num_heads, seq_length, head_dim)
+
+              # Scaled Dot-Product Attention
+              context_vec = F.scaled_dot_product_attention(queries, keys, values, attn_mask=mask, dropout_p=self.dropout, is_causal=self.is_causal)
+
+              # Combine heads, where self.d_model = self.num_heads * self.head_dim
+              context_vec = context_vec.transpose(1, 2).contiguous().view(batch_size, seq_length, self.d_model)
+              context_vec = self.dropout_layer(self.linear(context_vec))
+
+              return context_vec
+  - trigger: ";torchenc"
+    replace: |
+      class EncoderLayer(nn.Module):
+          def __init__(self, d_model: int, num_heads: int, hidden_dim: int, dropout: float = 0.1):
+              super().__init__()
+              self.multihead_attention = MultiHeadAttention(d_model, num_heads, dropout)
+              self.residual1 = ResidualConnection(d_model, dropout)
+              self.feed_forward = FeedForward(d_model, hidden_dim, dropout)
+              self.residual2 = ResidualConnection(d_model, dropout)
+
+          def forward(self, x, mask=None):
+              x = self.residual1(x, self.multihead_attention(x, mask))
+              x = self.residual2(x, self.feed_forward(x))
+              return x
+
+      class EncoderStack(nn.Module):
+          def __init__(self, d_model: int, num_heads: int, hidden_dim: int, num_layers: int, dropout: float = 0.1):
+              super().__init__()
+              self.layers = nn.ModuleList([EncoderLayer(d_model, num_heads, hidden_dim, dropout) for _ in range(num_layers)])
+
+          def forward(self, x, mask=None):
+              for layer in self.layers:
+                  x = layer(x, mask)
+              return x
+
+      class TransformerEncoderModel(nn.Module):
+          def __init__(self, vocab_size: int, d_model: int, num_heads: int, hidden_dim: int, num_layers: int, dropout: float = 0.1):
+              super().__init__()
+              self.embedding = EmbeddingLayer(vocab_size, d_model)
+              self.positional_embedding = PositionalEmbedding(vocab_size, d_model, dropout)
+              self.encoder = EncoderStack(d_model, num_heads, hidden_dim, num_layers, dropout)
+
+          def forward(self, x, mask=None):
+              x = self.embedding(x)
+              x = self.positional_embedding(x)
+              x = self.encoder(x, mask)
+              return x
+
+

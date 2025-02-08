@@ -1,0 +1,125 @@
+matches:
+#  ────────────────────────────────────────────────────────────────────
+#   LOGSEQ TAGS                                                        
+#  ────────────────────────────────────────────────────────────────────
+  - trigger: ";pn"
+    replace: "#[[PN: permanent note]]"
+
+  - trigger: ";top"
+    replace: "#toprocess"
+    
+  - trigger: ";df"
+    replace: "#definition"
+
+  - trigger: ";alias"
+    replace: "[*]($|$)"
+
+#  ────────────────────────────────────────────────────────────────────
+#   DATA SCIENCE AND NLP                                                     
+#  ────────────────────────────────────────────────────────────────────
+  - trigger: "[ds"
+    replace: "[[data science]]"
+  - trigger: ";ds"
+    replace: "#[[data science]]"
+
+  - trigger: "[ml"
+    replace: "[[ML: machine learning]]"
+  - trigger: ";ml"
+    replace: "#[[ML: machine learning]]"
+
+  - trigger: "[dl"
+    replace: "[[deep learning]]"
+  - trigger: ";dl"
+    replace: "#[[deep learning]]"
+
+  - trigger: "[nlp"
+    replace: "[[nlp]]"
+  - trigger: ";nlp"
+    replace: "#nlp"
+
+  - trigger: "[am"
+    replace: "[[attention mechanism]]"
+  - trigger: ";am"
+    replace: "#[[attention mechanism]]"
+
+  - trigger: "[trm"
+    replace: "[[transformer model]]"
+  - trigger: ";trm"
+    replace: "#[[transformer model]]"
+
+#  ────────────────────────────────────────────────────────────────────
+#   LINGUISTICS                                                        
+#  ────────────────────────────────────────────────────────────────────
+  - trigger: "[lp"
+    replace: "[[lexical phonology]]"
+  - trigger: ";lp"
+    replace: "#[[lexical phonology]]"
+
+  - trigger: "[pr"
+    replace: "[[phonological rule]]"
+  - trigger: ";pr"
+    replace: "#[[phonological rule]]"
+
+  - trigger: "[phl"
+    replace: "[[phonology]]"
+  - trigger: ";phl"
+    replace: "#phonology"
+
+  - trigger: "[pht"
+    replace: "[[phonetics]]"
+  - trigger: ";pht"
+    replace: "#phonetics"
+
+  - trigger: "[pt"
+    replace: "[[phonological theory]]"
+  - trigger: ";pt"
+    replace: "#[[phonological theory]]"
+
+#  ────────────────────────────────────────────────────────────────────
+#   LANGUAGES                                                          
+#  ────────────────────────────────────────────────────────────────────
+#   Germanic
+  - trigger: "[de"
+    replace: "[[German]]"
+  - trigger: ";de"
+    replace: "#German"
+
+
+#   Slavic
+  - trigger: "[ru"
+    replace: "[[Russian]]"
+  - trigger: ";ru"
+    replace: "#Russian"
+
+  - trigger: "[po"
+    replace: "[[Polish]]"
+  - trigger: ";po"
+    replace: "#Polish"
+
+#   Romance
+  - trigger: "[fr"
+    replace: "[[French]]"
+  - trigger: ";fr"
+    replace: "#French"
+
+#  ────────────────────────────────────────────────────────────────────
+#   TOPIC TAGS                                                         
+#  ────────────────────────────────────────────────────────────────────
+  - trigger: "[vec"
+    replace: "[[vectorization]]"
+  - trigger: ";vec"
+    replace: "#vectorization"
+  - trigger: ";gpt"
+    replace: "#chatgpt"
+
+  - trigger: "[sla"
+    replace: "[[SLA: second language acquisition]]"
+  - trigger: ";sla"
+    replace: "#[[SLA: second language acquisition]]"
+
+  - trigger: "[tf"
+    replace: "[[transfer]]"
+  - trigger: ";tf"
+    replace: "#transfer"
+
+

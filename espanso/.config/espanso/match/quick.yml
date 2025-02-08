@@ -1,0 +1,43 @@
+matches:
+  - trigger: ";sgdh"
+    replace: "Sehr geehrte Damen und Herren,\n\n"
+
+  - trigger: ";sgh"
+    replace: "Sehr geehrter Herr $|$,\n\n"
+
+  - trigger: ";sgf"
+    replace: "Sehr geehrte Frau $|$,\n\n"
+
+  - trigger: ";mfg"
+    replace: "Mit freundlichen Grüßen,"
+
+  - trigger: ";vg"
+    replace: "Viele Grüße,"
+
+  - trigger: ";smart"
+    replace: |
+      - Specific: 
+      - Measurable: 
+      - Achievable: 
+      - Reliable: 
+      - Time-related: 
+
+  - trigger: ";archive"
+    replace: "https://archive.org/services/loans/loan/?action=media_url&identifier=$|$&format=pdf&redirect=1"
+
+  - trigger: ";kplt"
+    replace: |
+      import matplotlib
+      matplotlib.use("module://matplotlib-backend-kitty")
+      font = {'size'   : 22}
+      matplotlib.rc('font', **font)
+
+
+  - trigger: ";docs"
+    replace: "~/Library/Mobile Documents/com~apple~CloudDocs/Documents"
+    
+  - trigger: "->"
+    replace: "→"
+
+  - trigger: "<-"
+    replace: "←"

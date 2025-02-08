@@ -1,0 +1,119 @@
+matches:
+  - trigger: ";pyds"
+    replace: |
+      import pandas as pd
+      import numpy as np
+      import matplotlib.pyplot as plt
+      import seaborn as sns
+      import missingno as msno
+
+      # Set default figure size
+      figsize = (15,9)
+      plt.rcParams['figure.figsize'] = figsize
+      sns.set(rc={'figure.figsize':figsize})
+
+      # Set default float size
+      pd.set_option('display.float_format', lambda x: '%.2f' % x)
+  
+  - trigger: ";sktts"
+    replace: |
+      X_train, X_test, y_train, y_test = train_test_split(X, 
+                                                          y, 
+                                                          test_size=0.30, 
+                                                          random_state=42)
+
+  - trigger: ";qjyml"
+    replace: |
+      ---
+      title: $|$
+      format: 
+        html:
+          code-fold: true
+      jupyter: python3
+      execute: 
+        cache: true
+      ---
+
+  - trigger: ";jyml"
+    replace: |
+      ---
+      title: $|$
+      description: 
+      image: 
+      type: 
+      category: 
+      skills:
+      ---
+
+  - trigger: ";ext$"
+    replace: |
+      cd ~/Documents/Coding/Personal\ Finance\ Dashboard
+      python extract_transactions.py
+
+  - trigger: ";pipstarter"
+    replace: |
+      pip install pandas numpy matplotlib seaborn pyarrow ipython
+
+  - trigger: ";cuda"
+    replace: 'device = torch.device("cuda" if torch.cuda.is_available() else "cpu")'
+
+  - trigger: ";readme"
+    replace: |
+      [banner]
+
+      # TITLE
+      ### SUBTITLE
+
+      ![PyTorch](https://img.shields.io/badge/pytorch-white?logo=pytorch)
+      ![tensorflow](https://img.shields.io/badge/tensorflow-white?logo=tensorflow)
+      ![HuggingFace](https://img.shields.io/badge/HuggingFace-white?logo=huggingface&logoColor=yellow)
+      ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-white?logo=scikit-learn)
+
+      [EXECUTIVE SUMMARY]
+
+      📄 **WRITE-UP**: [Project Write-Up]()  
+      📔 **NOTEBOOK**: [Jupyter Notebook]()  
+
+      ## 🚀 Key Takeaways
+
+      1. **Insight 1**: [description]
+      2. **Insight 2**: [description]
+      3. **Insight 3**: [description]
+      4. **Insight 4**: [description]
+      5. **Insight 5**: [description]
+
+      [👇 Jump to results and discussion](#-results-and-discussion)
+
+      ## 📂 Table of Contents
+
+      - [Key Takeaways](#-key-takeaways)
+      - [Motivation](#-motivation)
+      - [Approach](#-approach)
+      - [Datasets](#-datasets)
+      - [Preprocessing](#-preprocessing)
+      - [Model Development](#-model-development)
+      - [Results and Discussion](#-results-and-discussion)
+      - [Future Work](#-future-work)
+      - [References](#-references)
+
+      ## 📋 Motivation
+
+      ## 🎯 Approach
+
+      ## 💾 Datasets
+
+      ## 🔨 Preprocessing
+
+      ## 🧠 Model Development
+
+      ## 📈 Results and Discussion
+
+      ## 🪐 Future Work
+
+      ## 📚 References
+
+      - [Reference 1]()
+      - [Reference 2]()
+      - [Reference 3]()
+      - [Reference 4]()
+      - [Reference 5]()

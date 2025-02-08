@@ -1,0 +1,68 @@
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    CONFIGURE SCRIPTING ADDITION
+#  └────────────────────────────────────────────────────────────────────┘
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    DEFAULT SETTINGS
+#  └────────────────────────────────────────────────────────────────────┘
+yabai -m config layout bsp
+
+yabai -m config window_placement second_child
+
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    FOCUS CONFIGS                                                            
+#  └────────────────────────────────────────────────────────────────────┘
+yabai -m signal --add event=window_minimized active=yes action="if \$(yabai -m query --windows --window \$YABAI_WINDOW_ID | jq -r '.\"is-floating\"'); then yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null; fi"
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    PADDING                                                            
+#  └────────────────────────────────────────────────────────────────────┘
+yabai -m config top_padding 0 
+yabai -m config bottom_padding 0
+yabai -m config left_padding 0
+yabai -m config right_padding 0
+yabai -m config window_gap 12
+
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    CENTER MOUSE ON WINDOW WITH FOCUS                                  
+#  └────────────────────────────────────────────────────────────────────┘
+# yabai -m config mouse_follows_focus on
+
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    MODIFIER FOR CLICKING AND DRAGGING WITH MOUSE                      
+#  └────────────────────────────────────────────────────────────────────┘
+# yabai -m config mouse_modifier alt
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    SET MODIFIER + LEFT-CLICK DRAG TO MOVE WINDOW                      
+#  └────────────────────────────────────────────────────────────────────┘
+yabai -m config mouse_action1 move
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    SET MODIFIER + RIGHT-CLICK DRAG TO RESIZE WINDOW                   
+#  └────────────────────────────────────────────────────────────────────┘
+yabai -m config mouse_action2 resize
+
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    MOUSE DROP = SWAP WINDOWS                                       
+#  └────────────────────────────────────────────────────────────────────┘
+yabai -m mouse_drop_action swap
+
+#  ┌────────────────────────────────────────────────────────────────────┐
+#    DISABLE SPECIFIC APPS                                              
+#  └────────────────────────────────────────────────────────────────────┘
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Things$" manage=off
+yabai -m rule --add app="^Fantastical$" manage=off
+yabai -m rule --add app="^Smart Scan$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^CleanMyMac X$" manage=off
+yabai -m rule --add app="^Spark$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Norton 360$" manage=off
+yabai -m rule --add app="^Spark$" manage=off
+yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^Python$" manage=off

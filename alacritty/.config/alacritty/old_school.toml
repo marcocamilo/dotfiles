@@ -1,0 +1,30 @@
+# Default colors
+[colors.primary]
+background = "#000000"
+foreground = "#FFFFFF"
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = "#011423"
+cursor = "#47FF9C"
+
+[colors.normal]
+black = "#000000"
+red = "#B83524"
+green = "#36B800"
+yellow = "#FEFF54"
+blue = "#3443EE"
+magenta = "#C03DD5"
+cyan = "#73F7FC"
+white = "#FFFFFF"
+
+[colors.bright]
+black = "#686868"
+red = "#F0776D"
+green = "#8DF77A"
+yellow = "#FEFC7F"
+blue = "#6A71F7"
+magenta = "#F07FF8"
+cyan = "#56B9BF"
+white = "#FFFFFF"
+

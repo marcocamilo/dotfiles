@@ -1,0 +1,23 @@
+8924 586578-05-19 10:42:39.844 +0200
+1714524344.846271 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 100
+1714524344.846619 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 101
+1714524344.846909 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 102
+1714524344.847592 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 104
+1714524344.848017 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 105
+1714524344.848515 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 107
+1714524344.848840 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 108
+1714524344.849171 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 109
+1714524344.849574 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 110
+1714524344.850121 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 111
+1714524344.851109 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 114
+1714524344.851385 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 115
+1714524344.851647 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 116
+1714524344.851910 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 117
+1714524344.852168 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 118
+1714524344.852363 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 119
+1714524344.852738 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 120
+1714524344.853251 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 122
+1714524344.853559 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 123
+1714524344.853987 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 124
+1714524344.854433 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 125
+1714524344.854803 iTermASCIITexture.m:132 (-[iTermASCIITexture initWithAttributes:descriptor:device:creation:]): Couldn't produce image for ascii 126
