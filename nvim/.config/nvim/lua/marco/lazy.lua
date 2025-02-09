@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ import = "marco.plugins" },
-	{ import = "marco.plugins.lsp" },
+	{ import = "marco.sandbox" },
 }, {
 	checker = {
 		enabled = true,
