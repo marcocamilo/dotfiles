@@ -10,12 +10,11 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
+vim.g.lazyvim_check_order = false
 
 require("lazy").setup({
-	{ import = "lazyvim.plugins" },          -- First: Core LazyVim plugins
-	{ import = "lazyvim.plugins.extras" },   -- Second: Any LazyVim extras (if you have them)
-	{ import = "marco.plugins" },            -- Third: Your own custom plugins
-	{ import = "marco.plugins.lsp" },        -- Any additional custom plugins
+	{ import = "marco.plugins" },
+	{ import = "marco.plugins.lsp" },
 }, {
 	checker = {
 		enabled = true,
