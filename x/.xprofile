@@ -1,0 +1,12 @@
+# Load X resources
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+# Set keyboard repeat rate
+xset r rate 200 30
+
+# Start background applications
+~/.fehbg &
+xcompmgr &
+transset .50 &
+slstatus &
+# dwmblocks &

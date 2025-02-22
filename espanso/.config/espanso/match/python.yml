@@ -1,4 +1,17 @@
 matches:
+  - trigger: ";py"
+    replace: "import pandas as pd"
+  - trigger: ";np"
+    replace: "import numpy as np"
+  - trigger: ";plt"
+    replace: "import matplotlib.pyplot as plt"
+  - trigger: ";sns"
+    replace: "import seaborn as sns"
+  - trigger: ";px"
+    replace: "import plotly.express as px"
+  - trigger: ";sp"
+    replace: "import scipy as sp"
+
   - trigger: ";pyds"
     replace: |
       import pandas as pd

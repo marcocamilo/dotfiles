@@ -11,8 +11,8 @@ return {
     -- configure nvim-tree
     nvimtree.setup({
       view = {
-        width = 30,
-        side = "left",
+        width = 50,
+        side = "right",
       },
       update_focused_file = {
          enable = true,
@@ -36,7 +36,7 @@ return {
              },
              git = {
                unstaged = "",
-               staged = "S",
+               staged = "+",
                unmerged = "",
                renamed = "➜",
                untracked = "U",
@@ -47,10 +47,10 @@ return {
          },
       },
       diagnostics = {
-        enable = true,
+        enable = false,
         show_on_dirs = true,
         icons = {
-          hint = "",
+          hint = "󰠠",
           info = "",
           warning = "",
           error = "",

@@ -5,7 +5,7 @@ opt.backup = false -- creates a backup file
 opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
-opt.conceallevel = 0 -- so that `` is visible in markdown files
+opt.conceallevel = 1 -- so that `` is visible in markdown files
 opt.cursorline = true -- highlight the current line
 opt.expandtab = true -- convert tabs to spaces
 opt.fileencoding = "utf-8" -- the encoding written to a file
@@ -21,7 +21,7 @@ opt.number = true -- set numbered lines
 opt.relativenumber = true -- set relative numbers
 opt.numberwidth = 4 -- minimal number of columns to use for the line number {default 4}
 opt.pumheight = 10 -- pop up menu height
-opt.report = 0 -- print message from commands
+opt.report = 1 -- print message from commands
 opt.ruler = false -- hide the line and column number of the cursor position
 opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor
 opt.sidescrolloff = 8 -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
@@ -41,7 +41,7 @@ opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in mill
 opt.undofile = true -- enable persistent undo
 opt.updatetime = 300 -- faster completion (4000ms default)
 opt.winheight = 20
-opt.wrap = true -- display lines as one long line
+opt.wrap = false -- display lines as one long line
 opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 
 opt.shortmess:append("c") -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
@@ -50,3 +50,8 @@ opt.iskeyword:append("-") -- treats words with `-` as single words
 opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 
 opt.backspace = "indent,eol,start"
+opt.foldmethod = "syntax"
+
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.cmd([[ set nofoldenable ]])

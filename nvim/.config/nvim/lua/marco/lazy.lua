@@ -10,10 +10,11 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
+vim.g.lazyvim_check_order = false
 
 require("lazy").setup({
 	{ import = "marco.plugins" },
-	{ import = "marco.sandbox" },
+	{ import = "marco.plugins.lsp" },
 }, {
 	checker = {
 		enabled = true,
