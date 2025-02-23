@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/feh --no-fehbg --bg-fill '/home/marcocamilo/Wallpapers/snowymountain-night.jpg' 
+/usr/bin/feh --no-fehbg --bg-fill '/home/marcocamilo/wallpapers/snowymountain-night.jpg' 
