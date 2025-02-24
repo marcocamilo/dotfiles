@@ -1,12 +1,41 @@
-# Load X resources
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+#!/bin/sh
+
+SESSION_TYPE="${XDG_SESSION_TYPE:-x11}"
+DESKTOP_ENVIRONMENT="${DESKTOP_SESSION:-unknown}"
+
+# Load X resources (only on X11)
+[ "$SESSION_TYPE" = "x11" ] && [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
 # Set keyboard repeat rate
 xset r rate 200 30
+
+# Set mouse acceleration
+xinput --set-prop 11 'libinput Accel Speed' 0.7
+
+# Apply X11-specific keymap
+if [ "$SESSION_TYPE" = "x11" ] && command -v localectl >/dev/null 2>&1; then
+  localectl set-x11-keymap us pc104 "" ctrl:nocaps
+fi
+
+# GNOME settings (Wayland + X11)
+if [ "$DESKTOP_ENVIRONMENT" = "GNOME" ] || [ "$DESKTOP_ENVIRONMENT" = "ubuntu:GNOME" ]; then
+  if command -v gsettings >/dev/null 2>&1; then
+    gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+    gsettings set org.gnome.desktop.peripherals.touchpad disable-while-typing true
+  fi
+fi
+
+# Xorg-specific: Disable tapping while typing
+if [ "$SESSION_TYPE" = "x11" ] && command -v xinput >/dev/null 2>&1; then
+  TOUCHPAD_ID=$(xinput list | grep -i touchpad | grep -o 'id=[0-9]*' | cut -d= -f2 | head -n 1)
+  [ -n "$TOUCHPAD_ID" ] && {
+    xinput set-prop "$TOUCHPAD_ID" "libinput Disable While Typing Enabled" 1 2>/dev/null ||
+    xinput set-prop "$TOUCHPAD_ID" "Synaptics Disable While Typing" 1 2>/dev/null
+  }
+fi
 
 # Start background applications
 ~/.fehbg &
 xcompmgr &
 transset .50 &
 slstatus &
-# dwmblocks &
