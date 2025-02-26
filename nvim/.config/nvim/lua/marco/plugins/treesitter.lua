@@ -24,7 +24,6 @@ return {
           "lua",
           "markdown",
           "markdown_inline",
-          "org",
           "python",
           "query",
           "r",
