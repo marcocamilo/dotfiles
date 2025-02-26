@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-#define BROWSER "opera"
+#define BROWSER "firefox"
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
