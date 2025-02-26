@@ -11,11 +11,6 @@ source $ZSH/functions.zsh
 source $ZSH/options.zsh
 source $ZSH/aliases.zsh
 
-#  ────────────────────────────────────────────────────────────────────
-#   FINAL PROMPTS                                                      
-#  ────────────────────────────────────────────────────────────────────
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # neofetch
 unset ZSH_AUTOSUGGEST_USE_ASYNC
 

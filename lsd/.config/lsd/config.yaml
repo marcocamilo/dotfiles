@@ -12,8 +12,9 @@ classic: false
 blocks:
   - name
   - links
+  - group
   - size
-  - inode
+  # - inode
   - git
   - date
   - permission
