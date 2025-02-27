@@ -16,7 +16,6 @@ return {
 				lua = { "stylua" },
 				markdown = { "mdformat" },
 				python = { "isort", "black", "ruff" },
-				latex = { "latexindent" },
 				yaml = { "prettier" },
 			},
 		})

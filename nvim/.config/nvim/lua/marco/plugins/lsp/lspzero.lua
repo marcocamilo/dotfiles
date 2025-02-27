@@ -39,7 +39,6 @@ return {
 					"isort", -- python formatter
 					"black", -- python formatter
 					"mdformat",
-					"latexindent",
 					"bibtex-tidy",
 					"eslint_d",
 					"clang-format",

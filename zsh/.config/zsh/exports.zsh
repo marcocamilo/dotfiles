@@ -3,6 +3,8 @@
 #  ────────────────────────────────────────────────────────────────────
 #
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="/usr/local/nvim/bin:$PATH"
+# export PATH="/usr/local/"
 
 #  ────────────────────────────────────────────────────────────────────
 #   EDITOR                                                             

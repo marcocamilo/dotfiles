@@ -8,7 +8,6 @@ return {
 		-- { "hrsh7th/cmp-emoji" },
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "ray-x/cmp-treesitter" },
-		{ "kdheepak/cmp-latex-symbols" },
 		{ "L3MON4D3/LuaSnip" },
 		{ "rafamadriz/friendly-snippets" },
 		{ "onsails/lspkind-nvim" },
@@ -75,7 +74,6 @@ return {
 						path = "[]",
 						tags = "[󰏢]",
 						treesitter = "[]",
-						latex_symbols = "[]",
 						emoji = "[󰱨]",
 					}
 
@@ -111,7 +109,6 @@ return {
 				{ name = "luasnip" },
 				-- { name = "buffer" },
 				{ name = "treesitter" },
-				{ name = "latex_symbols" },
 				-- { name = "emoji" },
 			},
 		})
