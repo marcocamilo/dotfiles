@@ -19,13 +19,11 @@ return {
           "html",
           "javascript",
           "json",
-          "julia",
           "latex",
           "lua",
           "markdown",
           "markdown_inline",
           "python",
-          "query",
           "r",
           "toml",
           "vim",
@@ -53,7 +51,7 @@ return {
           },
         },
       })
-    end, 
+    end,
   },
   {
     "nikvdp/ejs-syntax",
