@@ -1,7 +1,7 @@
 return {
 	{
 		"jpalardy/vim-slime",
-    ft = { "python", "quarto" },
+		ft = { "python", "quarto" },
 		init = function()
 			vim.b.slime_cell_delimiter = "# %%"
 
@@ -33,14 +33,15 @@ return {
 	},
 	{
 		"GCBallesteros/jupytext.nvim",
-    ft = { "python", "quarto" },
+    config = true,
+    lazy = false,
 		opts = {
 			style = "hydrogen",
 			custom_language_formatting = {
 				python = {
-					extension = "qmd", -- or "md"
-					style = "quarto", -- or "markdown"
-					force_ft = true, -- or false
+					extension = "md",
+					style = "markdown",
+					force_ft = "markdown", -- you can set whatever filetype you want here
 				},
 			},
 		},
