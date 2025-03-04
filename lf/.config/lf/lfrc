@@ -118,46 +118,33 @@ map q quit
 #  ────────────────────────────────────────────────────────────────────
 map gh cd ~
 
-map gd. cd ~/documents
-map gad cd ~/documents/admin/
-map gdc cd ~/documents/config/
-map gdf cd ~/documents/finance/
-map gdk cd ~/documents/kingdom/
-map gdp cd ~/documents/personal/
-map gdx cd ~/documents/archive/
-map gdr cd ~/documents/resources/
+map gc. cd ~/.config/
+map gcd cd ~/dotfiles/
+map gclf cd ~/.config/lf/
+map gcls cd ~/.config/lsd/
+map gcn cd ~/.config/nvim/
+map gcs cd ~/.config/starship/
+map gct cd ~/.config/tmux/
+map gcz cd ~/.config/zsh/
 
+map gn. cd ~/nlp/
+map gnr cd ~/nlp/reference-notebooks/
+map gno cd ~/nlp/optimization-tutorial/
 
-map ga. cd ~/documents/academics
-map gahu cd ~/documents/academics/humboldt\ universität\ zu\ berlin/ma\ slawischen\ sprachen
-map gapr cd ~/documents/academics/uprrp/
+map gus. cd ~/nlp/USR\ -\ User\ Needs\ Prediction/
+map gusn cd ~/nlp/USR\ -\ User\ Needs\ Prediction/notebooks/
+map gusd cd ~/nlp/USR\ -\ User\ Needs\ Prediction/data/
 
-map gds. cd ~/documents/data\ science/
-map gdsc cd ~/documents/data\ science/courses/
-map gdsp cd ~/documents/data\ science/portfolio/
-map gdsj cd ~/documents/data\ science/projects/
-map gdsr cd ~/documents/data\ science/resources/
-map gdss cd ~/documents/data\ science/sandbox/
-map gdsw cd ~/documents/data\ science/website/marcocamilo.com
+map gtc. cd ~/nlp/TCM\ -\ Topic\ Clustering\ Model/
+map gtcn cd ~/nlp/TCM\ -\ Topic\ Clustering\ Model/notebooks/
+map gtcd cd ~/nlp/TCM\ -\ Topic\ Clustering\ Model/data/
 
-map gp. cd ~/Documents/Profession/
-map gp. cd ~/Documents/Profession/Work/
-map gpf cd ~/Documents/Profession/Profile/
-map gpp cd ~/Documents/Profession/Portfolio/
-map gpr cd ~/Documents/Profession/Resources/
+map gen. cd ~/nlp/TENT\ -\ Topic\ Entity\ Recognition/
 
+map gv. cd ~/nlp/VEC\ -\ Vectorization\ Model/
+map gvm cd ~/nlp/VEC\ -\ Vectorization\ Model/vector-model
+map gvd cd ~/nlp/VEC\ -\ Vectorization\ Model/dev
 
-map gD cd ~/downloads
-
-map gc. cd ~/.config
-map gcz cd ~/.config/zsh
-map gcn cd ~/.config/nvim
-map gcl cd ~/.config/lf
-map gcy cd ~/.config/yabai
-map gcs cd ~/.config/skhd
-map gce cd ~/.config/emacs
-map gcx cd ~/.config/emacs
-
-map gu cd /usr
-map gl cd /usr/local
-map gb cd /usr/local/bin
+map g. cd /usr/
+map gl cd /usr/local/
+map gb cd /usr/local/bin/

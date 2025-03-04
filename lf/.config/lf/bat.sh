@@ -1,2 +1,2 @@
 #!/bin/bash
-bat --color always "$1"
+batcat --color always "$1"
