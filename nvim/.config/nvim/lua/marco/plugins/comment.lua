@@ -14,10 +14,10 @@ return {
 				bottom = "─",
 				left = " ",
 				right = " ",
-				top_left = "┌",
-				top_right = "┐",
-				bottom_left = "└",
-				bottom_right = "┘",
+				top_left = "─",
+				top_right = "─",
+				bottom_left = "─",
+				bottom_right = "─",
 			},
 			line_width = 70, -- Width of the lines
 			line = { -- Symbols used to draw a line

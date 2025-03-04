@@ -51,3 +51,7 @@ opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters whi
 
 opt.backspace = "indent,eol,start"
 opt.foldmethod = "syntax"
+
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.cmd([[ set nofoldenable ]])
