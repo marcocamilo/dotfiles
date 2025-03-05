@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.surround",
-  event = { "BufReadPre", "BufNewFile" },
+  -- event = { "BufReadPre", "BufNewFile" },
   version = "*",
   config = true
 }
