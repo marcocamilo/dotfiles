@@ -46,6 +46,18 @@ alias bwf="brew info"
 alias bwlc="brew list --cask"
 alias bwlf="brew list --formulae"
 
+# ──────────────────────────────────────────────────────────────────────
+#   GIT                                                                
+# ──────────────────────────────────────────────────────────────────────
+alias gt="git log --graph --abbrev-commit --decorate --oneline"
+alias gac="git add *; git commit -m"
+
+# ──────────────────────────────────────────────────────────────────────
+#   UV                                                                 
+# ──────────────────────────────────────────────────────────────────────
+alias activate="source .venv/bin/activate"
+alias uvjl="uv run --with jupyter jupyter lab"
+
 #  ────────────────────────────────────────────────────────────────────
 #  CONFIGURATION FILES
 #  ────────────────────────────────────────────────────────────────────
@@ -67,44 +79,3 @@ alias zrp="nvim ~/.config/zsh/plugins.zsh"
 #  ────────────────────────────────────────────────────────────────────
 alias szr="source ~/.zshrc"
 alias smx="source ~/.tmux.conf"
-
-#  ────────────────────────────────────────────────────────────────────
-#   CUSTOM SCRIPTS                                                     
-#  ────────────────────────────────────────────────────────────────────
-# JOB SEARCH
-alias newjob='source /Users/marcocamilo/Documents/Profession/Profile/Career\ Documents/Resume/newjob.sh'
-
-# BUILD PROJECT
-alias buildproj='source /Users/marcocamilo/Documents/Data\ Science/Resources/project_templates/ds-project/build_project.sh'
-
-# ZOT2LOG
-alias z2l="/usr/local/bin/zot2log"
-alias z2ls="/usr/local/bin/zot2log search"
-alias z2li="/usr/local/bin/zot2log import"
-alias z2lp="/usr/local/bin/zot2log path"
-
-# WORD SEARCH (PHONOLOGY FUNCTIONS)
-alias ruws="/usr/local/bin/phonology_functions -lang ru -ws"
-alias dews="/usr/local/bin/phonology_functions -lang de -ws"
-alias fraws="/usr/local/bin/phonology_functions -lang fra -ws"
-alias spaws="/usr/local/bin/phonology_functions -lang spa -ws"
-alias enws="/usr/local/bin/phonology_functions -lang en -ws"
-alias pows="/usr/local/bin/phonology_functions -lang po -ws"
-alias itaws="/usr/local/bin/phonology_functions -lang ita -ws"
-
-# ENVIRONMENT SEARCH (PHONOLOGY FUNCTIONS)
-alias ruenv="/usr/local/bin/phonology_functions -lang ru -env"
-alias deenv="/usr/local/bin/phonology_functions -lang de -env"
-alias fraenv="/usr/local/bin/phonology_functions -lang fra -env"
-alias spaenv="/usr/local/bin/phonology_functions -lang spa -env"
-alias enenv="/usr/local/bin/phonology_functions -lang en -env"
-alias poenv="/usr/local/bin/phonology_functions -lang po -env"
-alias itaenv="/usr/local/bin/phonology_functions -lang ita -env"
-
-# THINGS-CLI
-alias th="things-cli"
-alias tht="things-cli today"
-alias thp="things-cli projects"
-alias tha="things-cli areas"
-alias thu="things-cli upcoming"
-alias thl="things-cli logtoday"
