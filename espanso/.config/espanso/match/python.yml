@@ -11,6 +11,10 @@ matches:
     replace: "import plotly.express as px"
   - trigger: ";sp"
     replace: "import scipy as sp"
+  - trigger: ";cp"
+    replace: "import cupy as cp"
+  - trigger: ";cdf"
+    replace: "import cudf"
 
   - trigger: ";pyds"
     replace: |
