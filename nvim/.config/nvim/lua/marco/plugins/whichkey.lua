@@ -1,6 +1,6 @@
 return {
 	"folke/which-key.nvim",
-  commit = "f5b912451f33fd19e52230e73617ad099ffd3ab1",
+	commit = "f5b912451f33fd19e52230e73617ad099ffd3ab1",
 	event = "VeryLazy",
 	init = function()
 		vim.o.timeout = true
@@ -79,7 +79,10 @@ return {
 			["f"] = { "<cmd>Telescope find_files<CR>", "Find files" },
 			["F"] = { "<cmd>Telescope live_grep<CR>", "Find Text" },
 			["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-			["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
+			["b"] = {
+				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+				"Buffers",
+			},
 			["L"] = { "<cmd>Lazy<CR>", "Lazy" },
 			["M"] = { "<cmd>Mason<CR>", "Mason" },
 			["lg"] = { "<cmd>LazyGit<CR>", "LazyGit" },
@@ -90,12 +93,12 @@ return {
 				h = { "<cmd>MarkdownHeaders<CR>", "Markdown Headers" },
 				t = { "<cmd>MDInsertToc<CR>", "Insert TOC" },
 			},
-      n = {
-        name = "Obsidian",
-        n = { "<cmd>ObsidianNew<CR>", "Create New Note" },
-        b = { "<cmd>ObsidianBacklinks<CR>", "Note Backlinks" },
-        s = { "<cmd>ObsidianSearch<CR>", "Note Search" },
-      },
+			n = {
+				name = "Obsidian",
+				n = { "<cmd>ObsidianNew<CR>", "Create New Note" },
+				b = { "<cmd>ObsidianBacklinks<CR>", "Note Backlinks" },
+				s = { "<cmd>ObsidianSearch<CR>", "Note Search" },
+			},
 			l = {
 				name = "LSP",
 				a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -180,6 +183,7 @@ return {
 					p = { "<cmd>ToggleTermSendCurrentLine<CR>", "Send Line" },
 				},
 			},
+			["gr"] = { "<cmd>Telescope grep_string<CR>", "Find Word Under Cursor" },
 			s = { "<Plug>SlimeRegionSend<CR>", "Send to iPython" },
 			c = {
 				b = {

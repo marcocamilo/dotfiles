@@ -6,8 +6,8 @@ return {
 	event = {
 		-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
 		-- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-		"BufReadPre /Users/marcocamilo/Documents/marco_camilo/*",
-		"BufNewFile /Users/marcocamilo/Documents/marco_camilo/*",
+		"BufReadPre /home/Camilo-Pietri.M/second-brain/*",
+		"BufNewFile /home/Camilo-Pietri.M/second-brain/*",
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -17,7 +17,7 @@ return {
 		workspaces = {
 			{
 				name = "marco_camilo",
-				path = "~/Documents/marco_camilo",
+				path = "~/second-brain/",
 			},
 		},
 		daily_notes = {
@@ -26,7 +26,7 @@ return {
 		disable_frontmatter = true,
 		note_id_func = function(title)
 			if title ~= nil then
-				title = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				title = title
 			else
         title = tostring(os.time()) .. "-new_note"
 			end
