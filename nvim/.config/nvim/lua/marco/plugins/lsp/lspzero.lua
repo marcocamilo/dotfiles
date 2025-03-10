@@ -5,7 +5,6 @@ return {
 		lazy = true,
 		config = false,
 		init = function()
-			-- Disable automatic setup, we are doing it manually
 			vim.g.lsp_zero_extend_cmp = 0
 			vim.g.lsp_zero_extend_lspconfig = 0
 		end,
@@ -14,15 +13,11 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
-		-- config = true,
 		dependencies = {
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
 		config = function()
-			local mason = require("mason")
-			local mason_tool_installer = require("mason-tool-installer")
-
-			mason.setup({
+			require("mason").setup({
 				ui = {
 					icons = {
 						package_installed = "✓",
@@ -31,16 +26,13 @@ return {
 					},
 				},
 			})
-			-- Formatters
-			mason_tool_installer.setup({
+
+			require("mason-tool-installer").setup({
 				ensure_installed = {
-					"prettier", -- prettier formatter
-					"stylua", -- lua formatter
-					"isort", -- python formatter
-					"black", -- python formatter
+					"prettier",
+					"stylua",
+					"ruff",
 					"mdformat",
-					"latexindent",
-					"bibtex-tidy",
 					"eslint_d",
 					"clang-format",
 				},
@@ -53,22 +45,15 @@ return {
 		cmd = { "LspInfo", "LspInstall", "LspStart" },
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "williamboman/mason-lspconfig.nvim" },
+			"hrsh7th/cmp-nvim-lsp",
+			"williamboman/mason-lspconfig.nvim",
 		},
 		config = function()
-			local lspconfig = require("lspconfig")
-			local util = require("lspconfig.util")
-			local mason_lspconfig = require("mason-lspconfig")
 			local lsp_zero = require("lsp-zero")
 
-			lsp_zero.extend_lspconfig()
-
-			lsp_zero.on_attach(function(client, bufnr)
-				lsp_zero.default_keymaps({
-					buffer = bufnr,
-					exclude = { "gs" },
-				})
+			-- Global LSP settings
+			lsp_zero.on_attach(function(_, bufnr)
+				lsp_zero.default_keymaps({ buffer = bufnr, exclude = { "gs" } })
 			end)
 
 			lsp_zero.set_sign_icons({
@@ -78,8 +63,8 @@ return {
 				hint = "󰠠 ",
 			})
 
-			mason_lspconfig.setup({
-
+			-- Mason & LSP setup
+			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"html",
 					"cssls",
@@ -93,14 +78,11 @@ return {
 				},
 
 				handlers = {
-
-					function(server_name)
-						require("lspconfig")[server_name].setup({})
-					end,
+					lsp_zero.default_setup,
 
 					pyright = function()
-						lspconfig.pyright.setup({
-							root_dir = util.root_pattern(
+						require("lspconfig").pyright.setup({
+							root_dir = require("lspconfig.util").root_pattern(
 								"pyproject.toml",
 								"setup.py",
 								"setup.cfg",
@@ -112,22 +94,23 @@ return {
 						})
 					end,
 
-					ruff = lsp_zero.noop,
+					ruff = lsp_zero.noop, -- Disable Ruff LSP
 
 					marksman = function()
-						lspconfig.marksman.setup({
+						require("lspconfig").marksman.setup({
 							filetypes = { "markdown", "quarto" },
-							root_dir = util.root_pattern(".git", ".marksman.toml", "_quarto.yml"),
+							root_dir = require("lspconfig.util").root_pattern(".git", ".marksman.toml", "_quarto.yml"),
 						})
 					end,
 
 					texlab = function()
-						lspconfig.texlab.setup({
+						require("lspconfig").texlab.setup({
 							filetypes = { "tex", "plaintex", "bib", "rmd", "quarto" },
 						})
 					end,
+
 					clangd = function()
-						lspconfig.clangd.setup({
+						require("lspconfig").clangd.setup({
 							filetypes = { "c", "cpp", "objc", "objcpp" },
 							init_options = {
 								fallbackFlags = { "-I/usr/local/include" },

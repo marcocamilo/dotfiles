@@ -10,7 +10,7 @@ DESKTOP_ENVIRONMENT="${DESKTOP_SESSION:-unknown}"
 xset r rate 200 30
 
 # Set mouse acceleration
-xinput --set-prop 11 'libinput Accel Speed' 0.7
+xinput --set-prop 11 'libinput Accel Speed' 0.8
 
 # Apply X11-specific keymap
 if [ "$SESSION_TYPE" = "x11" ] && command -v localectl >/dev/null 2>&1; then
