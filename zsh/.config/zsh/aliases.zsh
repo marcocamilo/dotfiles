@@ -50,6 +50,7 @@ alias bwlf="brew list --formulae"
 #   GIT                                                                
 # ──────────────────────────────────────────────────────────────────────
 alias gt="git log --graph --abbrev-commit --decorate --oneline"
+alias gta="git log --graph --abbrev-commit --decorate --oneline --all"
 alias gac="git add *; git commit -m"
 
 # ──────────────────────────────────────────────────────────────────────
