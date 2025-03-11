@@ -111,6 +111,8 @@ return {
 				q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 				R = { "<cmd>LspRestart<CR>", "Restart LSP" },
 				s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+				x = { "<cmd>LspStop<cr>", "LSP Stop" },
+				o = { "<cmd>LspStart<cr>", "LSP Start" },
 			},
 			[";"] = {
 				name = "Noice",
