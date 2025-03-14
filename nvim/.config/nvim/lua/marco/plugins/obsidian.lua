@@ -1,25 +1,32 @@
 return {
 	"epwalsh/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
-	lazy = true,
+	lazy = false,
 	-- ft = "markdown",
 	event = {
 		-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
 		-- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-		"BufReadPre /home/Camilo-Pietri.M/second-brain/*",
-		"BufNewFile /home/Camilo-Pietri.M/second-brain/*",
+		"BufReadPre /home/Camilo-Pietri.M/mac-brain/*",
+		"BufNewFile /home/Camilo-Pietri.M/mac-brain/*",
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
+  -- config = function ()
+  --   if vim.fn.getcwd() == vim.fn.expand "~" .. "/mac-brain" then
+  --     require("lazy").load({ plugins = { "obsidian.nvim" } })
+  --   end
+  -- end,
 	opts = {
 		ui = { enable = false },
 		workspaces = {
 			{
-				name = "marco_camilo",
-				path = "~/second-brain/",
+				name = "mac-brain",
+				path = "~/mac-brain/",
 			},
 		},
+    notes_subdir = "1. Knowledge",
+    new_notes_location = "notes_subdir",
 		daily_notes = {
 			folder = "daily/",
 		},

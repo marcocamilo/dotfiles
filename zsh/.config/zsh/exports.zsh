@@ -15,6 +15,12 @@ export NVM_DIR="$HOME/.nvm"
 # ──────────────────────────────────────────────────────────────────────
 export GOOGLE_APPLICATION_CREDENTIALS="/home/Camilo-Pietri.M/service-accounts/camilo-pietri-m.json"
 
+# ──────────────────────────────────────────────────────────────────────
+#   OTHER VARIABLES                                                    
+# ──────────────────────────────────────────────────────────────────────
+export NLTK_DATA="$HOME/nlp-models/nltk_data/"
+export FASTTEXT_MODEL_DIR="$HOME/nlp-models/fasttext"
+
 #  ────────────────────────────────────────────────────────────────────
 #   EDITOR                                                             
 #  ────────────────────────────────────────────────────────────────────

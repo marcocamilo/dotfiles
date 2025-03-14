@@ -127,23 +127,23 @@ map gcs cd ~/.config/starship/
 map gct cd ~/.config/tmux/
 map gcz cd ~/.config/zsh/
 
-map gn. cd ~/nlp/
-map gnr cd ~/nlp/reference-notebooks/
-map gno cd ~/nlp/optimization-tutorial/
+map gn. cd ~/ml/
+map gnr cd ~/ml/reference-notebooks/
+map gno cd ~/ml/optimization-tutorial/
 
-map gus. cd ~/nlp/USR\ -\ User\ Needs\ Prediction/
-map gusn cd ~/nlp/USR\ -\ User\ Needs\ Prediction/notebooks/
-map gusd cd ~/nlp/USR\ -\ User\ Needs\ Prediction/data/
+map gus. cd ~/ml/USR\ -\ User\ Needs\ Prediction/
+map gusn cd ~/ml/USR\ -\ User\ Needs\ Prediction/notebooks/
+map gusd cd ~/ml/USR\ -\ User\ Needs\ Prediction/data/
 
-map gtc. cd ~/nlp/TCM\ -\ Topic\ Clustering\ Model/
-map gtcn cd ~/nlp/TCM\ -\ Topic\ Clustering\ Model/notebooks/
-map gtcd cd ~/nlp/TCM\ -\ Topic\ Clustering\ Model/data/
+map gtc. cd ~/ml/TCM\ -\ Topic\ Clustering\ Model/
+map gtcn cd ~/ml/TCM\ -\ Topic\ Clustering\ Model/notebooks/
+map gtcd cd ~/ml/TCM\ -\ Topic\ Clustering\ Model/data/
 
-map gen. cd ~/nlp/TENT\ -\ Topic\ Entity\ Recognition/
+map gen. cd ~/ml/TENT\ -\ Topic\ Entity\ Recognition/
 
-map gv. cd ~/nlp/VEC\ -\ Vectorization\ Model/
-map gvm cd ~/nlp/VEC\ -\ Vectorization\ Model/vector-model
-map gvd cd ~/nlp/VEC\ -\ Vectorization\ Model/dev
+map gv. cd ~/ml/VEC\ -\ Vectorization\ Model/
+map gvm cd ~/ml/VEC\ -\ Vectorization\ Model/vector-model
+map gvd cd ~/ml/VEC\ -\ Vectorization\ Model/dev
 
 map g. cd /usr/
 map gl cd /usr/local/
