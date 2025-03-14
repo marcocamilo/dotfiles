@@ -23,7 +23,7 @@ multiplier = 3
 
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
-size = 10
+size = 14
 
 [cursor]
 # style.shape = "Block"
