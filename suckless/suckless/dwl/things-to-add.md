@@ -12,3 +12,4 @@
     - [ ] centeredmaster
     - [ ] centeredfloatingmaster
     - [ ] floating (null)
+- [ ] Movestack
