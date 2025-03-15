@@ -36,8 +36,10 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },
 	{ "TTT",      bstack },
 
-	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "[D]",	    deck },	                /* Master on left, slaves in monocle-like mode on right */
+
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* monitors */

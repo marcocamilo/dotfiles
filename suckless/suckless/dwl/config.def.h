@@ -34,10 +34,12 @@ static const Rule rules[] = {
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
 	{ "TTT",      bstack },
-	{ "===",      bstackhoriz },
+
+	{ "[M]",      monocle },
+	{ "[D]",	    deck },	                /* Master on left, slaves in monocle-like mode on right */
+
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* monitors */
@@ -138,12 +140,14 @@ static const Key keys[] = {
   { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_W,          spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
 
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                    XKB_KEY_f,          setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                    XKB_KEY_m,          setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                    XKB_KEY_u,          setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                    XKB_KEY_o,          setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
-	{ MODKEY,                    XKB_KEY_e,         togglefullscreen, {0} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_T,          setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                    XKB_KEY_y,          setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Y,          setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                    XKB_KEY_u,          setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_U,          setlayout,      {.v = &layouts[5]} },
+	{ MODKEY,                    XKB_KEY_i,          setlayout,      {.v = &layouts[6]} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_I,          setlayout,      {.v = &layouts[7]} },
+	{ MODKEY,                    XKB_KEY_f,         togglefullscreen, {0} },
 
 	{ MODKEY,                    XKB_KEY_o,          incnmaster,     {.i = +1} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_O,          incnmaster,     {.i = -1} },
