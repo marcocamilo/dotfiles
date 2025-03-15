@@ -171,7 +171,7 @@ format = '[$symbol$branch]($style) '
 
 [gcloud]
 symbol = "󱇶 "
-format = '[$symbol $account(@$domain)]($style) '
+format = '[$symbol$account]($style)  '
 style = "bold blue"
 
 [git_branch]
@@ -229,7 +229,7 @@ format = '[$symbol$branch]($style) '
 
 [hostname]
 ssh_symbol = "󰍹 "
-format = '[$ssh_symbol]($style)'
+format = '[$ssh_symbol$hostname]($style) '
 style = 'bold cyan'
 
 [java]

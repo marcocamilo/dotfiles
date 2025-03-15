@@ -11,11 +11,10 @@ classic: false
 # Possible values: permission, user, group, context, size, date, name, inode, links, git
 blocks:
   - name
+  - git
   - links
   - group
   - size
-  # - inode
-  - git
   - date
   - permission
 
