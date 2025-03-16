@@ -37,6 +37,9 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },
 	{ "TTT",      bstack },
 
+	{ "[@]",	spiral },               /* Fibonacci spiral */
+	{ "[\\]",	dwindle },              /* Decreasing in size right and leftward */
+
 	{ "[D]",	    deck },	                /* Master on left, slaves in monocle-like mode on right */
 	{ "[M]",      monocle },
 
