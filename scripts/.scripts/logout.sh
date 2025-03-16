@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-# Prompt the user with dmenu
-choice=$(echo -e "YES\nNO" | dmenu -i -p "Do you want to LOGOUT?")
+# Ask the user if they want to log off using wmenu
+CHOICE=$(echo -e "Yes\nNo" | wmenu -p "Do you want to log off?")
 
-# If the user confirms, execute the logout command
-if [ "$choice" = "YES" ]; then
-    pkill -u "$USER"
+# If the choice is "Yes", execute killp dwl
+if [ "$CHOICE" == "Yes" ]; then
+    pkill dwl
 fi
 
