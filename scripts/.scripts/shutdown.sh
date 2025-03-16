@@ -5,6 +5,6 @@ CHOICE=$(echo -e "Yes\nNo" | wmenu -p "Do you want to shutdown?")
 
 # If the choice is "Yes", execute killp dwl
 if [ "$CHOICE" == "Yes" ]; then
-    sudo shutdown now
+    shutdown now
 fi
 
