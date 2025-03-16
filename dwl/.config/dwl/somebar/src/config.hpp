@@ -14,7 +14,7 @@ constexpr const char* font = "MesloLGS Nerd Font 12";
 
 constexpr ColorScheme colorInactive = {Color(0xbb, 0xbb, 0xbb), Color(0x22, 0x22, 0x22)};
 constexpr ColorScheme colorActive = {Color(0xee, 0xee, 0xee), Color(0x00, 0x55, 0x77)};
-constexpr const char* termcmd[] = {"foot", nullptr};
+constexpr const char* termcmd[] = {"alacritty", nullptr};
 
 static std::vector<std::string> tagNames = {
 	"1", "2", "3",
