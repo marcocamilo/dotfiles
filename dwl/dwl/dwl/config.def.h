@@ -145,6 +145,8 @@ static const char *menucmd[] = { "wmenu-run", NULL };
 static const char *upvol[]      = { "/usr/bin/wpctl",   "set-volume", "60",      "5%+",      NULL };
 static const char *downvol[]    = { "/usr/bin/wpctl",   "set-volume", "60",      "5%-",      NULL };
 static const char *mutevol[]    = { "/usr/bin/wpctl",   "set-mute",   "60",      "toggle",   NULL };
+static const char *logout[] = { "/usr/bin/sh", "/home/marcocamilo/.scripts/logout.sh", NULL };
+static const char *shutdown[] = { "/usr/bin/sh", "/home/marcocamilo/.scripts/shutdown.sh", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
@@ -155,6 +157,8 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_R,          quit,           {0} },
 	{ MODKEY,                    XKB_KEY_q,          killclient,     {0} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          spawn,           {.v = logout} },
+	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          spawn,           {.v = shutdown} },
 
   { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_W,          spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
 
