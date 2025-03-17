@@ -29,6 +29,7 @@ keymap("n", "<Del>", '"_x', opts)
 
 -- Better change
 keymap("n", "c", '"_c', opts)
+keymap("n", "C", '"_C', opts)
 keymap("v", "c", '"_c', opts)
 
 -- Move
