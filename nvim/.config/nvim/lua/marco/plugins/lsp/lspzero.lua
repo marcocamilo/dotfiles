@@ -32,6 +32,7 @@ return {
 					"prettier",
 					"stylua",
 					"ruff",
+          "isort",
 					"mdformat",
 					"eslint_d",
 					"clang-format",

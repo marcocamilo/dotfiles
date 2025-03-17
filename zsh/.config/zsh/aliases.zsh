@@ -20,7 +20,7 @@ alias rmf="rm -rf"
 alias ls="lsd"
 alias lsa="lsd -a"
 alias lsl="lsd -l"
-alias lst="lsd --tree --depth=3"
+alias lst="lsd --tree --depth=2"
 alias lsat="lsd -a --tree --depth=2"
 alias lsal="lsd -l -a"
 
