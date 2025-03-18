@@ -45,18 +45,17 @@ static const Rule rules[] = {
 /* layout(s) */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },
-	{ "TTT",      bstack },
+	{ "[@]",	  spiral },               /* Fibonacci spiral */
+	{ "[]=",    tile },
 
-	{ "[@]",	spiral },               /* Fibonacci spiral */
-	{ "[\\]",	dwindle },              /* Decreasing in size right and leftward */
+	{ "|M|",	  centeredmaster },               /* Master in middle, slaves on sides */
+	{ "TTT",    bstack },
 
-	{ "[D]",	    deck },	                /* Master on left, slaves in monocle-like mode on right */
-	{ "[M]",      monocle },
+	{ "[D]",	  deck },	                /* Master on left, slaves in monocle-like mode on right */
+	{ "[\\]",	  dwindle },              /* Decreasing in size right and leftward */
 
-	{ "|M|",	    centeredmaster },               /* Master in middle, slaves on sides */
-
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[M]",    monocle },
+	{ "><>",    NULL },    /* no layout function means floating behavior */
 };
 
 /* monitors */
