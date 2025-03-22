@@ -147,11 +147,12 @@ static const char *downvol[]    = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AU
 static const char *mutevol[]    = { "/usr/bin/wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
 static const char *logout[] = { "/usr/bin/sh", "/home/marcocamilo/.scripts/logout.sh", NULL };
 static const char *shutdown[] = { "/usr/bin/sh", "/home/marcocamilo/.scripts/shutdown.sh", NULL };
+static const char *wallpaper[] = { "/usr/bin/sh", "/home/marcocamilo/.scripts/wallpaper.sh", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                 function        argument */
-	{ MODKEY,                    XKB_KEY_grave,          spawn,          {.v = menucmd} },
+	{ MODKEY,                    XKB_KEY_grave,      spawn,          {.v = menucmd} },
 	{ MODKEY,                    XKB_KEY_Return,     spawn,          {.v = termcmd} },
 
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
@@ -161,6 +162,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          spawn,           {.v = shutdown} },
 
   { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_W,          spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
+	{ MODKEY,                    XKB_KEY_w,          spawn,           {.v = wallpaper} },
 
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_T,          setlayout,      {.v = &layouts[1]} },
