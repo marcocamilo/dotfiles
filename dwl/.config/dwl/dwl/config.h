@@ -158,11 +158,11 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_R,          quit,           {0} },
 	{ MODKEY,                    XKB_KEY_q,          killclient,     {0} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          spawn,           {.v = logout} },
-	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          spawn,           {.v = shutdown} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          spawn,          {.v = logout} },
+	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT, XKB_KEY_Q,        spawn,           {.v = shutdown} },
 
   { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_W,          spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
-	{ MODKEY,                    XKB_KEY_w,          spawn,           {.v = wallpaper} },
+	{ MODKEY,                    XKB_KEY_w,          spawn,          {.v = wallpaper} },
 
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_T,          setlayout,      {.v = &layouts[1]} },
@@ -172,7 +172,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_U,          setlayout,      {.v = &layouts[5]} },
 	{ MODKEY,                    XKB_KEY_i,          setlayout,      {.v = &layouts[6]} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_I,          setlayout,      {.v = &layouts[7]} },
-	{ MODKEY,                    XKB_KEY_f,         togglefullscreen, {0} },
+	{ MODKEY,                    XKB_KEY_f,          togglefullscreen, {0} },
 
 	{ MODKEY,                    XKB_KEY_o,          incnmaster,     {.i = +1} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_O,          incnmaster,     {.i = -1} },
