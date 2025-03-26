@@ -29,6 +29,7 @@ keymap("n", "<Del>", '"_x', opts)
 
 -- Better change
 keymap("n", "c", '"_c', opts)
+keymap("n", "C", '"_C', opts)
 keymap("v", "c", '"_c', opts)
 
 -- Move
@@ -135,7 +136,7 @@ keymap("v", "<leader>mt", "!pandoc -t markdown-simple_tables<CR>", { desc = "Ali
 --  ───────────────────────────────────────────────────────────────────
 --   SNIPPETS                                                          
 --  ───────────────────────────────────────────────────────────────────
-keymap("n", "<leader>xc", "o```<cr>```<esc>O", { desc = "Python code chunk" }, opts)
+keymap("n", "<leader>xc", "o```<cr>```<esc>O", { desc = "Code chunk" }, opts)
 keymap("n", "<leader>xp", "o```python<cr>```<esc>O", { desc = "Python code chunk" }, opts)
 keymap("n", "<leader>xr", "o```r<cr>```<esc>O", { desc = "R code chunk" }, opts)
 keymap("n", "<leader>xt", "o```tex<cr>```<esc>O", { desc = "TeX code chunk" }, opts)

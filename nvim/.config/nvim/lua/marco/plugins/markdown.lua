@@ -4,11 +4,19 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 		opts = {
 			file_types = { "markdown", "quarto" },
-			win_options = {
-				conceallevel = {
-					rendered = 2,
-				},
-			},
+      heading = {
+        position = 'inline',
+        border = true,
+        border_virtual = true,
+      },
+      indent = {
+        enabled = true,
+      },
+			-- win_options = {
+			-- 	conceallevel = {
+			-- 		rendered = 2,
+			-- 	},
+			-- },
 		},
 	},
 	{
@@ -27,6 +35,7 @@ return {
 		"bullets-vim/bullets.vim",
 		ft = { "markdown", "quarto" },
 		init = function()
+      vim.g.bullets_outline_levels = { 'ROM', 'ABC', 'num', 'abc', 'rom', 'std-' }
 			vim.g.bullets_enabled_file_types = {
 				"markdown",
 				"quarto",

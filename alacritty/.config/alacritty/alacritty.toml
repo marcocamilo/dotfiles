@@ -23,7 +23,7 @@ multiplier = 3
 
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
-size = 10
+size = 14
 
 [cursor]
 # style.shape = "Block"
@@ -32,7 +32,13 @@ size = 10
 [selection]
 save_to_clipboard = true
 
-[[keyboard.bindings]]
-chars = "\u001B[13;5u"
-key = "Return"
-mods = "Control"
+# [[keyboard.bindings]]
+# chars = "\u001B[13;5u"
+# key = "Return"
+# mods = "Control"
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
+  { key = "V", mods = "Control", action = "Paste" },
+]
