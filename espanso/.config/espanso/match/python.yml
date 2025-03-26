@@ -18,6 +18,9 @@ matches:
   - trigger: ";dd"
     replace: "import dask.dataframe as dd"
 
+  - trigger: ";jl"
+    replace: "uv --with jupyter jupyter lab"
+
   - trigger: ";pyds"
     replace: |
       import pandas as pd
