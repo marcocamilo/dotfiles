@@ -1,0 +1,98 @@
+[global]
+    monitor = 0
+    follow = mouse
+		width = 450
+    height = (0, 800)
+    origin = top-right
+    offset = (10, 10)
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 400
+    progress_bar_corner_radius = 5
+
+    indicate_hidden = yes
+    shrink = no
+		separator_height = 2
+    separator_color = frame
+    padding = 15
+    horizontal_padding = 15
+    frame_width = 0
+    corner_radius = 10
+    sort = yes
+    idle_threshold = 120
+
+    font = MesloLG Nerd Font
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 128
+    icon_path = $HOME/.local/share/icons/dunst:/usr/share/icons/Papirus-Dark/16x16/actions
+    sticky_history = yes
+    history_length = 20
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+
+# very dark:      #002233
+# dark:           #003D5C
+# dwl:            #005577
+# light neutral:  #B0C8DA
+# light:          #FFFFFF
+# warning:        #FFB4C1
+
+[urgency_low]
+    background =   "#003D5C"
+    foreground =   "#FFFFFF"
+    highlight =    "#005577"
+    frame_color =  "#003D5C"
+    timeout = 5
+    default_icon = arrow-right
+
+[urgency_normal]
+    background =   "#003D5C"
+    foreground =   "#FFFFFF"
+    highlight =    "#005577"
+    frame_color =  "#003D5C"
+    timeout = 10
+    override_pause_level = 30
+    default_icon = dialog-information
+
+[urgency_critical]
+    background =   "#002233"
+    foreground =   "#FFFFFF"
+    highlight =    "#FFB4C1"
+    frame_color =  "#FFB4C1"
+    timeout = 1000
+    default_icon = messagebox_warning
+
+[volume]
+    appname = "Volume"
+    background =   "#002233"
+    foreground =   "#FFFFFF"
+    highlight =    "#005577"
+    frame_color =  "#005577"
+
+# vim: ft=cfg

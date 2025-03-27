@@ -26,9 +26,9 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
+    "sh", "-c", "dunst", NULL,
     "waypaper", "--restore", NULL,   // Restore wallpaper
     "sh", "-c", "someblocks -p | dwlb -status-stdin all", NULL,
-    "foot", "--server", NULL,        // Start a foot terminal server
     "fnott", NULL,                    // Start fnott notification daemon
     NULL // This must be here to mark the end
 };
@@ -38,15 +38,14 @@ static const char *const autostart[] = {
 static const Rule rules[] = {
 	/* app_id             title       tags mask     isfloating   monitor */
 	/* examples: */
-	// { "Gimp_EXAMPLE",     NULL,       0,            1,           -1 }, /* Start on currently visible tags floating, not tiled */
 	{ "google-chrome-stable",  NULL,       0,       0,           -1 }, /* Start on ONLY tag "9" */
 };
 
 /* layout(s) */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[@]",	  spiral },               /* Fibonacci spiral */
 	{ "[]=",    tile },
+	{ "[@]",	  spiral },               /* Fibonacci spiral */
 
 	{ "|M|",	  centeredmaster },               /* Master in middle, slaves on sides */
 	{ "TTT",    bstack },
@@ -140,14 +139,14 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "alacritty", NULL };
-static const char *menucmd[] = { "wofi", "--show", "drun", NULL };
-static const char *upvol[]      = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
-static const char *downvol[]    = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
-static const char *mutevol[]    = { "/usr/bin/wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
-static const char *logout[] = { "/usr/bin/sh", "/home/marcocamilo/.scripts/logout.sh", NULL };
-static const char *shutdown[] = { "/usr/bin/sh", "/home/marcocamilo/.scripts/shutdown.sh", NULL };
-static const char *wallpaper[] = { "/usr/bin/sh", "/home/marcocamilo/.scripts/wallpaper.sh", NULL };
+static const char *termcmd[]    = { "alacritty", NULL };
+static const char *menucmd[]    = { "wofi", "--show", "drun", NULL };
+static const char *upvol[]      = { "/home/marcocamilo/.local/bin/volume", "up", NULL };
+static const char *downvol[]    = { "/home/marcocamilo/.local/bin/volume", "down", NULL };
+static const char *mutevol[]    = { "/home/marcocamilo/.local/bin/volume", "mute", NULL };
+static const char *logout[]     = { "/usr/bin/sh", "/home/marcocamilo/.scripts/logout.sh", NULL };
+static const char *shutdown[]   = { "/usr/bin/sh", "/home/marcocamilo/.scripts/shutdown.sh", NULL };
+static const char *wallpaper[]  = { "/usr/bin/sh", "/home/marcocamilo/.scripts/wallpaper.sh", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
