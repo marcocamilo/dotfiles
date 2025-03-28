@@ -3,6 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		filetypes = {
+      "cfg",
 			"css",
 			"html",
 			"lua",
