@@ -26,9 +26,9 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-    "sh", "-c", "dunst", NULL,
     "waypaper", "--restore", NULL,   // Restore wallpaper
     "sh", "-c", "someblocks -p | dwlb -status-stdin all", NULL,
+    "foot", "--server", NULL,        // Start a foot terminal server
     "fnott", NULL,                    // Start fnott notification daemon
     NULL // This must be here to mark the end
 };

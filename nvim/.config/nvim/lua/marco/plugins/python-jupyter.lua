@@ -1,7 +1,7 @@
 return {
 	{
 		"jpalardy/vim-slime",
-		ft = { "python", "quarto" },
+		ft = { "python", "quarto", "sh", "bash", "zsh" },
 		init = function()
 			vim.b.slime_cell_delimiter = "# %%"
 

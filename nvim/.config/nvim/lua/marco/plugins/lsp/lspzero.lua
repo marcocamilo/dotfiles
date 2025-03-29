@@ -32,6 +32,7 @@ return {
 					"prettier",
 					"stylua",
 					"ruff",
+					"isort",
 					"mdformat",
 					"eslint_d",
 					"clang-format",
@@ -49,6 +50,15 @@ return {
 			"williamboman/mason-lspconfig.nvim",
 		},
 		config = function()
+			-- Add blink.cmp capabilities settings to lspconfig
+			-- This should be executed before you configure any language server
+			local lspconfig_defaults = require("lspconfig").util.default_config
+			lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+				"force",
+				lspconfig_defaults.capabilities,
+				require("blink.cmp").get_lsp_capabilities()
+			)
+
 			local lsp_zero = require("lsp-zero")
 
 			-- Global LSP settings

@@ -10,6 +10,7 @@ source $ZSH/plugins.zsh
 source $ZSH/functions.zsh
 source $ZSH/options.zsh
 source $ZSH/aliases.zsh
+source $ZSH/keybindings.zsh
 
 # neofetch
 unset ZSH_AUTOSUGGEST_USE_ASYNC

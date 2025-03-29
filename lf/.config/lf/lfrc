@@ -118,27 +118,24 @@ map q quit
 #  ────────────────────────────────────────────────────────────────────
 map gh cd ~
 
-map gd. cd ~/documents
-map gad cd ~/documents/admin/
-map gdc cd ~/documents/config/
-map gdf cd ~/documents/finance/
-map gdk cd ~/documents/kingdom/
-map gdp cd ~/documents/personal/
-map gdx cd ~/documents/archive/
-map gdr cd ~/documents/resources/
+map gd. cd ~/Documents
+map gad cd ~/Documents/Admin/
+map gdc cd ~/Documents/config/
+map gdf cd ~/Documents/Finance/
+map gdk cd ~/Documents/Kingdom/
+map gdp cd ~/Documents/Personal/
+map gdr cd ~/Documents/Resources/
 
 
-map ga. cd ~/documents/academics
-map gahu cd ~/documents/academics/humboldt\ universität\ zu\ berlin/ma\ slawischen\ sprachen
-map gapr cd ~/documents/academics/uprrp/
+map ga. cd ~/Documents/Academics
 
-map gds. cd ~/documents/data\ science/
-map gdsc cd ~/documents/data\ science/courses/
-map gdsp cd ~/documents/data\ science/portfolio/
-map gdsj cd ~/documents/data\ science/projects/
-map gdsr cd ~/documents/data\ science/resources/
-map gdss cd ~/documents/data\ science/sandbox/
-map gdsw cd ~/documents/data\ science/website/marcocamilo.com
+map gds. cd ~/Documents/Data\ Science/
+map gdsc cd ~/Documents/Data\ Science/Courses/
+map gdsp cd ~/Documents/Data\ Science/Portfolio/
+map gdsj cd ~/Documents/Data\ Science/Projects/
+map gdsr cd ~/Documents/Data\ Science/Resources/
+map gdss cd ~/Documents/Data\ Science/Sandbox/
+map gdsw cd ~/Documents/Data\ Science/Website/marcocamilo.com
 
 map gp. cd ~/Documents/Profession/
 map gp. cd ~/Documents/Profession/Work/
@@ -147,7 +144,7 @@ map gpp cd ~/Documents/Profession/Portfolio/
 map gpr cd ~/Documents/Profession/Resources/
 
 
-map gD cd ~/downloads
+map gD cd ~/Downloads
 
 map gc. cd ~/.config
 map gcz cd ~/.config/zsh

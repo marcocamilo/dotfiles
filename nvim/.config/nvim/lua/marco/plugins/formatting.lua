@@ -13,8 +13,7 @@ return {
 				json = { "prettier" },
 				lua = { "stylua" },
 				markdown = { "mdformat" },
-				python = { "ruff_fix", "ruff_format" },
- 				latex = { "latexindent" },
+				python = { "ruff_fix", "ruff_format", "isort" },
 				yaml = { "prettier" },
 			},
 		})

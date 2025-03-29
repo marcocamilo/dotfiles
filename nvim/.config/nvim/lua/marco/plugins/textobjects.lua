@@ -45,8 +45,8 @@ return {
           enable = true,
           lookahead = true,
           keymaps = {
-            ["ac"] = "@codechunk.outer",
-            ["ic"] = "@codechunk.inner",
+            ["ab"] = "@codechunk.outer",
+            ["ib"] = "@codechunk.inner",
           },
         },
       },
