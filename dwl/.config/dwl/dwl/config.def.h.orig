@@ -26,9 +26,9 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-    "sh", "-c", "dunst", NULL,
     "waypaper", "--restore", NULL,   // Restore wallpaper
     "sh", "-c", "someblocks -p | dwlb -status-stdin all", NULL,
+    "foot", "--server", NULL,        // Start a foot terminal server
     "fnott", NULL,                    // Start fnott notification daemon
     NULL // This must be here to mark the end
 };
@@ -153,7 +153,6 @@ static const Key keys[] = {
 	/* modifier                  key                 function        argument */
 	{ MODKEY,                    XKB_KEY_grave,      spawn,          {.v = menucmd} },
 	{ MODKEY,                    XKB_KEY_Return,     spawn,          {.v = termcmd} },
-  { MODKEY,                    XKB_KEY_b,          togglebar,      {0} },
 
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_R,          quit,           {0} },
