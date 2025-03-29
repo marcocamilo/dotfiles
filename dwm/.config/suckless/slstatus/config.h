@@ -68,6 +68,6 @@ static const struct arg args[] = {
   { cpu_perc,           " %s%% | ",      NULL},
   { ram_free,           "  %s | ",     NULL},
   // { wifi_essid,         "  %s | ",       "wlp2s0" },
-  { battery_perc,       "󰁹 %s%% | ",      "BAT0"},
-  { datetime,           "%s",           "%a %d %b %Y, %r"},
+  // { battery_perc,       "󰁹 %s%% | ",      "BAT0"},
+  { datetime,           "%s",           "%A, %d %B %Y, %r"},
 };
