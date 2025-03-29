@@ -1,0 +1,15 @@
+- [ ] Scripts
+    - [ ] Logout
+    - [ ] Shutdown
+    - [ ] Change wallpaper
+- [ ] Layouts
+    - [ ] tile
+    - [ ] bstack
+    - [ ] spiral
+    - [ ] dwindle
+    - [ ] deck
+    - [ ] monocle
+    - [ ] centeredmaster
+    - [ ] centeredfloatingmaster
+    - [ ] floating (null)
+- [ ] Movestack
