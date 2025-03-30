@@ -9,5 +9,8 @@ xcompmgr &
 # Transparency effect
 transset .50 &
 
+# Dunst
+dunst &
+
 # Polybar
 (sleep 2 && polybar) &
