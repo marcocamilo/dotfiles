@@ -9,14 +9,13 @@ static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const char *fonts[] = {"MesloLGS Nerd Font:size=10",
-                              "Symbols Nerd Font:size=10",
                               "NotoColorEmoji:pixelsize=20"};
 static const char dmenufont[] = "MesloLGS Nerd Font:size=10";
-static const char col_gray1[] = "#1e1e1e";
+static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
 static const char col_gray4[] = "#eeeeee";
-static const char col_cyan[] =  "#005577";
+static const char col_cyan[] = "#005577";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3] = {
@@ -104,8 +103,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-  { MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("~/.scripts/x11/logout.sh") },
-  { MODKEY|ControlMask|ShiftMask, XK_q,      spawn,          SHCMD("~/.scripts/x11/shutdown.sh") },
+  { MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("~/.scripts/logout.sh") },
+  { MODKEY|ControlMask|ShiftMask, XK_q,      spawn,          SHCMD("~/.scripts/shutdown.sh") },
 
   { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
 
@@ -171,5 +170,23 @@ static const Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+};
+
+static const char *ipcsockpath = "/tmp/dwm.sock";
+static IPCCommand ipccommands[] = {
+  IPCCOMMAND(  view,                1,      {ARG_TYPE_UINT}   ),
+  IPCCOMMAND(  toggleview,          1,      {ARG_TYPE_UINT}   ),
+  IPCCOMMAND(  tag,                 1,      {ARG_TYPE_UINT}   ),
+  IPCCOMMAND(  toggletag,           1,      {ARG_TYPE_UINT}   ),
+  IPCCOMMAND(  tagmon,              1,      {ARG_TYPE_UINT}   ),
+  IPCCOMMAND(  focusmon,            1,      {ARG_TYPE_SINT}   ),
+  IPCCOMMAND(  focusstack,          1,      {ARG_TYPE_SINT}   ),
+  IPCCOMMAND(  zoom,                1,      {ARG_TYPE_NONE}   ),
+  IPCCOMMAND(  incnmaster,          1,      {ARG_TYPE_SINT}   ),
+  IPCCOMMAND(  killclient,          1,      {ARG_TYPE_SINT}   ),
+  IPCCOMMAND(  togglefloating,      1,      {ARG_TYPE_NONE}   ),
+  IPCCOMMAND(  setmfact,            1,      {ARG_TYPE_FLOAT}  ),
+  IPCCOMMAND(  setlayoutsafe,       1,      {ARG_TYPE_PTR}    ),
+  IPCCOMMAND(  quit,                1,      {ARG_TYPE_NONE}   )
 };
 
