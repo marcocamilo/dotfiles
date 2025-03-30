@@ -9,9 +9,9 @@ if [ -z "$XFT_DPI" ]; then
     if [ "$SCREEN_HEIGHT" -gt 1440 ]; then
         DPI=192
     elif [ "$SCREEN_HEIGHT" -gt 1080 ]; then
-        DPI=120
+        DPI=144
     else
-        DPI=96
+        DPI=120
     fi
     echo "Xft.dpi: $DPI" | xrdb -merge
 fi

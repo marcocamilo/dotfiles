@@ -8,6 +8,8 @@ return {
 			"html",
 			"lua",
 			"python",
+      "cpp",
+      "dosini",
 		},
 	},
 }

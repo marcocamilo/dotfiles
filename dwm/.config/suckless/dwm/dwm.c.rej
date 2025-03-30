@@ -1,0 +1,10 @@
+--- dwm.c
++++ dwm.c
+@@ -1631,6 +1667,7 @@ setup(void)
+ 	XSelectInput(dpy, root, wa.event_mask);
+ 	grabkeys();
+ 	focus(NULL);
++	spawnbar();
+ }
+ 
+ 
