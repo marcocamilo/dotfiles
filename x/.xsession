@@ -1,10 +1,9 @@
 #!/bin/sh
-# Source ~/.xprofile to set up the environment
+
+# Source profile for environment variables
 if [ -f ~/.xprofile ]; then
     . ~/.xprofile
 fi
 
-# Start the window manager
-while true; do
-  dwm 2> ~/.dwm.log
-done
+# Start shared background applications
+~/.scripts/startup.sh &
