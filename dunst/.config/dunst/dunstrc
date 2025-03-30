@@ -1,10 +1,10 @@
 [global]
     monitor = 0
     follow = mouse
-		width = 450
+		width = 400
     height = (0, 800)
     origin = top-right
-    offset = (10, 10)
+    offset = (5, 30)
 
     progress_bar = true
     progress_bar_height = 10
@@ -56,7 +56,7 @@
 [experimental]
     per_monitor_dpi = false
 
-# very dark:      #002233
+# very dark:      #222222
 # dark:           #003D5C
 # dwl:            #005577
 # light neutral:  #B0C8DA
@@ -64,7 +64,7 @@
 # warning:        #FFB4C1
 
 [urgency_low]
-    background =   "#003D5C"
+    background =   "#002233"
     foreground =   "#FFFFFF"
     highlight =    "#005577"
     frame_color =  "#003D5C"
@@ -72,7 +72,7 @@
     default_icon = arrow-right
 
 [urgency_normal]
-    background =   "#003D5C"
+    background =   "#002233"
     foreground =   "#FFFFFF"
     highlight =    "#005577"
     frame_color =  "#003D5C"

@@ -751,7 +751,7 @@ destroynotify(XEvent *e)
 
 	if ((c = wintoclient(ev->window)))
 		unmanage(c, 1);
-	else if (usealtbar && (m = wintomon(ev->window)) && m->barwin == ev->window)
+	else if ((m = wintomon(ev->window)) && m->barwin == ev->window)
 		unmanagealtbar(ev->window);
 }
 
@@ -1331,7 +1331,7 @@ maprequest(XEvent *e)
 
 	if (!XGetWindowAttributes(dpy, ev->window, &wa) || wa.override_redirect)
 		return;
-	if (usealtbar && wmclasscontains(ev->window, altbarclass, ""))
+	if (wmclasscontains(ev->window, altbarclass, ""))
 		managealtbar(ev->window, &wa);
 	else if (!wintoclient(ev->window))
 		manage(ev->window, &wa);
@@ -1681,7 +1681,7 @@ scan(void)
 			if (!XGetWindowAttributes(dpy, wins[i], &wa)
 			|| wa.override_redirect || XGetTransientForHint(dpy, wins[i], &d1))
 				continue;
-			if (usealtbar && wmclasscontains(wins[i], altbarclass, ""))
+			if (wmclasscontains(wins[i], altbarclass, ""))
 				managealtbar(wins[i], &wa);
 			else if (wa.map_state == IsViewable || getstate(wins[i]) == IconicState)
 				manage(wins[i], &wa);
@@ -1860,7 +1860,7 @@ setup(void)
 	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
 		die("no fonts could be loaded.");
 	lrpad = drw->fonts->h;
-	bh = usealtbar ? 0 : drw->fonts->h + 2;
+	bh = user_bh ? user_bh : drw->fonts->h + 2;
 	updategeom();
 	/* init atoms */
 	utf8string = XInternAtom(dpy, "UTF8_STRING", False);
@@ -2175,16 +2175,16 @@ unmanage(Client *c, int destroyed)
 void
 unmanagealtbar(Window w)
 {
-	Monitor *m = wintomon(w);
+    Monitor *m = wintomon(w);
 
-	if (!m)
-		return;
+    if (!m)
+        return;
 
-	m->barwin = 0;
-	m->by = 0;
-	m->bh = 0;
-	updatebarpos(m);
-	arrange(m);
+    m->barwin = 0;
+    m->by = 0;
+    m->bh = 0;
+    updatebarpos(m);
+    arrange(m);
 }
 
 void
@@ -2199,7 +2199,7 @@ unmapnotify(XEvent *e)
 			setclientstate(c, WithdrawnState);
 		else
 			unmanage(c, 0);
-	} else if (usealtbar && (m = wintomon(ev->window)) && m->barwin == ev->window)
+	} else if ((m = wintomon(ev->window)) && m->barwin == ev->window)
 		unmanagealtbar(ev->window);
 }
 
