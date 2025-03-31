@@ -51,6 +51,7 @@ symbol_map["sleetshowers_night"]=""
 symbol_map["rainshowers_day"]=""
 symbol_map["rainshowers_night"]=""
 symbol_map["heavyrainshowers_night"]=""
+symbol_map["lightrainshowers_night"]=""
 
 # Function to print the human-readable weather symbol
 human_readable() {

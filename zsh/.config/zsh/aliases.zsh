@@ -12,8 +12,6 @@ alias nf="neofetch"
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv="mv -i"
-# alias rm="trash -i"
-# alias rm="rm -i"
 alias rmf="rm -rf"
 
 # list
@@ -23,6 +21,11 @@ alias lsl="lsd -l"
 alias lst="lsd --tree --depth=2"
 alias lsat="lsd -a --tree --depth=2"
 alias lsal="lsd -l -a"
+
+# ──────────────────────────────────────────────────────────────────────
+#   UTILITIES                                                          
+# ──────────────────────────────────────────────────────────────────────
+alias tl="tldr"
 
 #  ────────────────────────────────────────────────────────────────────
 #   PROGRAMS                                                           
