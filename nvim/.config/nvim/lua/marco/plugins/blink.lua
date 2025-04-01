@@ -53,34 +53,17 @@ return {
 				"lsp",
 				"path",
 				"snippets",
-				"buffer",
-				"emoji",
-				"nerdfont",
+				-- "buffer",
 				"otter",
 			},
 
 			providers = {
-				emoji = {
-					module = "blink-emoji",
-					name = "Emoji",
-					score_offset = 15, -- Tune by preference
-					opts = { insert = true }, -- Insert emoji (default) or complete its name
-					should_show_items = function()
-						return vim.tbl_contains({ "gitcommit", "markdown", "python" }, vim.o.filetype)
-					end,
-				},
-				nerdfont = {
-					module = "blink-nerdfont",
-					name = "Nerd Fonts",
-					score_offset = 15, -- Tune by preference
-					opts = { insert = true }, -- Insert nerdfont icon (default) or complete its name
-				},
 				otter = {
 					name = "otter",
           module = 'blink.compat.source',
 				},
 			},
 		},
-		snippets = { preset = "luasnip" },
+		-- snippets = { preset = "luasnip" },
 	},
 }
