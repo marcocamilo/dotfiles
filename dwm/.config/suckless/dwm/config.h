@@ -140,6 +140,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = -1 } },
 
   { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
+  { MODKEY,                       XK_Escape, spawn,          SHCMD("~/.scripts/kb-switch.sh") },
 
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
