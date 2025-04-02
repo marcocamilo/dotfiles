@@ -4,8 +4,6 @@ return {
 		"saghen/blink.compat",
 		"rafamadriz/friendly-snippets",
 		"L3MON4D3/LuaSnip",
-		"moyiz/blink-emoji.nvim",
-		"MahanRahmati/blink-nerdfont.nvim",
 	},
 
 	version = "1.*",
@@ -28,7 +26,7 @@ return {
 		-- keymap = { preset = 'super-tab' },
 		keymap = {
 			["<CR>"] = { "accept", "fallback" },
-			["<C-e>"] = { "hide", "fallback" },
+			["<Tab>"] = { "hide", "fallback" },
 
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
@@ -53,7 +51,6 @@ return {
 				"lsp",
 				"path",
 				"snippets",
-				-- "buffer",
 				"otter",
 			},
 
@@ -64,6 +61,5 @@ return {
 				},
 			},
 		},
-		-- snippets = { preset = "luasnip" },
 	},
 }
