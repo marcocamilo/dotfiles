@@ -1,5 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
 #define BROWSER "google-chrome-stable"
 
 /* appearance */
@@ -94,9 +95,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
-    "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
+  "j4-dmenu-desktop", NULL
+    // "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
+    // "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL
+};
 static const char *termcmd[] = {"alacritty", NULL};
+static const char *upvol[]      = { "/home/marcocamilo/.local/bin/volume", "up", NULL };
+static const char *downvol[]    = { "/home/marcocamilo/.local/bin/volume", "down", NULL };
+static const char *mutevol[]    = { "/home/marcocamilo/.local/bin/volume", "mute", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -155,6 +161,10 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+
+	{ 0,              XF86XK_AudioLowerVolume,  spawn, {.v = downvol } },
+	{ 0,              XF86XK_AudioMute,         spawn, {.v = mutevol } },
+	{ 0,              XF86XK_AudioRaiseVolume,  spawn, {.v = upvol   } },
 };
 
 /* button definitions */
