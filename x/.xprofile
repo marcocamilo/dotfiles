@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Load X resources
-[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-
 # Set DPI automatically
 if [ -z "$XFT_DPI" ]; then
     SCREEN_HEIGHT=$(xdpyinfo | awk '/dimensions:/ {print $2}' | cut -d 'x' -f2)
@@ -17,7 +14,7 @@ if [ -z "$XFT_DPI" ]; then
 fi
 
 # Set keyboard repeat rate
-xset r rate 170 30
+xset r rate 150 30 &
 
 # Set mouse acceleration
-xinput --set-prop 11 'libinput Accel Speed' 0.8
+xinput --set-prop 11 'libinput Accel Speed' 0.8 &
