@@ -12,5 +12,8 @@ transset .50 &
 # Dunst
 dunst &
 
+# pCloud
+/home/marcocamilo/opt/pcloud &
+
 # Polybar
 (sleep 2 && polybar) &
