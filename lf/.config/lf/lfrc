@@ -5,6 +5,8 @@ set hidden true
 set ignorecase true
 set icons true
 set sortby natural
+set ratios 1:2:4
+
 #  ────────────────────────────────────────────────────────────────────
 #                           PERSISTENT OPTION
 #  ────────────────────────────────────────────────────────────────────
