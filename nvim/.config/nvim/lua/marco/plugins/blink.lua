@@ -28,7 +28,7 @@ return {
 		-- keymap = { preset = 'super-tab' },
 		keymap = {
 			["<CR>"] = { "accept", "fallback" },
-			["<C-e>"] = { "hide", "fallback" },
+			["<Tab>"] = { "hide", "fallback" },
 
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
