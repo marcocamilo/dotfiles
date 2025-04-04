@@ -78,7 +78,6 @@ return {
 			-- ["e"] = { "<cmd>Oil<cr>", "Explorer (Oil)" },
 			["f"] = { "<cmd>Telescope find_files<CR>", "Find files" },
 			["F"] = { "<cmd>Telescope live_grep<CR>", "Find Text" },
-			["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 			["b"] = {
 				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 				"Buffers",
