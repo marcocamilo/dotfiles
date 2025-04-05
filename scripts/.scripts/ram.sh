@@ -8,5 +8,5 @@ used_ram=$(free -m | awk '/^Mem:/ {print $3}')
 ram_percent=$(( (used_ram * 100) / total_ram ))
 
 # Output the RAM usage as a percentage
-echo " $ram_percent%"
+echo "  $ram_percent%"
 

@@ -63,4 +63,4 @@ human_readable() {
 }
 
 # Output temperature and weather
-echo "$(human_readable "$today_weather") $(round "$today_temp")"
+echo "$(human_readable "$today_weather")  $(round "$today_temp")"

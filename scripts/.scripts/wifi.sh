@@ -29,5 +29,5 @@ else
 fi
 
 # Output WiFi strength
-echo "$ICON $QUALITY%"
+echo "$ICON  $QUALITY%"
 
