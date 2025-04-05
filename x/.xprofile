@@ -13,8 +13,9 @@ if [ -z "$XFT_DPI" ]; then
     echo "Xft.dpi: $DPI" | xrdb -merge
 fi
 
-# Set keyboard repeat rate
-xset r rate 150 30 &
+# Set keyboard configs
+xset r rate 200 30 &
+setxkbmap -layout us -model pc104 -option ctrl:nocaps,ctrl:ralt_rctrl
 
 # Set mouse acceleration
 xinput --set-prop 11 'libinput Accel Speed' 0.8 &

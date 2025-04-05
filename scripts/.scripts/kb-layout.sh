@@ -9,4 +9,4 @@ if [[ "$VARIANT"  == "intl" ]]; then
     CURRENT_LAYOUT="$CURRENT_LAYOUT-$VARIANT"
 fi
 
-echo " $CURRENT_LAYOUT"
+echo "  $CURRENT_LAYOUT"
