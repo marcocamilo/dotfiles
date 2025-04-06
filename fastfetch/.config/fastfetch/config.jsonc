@@ -1,0 +1,60 @@
+{
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"display": {
+		"size": {
+			"maxPrefix": "MB",
+			"ndigits": 0
+		}
+	},
+	"modules": [
+		"title",
+		"separator",
+		"os",
+		"host",
+		{
+			"type": "kernel",
+			"format": "{release}"
+		},
+		"uptime",
+		"packages",
+		"shell",
+		{
+			"type": "display",
+			"compactType": "original",
+			"key": "Resolution"
+		},
+		"de",
+		"wm",
+		"wmtheme",
+		"theme",
+		"icons",
+		"terminal",
+		// "cpu",
+		{
+			"type": "cpu",
+      "format": "{name} ({cores-physical})"
+		},
+		{
+			"type": "gpu",
+			"driverSpecific": true,
+			"temp": false,
+      "format": "Radeon 780M Graphics ({core-count})"
+		},
+		{
+			"type": "memory",
+			"format": "{} / {}"
+		},
+    {
+      "type": "wifi",
+      "format": "{ssid}"
+    },
+    // "datetime",
+    {
+      "type": "datetime",
+      "format": "{weekday}, {day-in-month} {month-name} {year} | {hour-pretty}:{minute-pretty} ({timezone-name})",
+      "key": "Datetime"
+    },
+		"break",
+		"colors"
+	]
+}
