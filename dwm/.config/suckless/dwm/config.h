@@ -132,12 +132,12 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } },
 
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = -1 } },
+	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_k,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_l,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_h,      movestack,      {.i = -1 } },
 
   { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
   { MODKEY,                       XK_Escape, spawn,          SHCMD("~/.scripts/kb-switch.sh") },
