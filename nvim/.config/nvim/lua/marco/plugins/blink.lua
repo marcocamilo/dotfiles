@@ -53,6 +53,13 @@ return {
 			},
 
 			providers = {
+				path = {
+					opts = {
+						get_cwd = function(_)
+							return vim.fn.getcwd()
+						end,
+					},
+				},
 				otter = {
 					name = "otter",
 					module = "blink.compat.source",

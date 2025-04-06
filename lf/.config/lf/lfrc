@@ -118,45 +118,58 @@ map q quit
 #  ────────────────────────────────────────────────────────────────────
 #   Movements                                                           
 #  ────────────────────────────────────────────────────────────────────
-map gh cd ~
+# Root
+map   ge    cd  /etc/
+map   gh    cd  /home/marcocamilo/
+map   gu    cd  /usr/
+map   gl    cd  /usr/local
+map   gb    cd  /usr/local/bin
 
-map gd. cd ~/Documents
-map gad cd ~/Documents/Admin/
-map gdc cd ~/Documents/config/
-map gdf cd ~/Documents/Finance/
-map gdk cd ~/Documents/Kingdom/
-map gdp cd ~/Documents/Personal/
-map gdr cd ~/Documents/Resources/
+map   gD    cd  ~/Downloads
 
+# Documents
+map   gd.   cd  ~/Documents
+map   gdac  cd  ~/Documents/Academics/
+map   gdad  cd  ~/Documents/Admin/
+map   gdc   cd  ~/Documents/config/
+map   gdf   cd  ~/Documents/Finance/
+map   gdk   cd  ~/Documents/Kingdom/
+map   gdm   cd  ~/Documents/mac-brain/
+map   gdr   cd  ~/Documents/Resources/
+map   gdz   cd  ~/Documents/Zotero/
 
-map ga. cd ~/Documents/Academics
+# Data Science
+map   gds.  cd  ~/Documents/Data\ Science/
+map   gdsc  cd  ~/Documents/Data\ Science/Courses/
+map   gdsp  cd  ~/Documents/Data\ Science/Portfolio/
+map   gdsj  cd  ~/Documents/Data\ Science/Projects/
+map   gdsr  cd  ~/Documents/Data\ Science/Resources/
+map   gdss  cd  ~/Documents/Data\ Science/Sandbox/
+map   gdsw  cd  ~/Documents/Data\ Science/Website/marcocamilo.com
 
-map gds. cd ~/Documents/Data\ Science/
-map gdsc cd ~/Documents/Data\ Science/Courses/
-map gdsp cd ~/Documents/Data\ Science/Portfolio/
-map gdsj cd ~/Documents/Data\ Science/Projects/
-map gdsr cd ~/Documents/Data\ Science/Resources/
-map gdss cd ~/Documents/Data\ Science/Sandbox/
-map gdsw cd ~/Documents/Data\ Science/Website/marcocamilo.com
+# Profession
+map   gdp.   cd  ~/Documents/Profession/
+map   gdpw   cd  ~/Documents/Profession/Work/
+map   gdpf   cd  ~/Documents/Profession/Profile/
+map   gdpp   cd  ~/Documents/Profession/Portfolio/
+map   gdpr   cd  ~/Documents/Profession/Resources/
 
-map gp. cd ~/Documents/Profession/
-map gp. cd ~/Documents/Profession/Work/
-map gpf cd ~/Documents/Profession/Profile/
-map gpp cd ~/Documents/Profession/Portfolio/
-map gpr cd ~/Documents/Profession/Resources/
-
-
-map gD cd ~/Downloads
-
-map gc. cd ~/.config
-map gcz cd ~/.config/zsh
-map gcn cd ~/.config/nvim
-map gcl cd ~/.config/lf
-map gcy cd ~/.config/yabai
-map gcs cd ~/.config/skhd
-map gce cd ~/.config/emacs
-map gcx cd ~/.config/emacs
-
-map gu cd /usr
-map gl cd /usr/local
-map gb cd /usr/local/bin
+# config
+map   gc.   cd  ~/dotfiles/
+map   gca   cd  ~/dotfiles/alacritty/.config/alacritty/
+map   gcds  cd  ~/dotfiles/dunst/.config/dunst/
+map   gcdwl cd  ~/dotfiles/dwl/.config/dwl/
+map   gcdwm cd  ~/dotfiles/dwm/.config/suckless/dwm/
+map   gce   cd  ~/dotfiles/espanso/.config/espanso/
+map   gcff  cd  ~/dotfiles/fastfetch/.config/fastfetch/
+map   gcfz  cd  ~/dotfiles/fzf/.config/fzf/
+map   gclz  cd  ~/dotfiles/lazygit/.config/lazygit/
+map   gclf  cd  ~/dotfiles/lf/.config/lf/
+map   gclsp cd  ~/dotfiles/lsd/.config/lsd/
+map   gcn   cd  ~/dotfiles/nvim/.config/nvim/
+map   gcply cd  ~/dotfiles/polybar/.config/polybar/
+map   gcsc  cd  ~/dotfiles/scripts/.scripts/
+map   gcst  cd  ~/dotfiles/starship/.config/starship/
+map   gct   cd  ~/dotfiles/tmux/.config/tmux/
+map   gcx   cd  ~/dotfiles/x/
+map   gcz   cd  ~/dotfiles/zsh/.config/zsh/

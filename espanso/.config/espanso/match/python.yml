@@ -1,5 +1,5 @@
 matches:
-  - trigger: ";py"
+  - trigger: ";pd"
     replace: "import pandas as pd"
   - trigger: ";np"
     replace: "import numpy as np"
