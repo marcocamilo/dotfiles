@@ -9,7 +9,7 @@ mkcd() {
 
 # preview csv files
 csv () {
-  csvlook "${1}" | less -S
+  csvlens "${1}"
 }
 
 # lf + enter directory
