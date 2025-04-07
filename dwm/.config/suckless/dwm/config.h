@@ -115,6 +115,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_q,      killclient,     {0} },
   { MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("~/.scripts/x11/logout.sh") },
   { MODKEY|ControlMask|ShiftMask, XK_q,      spawn,          SHCMD("~/.scripts/x11/shutdown.sh") },
+  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
+  { MODKEY,                       XK_Escape, spawn,          SHCMD("~/.scripts/kb-switch.sh") },
+  { MODKEY,                       XK_c,      spawn,          SHCMD("~/.scripts/dmenu-calc") },
 
   { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
 
@@ -132,14 +135,12 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } },
 
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = -1 } },
-
-  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
+	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_k,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_l,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_h,      movestack,      {.i = -1 } },
 
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
