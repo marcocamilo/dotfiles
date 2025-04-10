@@ -4,14 +4,14 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 		opts = {
 			file_types = { "markdown", "quarto" },
-      heading = {
-        position = 'inline',
-        border = true,
-        border_virtual = true,
-      },
-      indent = {
-        enabled = true,
-      },
+			heading = {
+				position = "inline",
+				border = true,
+				border_virtual = true,
+			},
+			indent = {
+				enabled = true,
+			},
 			-- win_options = {
 			-- 	conceallevel = {
 			-- 		rendered = 2,
@@ -29,13 +29,21 @@ return {
 				go_next_heading = "]]",
 				go_prev_heading = "[[",
 			},
+			on_attach = function(bufnr)
+				local function toggle(key)
+					return "<Esc>gv<Cmd>lua require'markdown.inline'" .. ".toggle_emphasis_visual'" .. key .. "'<CR>"
+				end
+
+				vim.keymap.set("x", "<C-b>", toggle("b"), { buffer = bufnr })
+				vim.keymap.set("x", "<C-i>", toggle("i"), { buffer = bufnr })
+			end,
 		},
 	},
 	{
 		"bullets-vim/bullets.vim",
 		ft = { "markdown", "quarto" },
 		init = function()
-      vim.g.bullets_outline_levels = { 'ROM', 'ABC', 'num', 'abc', 'rom', 'std-' }
+			vim.g.bullets_outline_levels = { "ROM", "ABC", "num", "abc", "rom", "std-" }
 			vim.g.bullets_enabled_file_types = {
 				"markdown",
 				"quarto",
@@ -58,7 +66,7 @@ return {
 			vim.g.mkdp_auto_close = true
 			vim.g.mkdp_open_to_the_world = false
 			vim.g.mkdp_open_ip = "127.0.0.1"
-			vim.g.mkdp_port = "8888"
+			vim.g.mkdp_port = "8081"
 			vim.g.mkdp_echo_preview_url = true
 			vim.g.mkdp_page_title = "${name}"
 		end,
