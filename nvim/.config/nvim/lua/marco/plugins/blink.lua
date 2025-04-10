@@ -4,8 +4,19 @@ return {
 		"saghen/blink.compat",
 		"rafamadriz/friendly-snippets",
 		"L3MON4D3/LuaSnip",
-		"moyiz/blink-emoji.nvim",
-		"MahanRahmati/blink-nerdfont.nvim",
+		{
+			"moyiz/blink-emoji.nvim",
+
+			config = function()
+				-- Get the original module
+				local emoji_source = require("blink-emoji")
+        
+				-- Override the get_trigger_characters function
+				emoji_source.get_trigger_characters = function(self)
+					return { ";" }
+				end
+			end,
+		},
 	},
 
 	version = "1.*",
@@ -49,9 +60,22 @@ return {
 				"path",
 				"snippets",
 				"otter",
+        "path",
+        "emoji",
 			},
 
 			providers = {
+        emoji = {
+          name = "emoji",
+          module = "blink-emoji",
+        },
+				path = {
+					opts = {
+						get_cwd = function(_)
+							return vim.fn.getcwd()
+						end,
+					},
+				},
 				otter = {
 					name = "otter",
 					module = "blink.compat.source",
