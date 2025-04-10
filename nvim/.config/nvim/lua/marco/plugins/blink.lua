@@ -4,6 +4,19 @@ return {
 		"saghen/blink.compat",
 		"rafamadriz/friendly-snippets",
 		"L3MON4D3/LuaSnip",
+		{
+			"moyiz/blink-emoji.nvim",
+
+			config = function()
+				-- Get the original module
+				local emoji_source = require("blink-emoji")
+        
+				-- Override the get_trigger_characters function
+				emoji_source.get_trigger_characters = function(self)
+					return { ";" }
+				end
+			end,
+		},
 	},
 
 	version = "1.*",
@@ -50,9 +63,14 @@ return {
 				"obsidian",
 				"obsidian_new",
 				"obsidian_tags",
+        "emoji",
 			},
 
 			providers = {
+        emoji = {
+          name = "emoji",
+          module = "blink-emoji",
+        },
 				path = {
 					opts = {
 						get_cwd = function(_)
