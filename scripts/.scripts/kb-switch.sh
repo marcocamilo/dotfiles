@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Define the keyboard layouts
-LAYOUTS=("us" "us(intl)" "ru(phonetic_mac)")
+LAYOUTS=("us" 
+  "us(intl)" 
+  # "ru(phonetic_mac)"
+)
 
 # Get the current layout
 CURRENT_LAYOUT=$(setxkbmap -query | awk '/layout:/ {print $2}')
