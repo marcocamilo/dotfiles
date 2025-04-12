@@ -131,6 +131,7 @@ static const Key keys[] = {
   { MODKEY,                       XK_x,      spawn,          SHCMD("normcap") },
   { MODKEY,                       XK_s,      spawn,          SHCMD("flameshot gui") },
   { MODKEY,                       XK_e,      spawn,          SHCMD("emote") },
+  { MODKEY,                       XK_Delete, spawn,          SHCMD("betterlockscreen -l") },
 
   { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
 
