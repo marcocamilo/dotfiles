@@ -71,8 +71,6 @@ return {
 						},
 					},
 					tex = false, -- Disable autopairs for tex
-				},
-				tex = false, -- Disable autopairs for tex
 			},
 		}))
 
