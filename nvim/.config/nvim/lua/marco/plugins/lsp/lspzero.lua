@@ -85,6 +85,7 @@ return {
 					"yamlls",
 					"ruff",
 					"clangd",
+          "terraformls",
 				},
 
 				handlers = {

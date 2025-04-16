@@ -194,6 +194,9 @@ return {
 					r = { "<cmd>'<,'>CBlrbox<CR>", "Right aligned text" },
 				},
 			},
+      n = {
+        l = { "<cmd>ObsidianLinkNew<CR>", "New link" }
+      },
 		}
 
 		local wk = require("which-key")

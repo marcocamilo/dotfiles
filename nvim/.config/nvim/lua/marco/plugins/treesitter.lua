@@ -20,6 +20,7 @@ return {
           "javascript",
           "json",
           "lua",
+          "terraform",
           "markdown",
           "markdown_inline",
           "python",
