@@ -21,6 +21,7 @@ return {
           "json",
           "latex",
           "lua",
+          "terraform",
           "markdown",
           "markdown_inline",
           "python",
