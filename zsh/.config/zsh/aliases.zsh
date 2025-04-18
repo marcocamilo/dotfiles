@@ -21,6 +21,7 @@ alias lsl="lsd -l"
 alias lst="lsd --tree --depth=2"
 alias lsat="lsd -a --tree --depth=2"
 alias lsal="lsd -l -a"
+alias lsalt="lsd -l -a --tree --depth=2"
 
 # ──────────────────────────────────────────────────────────────────────
 #   UTILITIES                                                          
