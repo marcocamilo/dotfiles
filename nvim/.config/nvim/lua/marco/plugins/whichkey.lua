@@ -184,7 +184,7 @@ return {
 					p = { "<cmd>ToggleTermSendCurrentLine<CR>", "Send Line" },
 				},
 			},
-			["gr"] = { "<cmd>Telescope grep_string<CR>", "Find Word Under Cursor" },
+			["gs"] = { "<cmd>Telescope grep_string<CR>", "Find Word Under Cursor" },
 			s = { "<Plug>SlimeRegionSend<CR>", "Send to iPython" },
 			c = {
 				b = {
