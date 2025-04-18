@@ -12,10 +12,10 @@ classic: false
 blocks:
   - name
   - git
-  - links
-  - group
+  # - links
   - size
   - date
+  - group
   - permission
 
 # == Color ==
