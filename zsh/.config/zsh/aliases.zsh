@@ -59,6 +59,13 @@ alias gac="git add *; git commit -m"
 alias activate="source .venv/bin/activate"
 alias uvjl="uv run --with jupyter jupyter lab"
 
+# ──────────────────────────────────────────────────────────────────────
+#   TERRAFORM                                                          
+# ──────────────────────────────────────────────────────────────────────
+alias tfv="terraform validate"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+
 #  ────────────────────────────────────────────────────────────────────
 #  CONFIGURATION FILES
 #  ────────────────────────────────────────────────────────────────────
