@@ -139,13 +139,13 @@ map   gdr   cd  ~/Documents/Resources/
 map   gdz   cd  ~/Documents/Zotero/
 
 # Data Science
-map   gds.  cd  ~/Documents/Data\ Science/
-map   gdsc  cd  ~/Documents/Data\ Science/Courses/
-map   gdsp  cd  ~/Documents/Data\ Science/Portfolio/
-map   gdsj  cd  ~/Documents/Data\ Science/Projects/
-map   gdsr  cd  ~/Documents/Data\ Science/Resources/
-map   gdss  cd  ~/Documents/Data\ Science/Sandbox/
-map   gdsw  cd  ~/Documents/Data\ Science/Website/marcocamilo.com
+map   gm.  cd  ~/Documents/ML/
+map   gmc  cd  ~/Documents/ML/Courses/
+map   gmp  cd  ~/Documents/ML/Portfolio/
+map   gmj  cd  ~/Documents/ML/Projects/
+map   gmr  cd  ~/Documents/ML/Resources/
+map   gms  cd  ~/Documents/ML/Sandbox/
+map   gmw  cd  ~/Documents/ML/Website/marcocamilo.com
 
 # Profession
 map   gdp.   cd  ~/Documents/Profession/
