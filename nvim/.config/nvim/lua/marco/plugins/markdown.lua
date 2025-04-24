@@ -12,11 +12,23 @@ return {
 			indent = {
 				enabled = true,
 			},
-			-- win_options = {
-			-- 	conceallevel = {
-			-- 		rendered = 2,
-			-- 	},
-			-- },
+			quote = {
+				repeat_linebreak = true,
+			},
+			win_options = {
+				showbreak = {
+					default = "",
+					rendered = "    ",
+				},
+				breakindent = {
+					default = false,
+					rendered = true,
+				},
+				breakindentopt = {
+					default = "",
+					rendered = "",
+				},
+			},
 		},
 	},
 	{
