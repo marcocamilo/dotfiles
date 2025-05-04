@@ -35,9 +35,3 @@ matches:
 
   - trigger: ";docs"
     replace: "~/Library/Mobile Documents/com~apple~CloudDocs/Documents"
-    
-  - trigger: "->"
-    replace: "→"
-
-  - trigger: "<-"
-    replace: "←"
