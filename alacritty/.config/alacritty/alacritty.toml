@@ -22,7 +22,7 @@ history = 10000
 multiplier = 3
 
 [font]
-normal.family = "MesloLGS Nerd Font Mono"
+normal.family = "monospace"
 size = 12
 
 [cursor]
