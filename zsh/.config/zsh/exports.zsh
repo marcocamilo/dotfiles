@@ -13,7 +13,8 @@ export NVM_DIR="$HOME/.nvm"
 # ──────────────────────────────────────────────────────────────────────
 #   GCP                                                                
 # ──────────────────────────────────────────────────────────────────────
-export GOOGLE_APPLICATION_CREDENTIALS="/home/Camilo-Pietri.M/service-accounts/camilo-pietri-m.json"
+# export GOOGLE_APPLICATION_CREDENTIALS="/home/Camilo-Pietri.M/service-accounts/camilo-pietri-m.json"
+export GOOGLE_APPLICATION_CREDENTIALS="/home/Camilo-Pietri.M/.config/gcloud/application_default_credentials.json"
 
 # ──────────────────────────────────────────────────────────────────────
 #   OTHER VARIABLES                                                    
