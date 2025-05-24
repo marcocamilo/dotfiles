@@ -73,6 +73,7 @@ alias gac="git add *; git commit -m"
 # ──────────────────────────────────────────────────────────────────────
 alias activate="source .venv/bin/activate"
 alias uvjl="uv run --with jupyter jupyter lab"
+alias uvib="uv init --bare"
 
 # ──────────────────────────────────────────────────────────────────────
 #   TERRAFORM                                                          
