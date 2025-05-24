@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Set DPI automatically
+if [ -z "$XFT_DPI" ]; then
+    SCREEN_HEIGHT=$(xdpyinfo | awk '/dimensions:/ {print $2}' | cut -d 'x' -f2)
+    if [ "$SCREEN_HEIGHT" -gt 1440 ]; then
+        DPI=192
+    elif [ "$SCREEN_HEIGHT" -gt 1080 ]; then
+        DPI=144
+    else
+        DPI=110
+    fi
+    echo "Xft.dpi: $DPI" | xrdb -merge
+fi
+
+# Set keyboard configs
+xset r rate 200 30 &
+setxkbmap -layout us -model pc104 -option ctrl:nocaps,ctrl:ralt_rctrl
+
+# Set mouse acceleration
+xinput --set-prop 11 'libinput Accel Speed' 0.8 &

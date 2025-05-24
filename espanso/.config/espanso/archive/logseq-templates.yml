@@ -1,0 +1,58 @@
+#  ────────────────────────────────────────────────────────────────────
+#   TEMPLATES                                                          
+#  ────────────────────────────────────────────────────────────────────
+matches:
+  - trigger: ";meta"
+    replace: |
+      - tags:: #
+        author::
+        layer::
+        date-read::
+        URL::
+      - [Literature notes]([[LN: Literature Notes]])
+          - 
+  - trigger: ";logpn"
+    replace: |
+      - tags:: #[[PN: permanent note]]
+      source:: 
+      layer:: 
+      date-read:: 
+      - Notes
+      - Linked References
+      - [Permanent Notes]([[PN: permanent note]])
+          - 
+  - trigger: ";idm"
+    replace: |
+      - tags:: 
+      author:: [[Marco Camilo]]
+      status::
+      completed-date:: 
+      published-date:: 
+      idea:: {BLOCK REFERENCE TO SUBTOPIC IN IDEA FILE}
+      source:: 
+      - # Notes
+      - # [Permanent Notes]([[PN: permanent note]])
+      - # Outline
+      - # Draft
+  - trigger: ";article"
+    replace: |
+      - tags:: [[my articles]] 
+      author:: [[Marco Camilo]]
+      status::
+      completed-date:: 
+      published-date:: 
+      layer::
+      URL::
+      📈-1%-improvements::
+      - 
+  - trigger: ";dp"
+    replace: |
+      - tags:: #[[PN: permanent note]]
+      source:: 
+      - # ✨ Notes
+      - # 💡 Ideation
+      - # 📌 Overview
+      - # 🎯 Approach
+      - # 💾 Dataset
+      - # 🧱 Frameworks and Technologies
+      - # 📊 Model Performance
