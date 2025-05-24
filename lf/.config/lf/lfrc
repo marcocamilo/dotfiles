@@ -1,0 +1,175 @@
+#  ────────────────────────────────────────────────────────────────────
+#                             BASIC SETTINGS
+#  ────────────────────────────────────────────────────────────────────
+set hidden true
+set ignorecase true
+set icons true
+set sortby natural
+set ratios 1:2:4
+
+#  ────────────────────────────────────────────────────────────────────
+#                           PERSISTENT OPTION
+#  ────────────────────────────────────────────────────────────────────
+#  ────────────────────────────────────────────────────────────────────
+#   sorting                                                            
+#  ────────────────────────────────────────────────────────────────────
+
+#  ────────────────────────────────────────────────────────────────────
+#                              FILE PREVIEW
+#  ────────────────────────────────────────────────────────────────────
+#  ────────────────────────────────────────────────────────────────────
+#   bat
+#  ────────────────────────────────────────────────────────────────────
+set previewer ~/.config/lf/bat.sh
+map b $~/.config/lf/bat.sh "$f" | less -RX
+
+#  ────────────────────────────────────────────────────────────────────
+#                            CUSTOM FUNCTIONS
+#  ────────────────────────────────────────────────────────────────────
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File name: "
+  read ans
+  touch "$ans"
+  lf -remote "send $7 reload"  # Reload lf to reflect the new file
+}}
+
+cmd setwallpaper ${{
+    cp "$f" ~/.config/wall.jpg
+    xwallpaper --zoom "$f"
+    betterlockscreen -u "$f" --fx
+}}
+
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+cmd copypath ${{
+    file_path=$(realpath "$f")
+    echo $file_path | pbcopy
+  }}
+
+#  ────────────────────────────────────────────────────────────────────
+#                                BINDINGS
+#  ────────────────────────────────────────────────────────────────────
+#  ────────────────────────────────────────────────────────────────────
+#   Remove some defaults                                               
+#  ────────────────────────────────────────────────────────────────────
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map a
+map q
+
+map c $vscodium "$f"
+
+map au unarchive
+map ae $wine "$f"
+
+#  ────────────────────────────────────────────────────────────────────
+#   Basc Functions                                                     
+#  ────────────────────────────────────────────────────────────────────
+map . set hidden!
+map dd delete
+map dr restore_trash
+map p paste
+map x cut
+map y copy
+map <enter> open
+map R reload
+map a mkfile
+map md mkdir
+map C clear
+map r rename
+map q quit
+
+#  ────────────────────────────────────────────────────────────────────
+#   Movements                                                           
+#  ────────────────────────────────────────────────────────────────────
+# Root
+map   ge    cd  /etc/
+map   gh    cd  /home/marcocamilo/
+map   gu    cd  /usr/
+map   gl    cd  /usr/local
+map   gb    cd  /usr/local/bin
+
+map   gD    cd  ~/Downloads
+
+# Documents
+map   gd.   cd  ~/Documents
+map   gdac  cd  ~/Documents/Academics/
+map   gdad  cd  ~/Documents/Admin/
+map   gdc   cd  ~/Documents/config/
+map   gdf   cd  ~/Documents/Finance/
+map   gdk   cd  ~/Documents/Kingdom/
+map   gdm   cd  ~/Documents/mac-brain/
+map   gdr   cd  ~/Documents/Resources/
+map   gdz   cd  ~/Documents/Zotero/
+
+# Data Science
+map   gm.  cd  ~/Documents/ML/
+map   gmc  cd  ~/Documents/ML/Courses/
+map   gmp  cd  ~/Documents/ML/Portfolio/
+map   gmj  cd  ~/Documents/ML/Projects/
+map   gmr  cd  ~/Documents/ML/Resources/
+map   gms  cd  ~/Documents/ML/Sandbox/
+map   gmw  cd  ~/Documents/ML/Website/marcocamilo.com
+
+# Profession
+map   gdp.   cd  ~/Documents/Profession/
+map   gdpw   cd  ~/Documents/Profession/Work/
+map   gdpf   cd  ~/Documents/Profession/Profile/
+map   gdpp   cd  ~/Documents/Profession/Portfolio/
+map   gdpr   cd  ~/Documents/Profession/Resources/
+
+# config
+map   gc.   cd  ~/dotfiles/
+map   gca   cd  ~/dotfiles/alacritty/.config/alacritty/
+map   gcds  cd  ~/dotfiles/dunst/.config/dunst/
+map   gcdwl cd  ~/dotfiles/dwl/.config/dwl/
+map   gcdwm cd  ~/dotfiles/dwm/.config/suckless/dwm/
+map   gce   cd  ~/dotfiles/espanso/.config/espanso/
+map   gcff  cd  ~/dotfiles/fastfetch/.config/fastfetch/
+map   gcfz  cd  ~/dotfiles/fzf/.config/fzf/
+map   gclz  cd  ~/dotfiles/lazygit/.config/lazygit/
+map   gclf  cd  ~/dotfiles/lf/.config/lf/
+map   gclsp cd  ~/dotfiles/lsd/.config/lsd/
+map   gcn   cd  ~/dotfiles/nvim/.config/nvim/
+map   gcply cd  ~/dotfiles/polybar/.config/polybar/
+map   gcsc  cd  ~/dotfiles/scripts/.scripts/
+map   gcst  cd  ~/dotfiles/starship/.config/starship/
+map   gct   cd  ~/dotfiles/tmux/.config/tmux/
+map   gcx   cd  ~/dotfiles/x/
+map   gcz   cd  ~/dotfiles/zsh/.config/zsh/
