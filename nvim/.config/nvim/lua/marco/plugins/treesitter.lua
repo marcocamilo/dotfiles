@@ -19,7 +19,6 @@ return {
           "html",
           "javascript",
           "json",
-          "latex",
           "lua",
           "terraform",
           "markdown",
