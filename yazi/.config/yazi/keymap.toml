@@ -2,6 +2,10 @@
 
 prepend_keymap = [
 
+# ─── EDIT ───────────────────────────────────────
+	{ on = [ "e" ],                     run = "open",                                       desc = "Edit in default editor" },
+
+# ─── GOTO ───────────────────────────────────────
 # ─── Root ───────────────────────────────────────
 	{ on = [ "g", "e" ],                run = "cd /etc/",                                   desc = "Go to /etc" },
 	{ on = [ "g", "h" ],                run = "cd ~",                                       desc = "Go to home" },
