@@ -3,30 +3,67 @@
 prepend_keymap = [
 
 # ─── Root ───────────────────────────────────────
-	{ on = [ "g", "e" ],                run = "cd /etc/",                                   desc = "Go to /etc" },
-	{ on = [ "g", "h" ],                run = "cd ~",                                       desc = "Go to home" },
-	{ on = [ "g", "u" ],                run = "cd /usr/",                                   desc = "Go to /usr" },
-	{ on = [ "g", "l" ],                run = "cd /usr/local",                              desc = "Go to /usr/local" },
-	{ on = [ "g", "b" ],                run = "cd /usr/local/bin",                          desc = "Go to /usr/local/bin" },
+	{ on = [ "g", "e" ],                run = "cd /etc/",                                               desc = "Go to /etc" },
+	{ on = [ "g", "h" ],                run = "cd ~",                                                   desc = "Go to home" },
+	{ on = [ "g", "u" ],                run = "cd /usr/",                                               desc = "Go to /usr" },
+	{ on = [ "g", "l" ],                run = "cd /usr/local",                                          desc = "Go to /usr/local" },
+	{ on = [ "g", "b" ],                run = "cd /usr/local/bin",                                      desc = "Go to /usr/local/bin" },
+
+# ─── ML Root ────────────────────────────────────
+	{ on = [ "g", "n", "." ],           run = "cd ~/ml/",                                               desc = "Go to ML root" },
+	{ on = [ "g", "n", "r" ],           run = "cd ~/ml/reference-notebooks/",                           desc = "Go to reference-notebooks" },
+	{ on = [ "g", "n", "o" ],           run = "cd ~/ml/optimization-tutorial/",                         desc = "Go to optimization-tutorial" },
+
+# ─── USR Project ────────────────────────────────
+	{ on = [ "g", "u", "s", "." ],      run = "cd ~/ml/USR - User Needs Prediction/",                   desc = "Go to USR root" },
+	{ on = [ "g", "u", "s", "n" ],      run = "cd ~/ml/USR - User Needs Prediction/notebooks/",         desc = "Go to USR notebooks" },
+	{ on = [ "g", "u", "s", "d" ],      run = "cd ~/ml/USR - User Needs Prediction/data/",              desc = "Go to USR data" },
+
+# ─── TCM Project ────────────────────────────────
+	{ on = [ "g", "t", "c", "." ],      run = "cd ~/ml/TCM - Topic Clustering Model/",                  desc = "Go to TCM root" },
+	{ on = [ "g", "t", "c", "n" ],      run = "cd ~/ml/TCM - Topic Clustering Model/notebooks/",        desc = "Go to TCM notebooks" },
+	{ on = [ "g", "t", "c", "d" ],      run = "cd ~/ml/TCM - Topic Clustering Model/data/",             desc = "Go to TCM data" },
+
+# ─── TENT Project ───────────────────────────────
+	{ on = [ "g", "e", "n" ],           run = "cd ~/ml/TENT - Topic Entity Recognition/",               desc = "Go to TENT root" },
+
+# ─── VEC Project ────────────────────────────────
+	{ on = [ "g", "v", "." ],           run = "cd ~/ml/VEC - Vectorization Model/",                     desc = "Go to VEC root" },
+	{ on = [ "g", "v", "m" ],           run = "cd ~/ml/VEC - Vectorization Model/vector-model",         desc = "Go to VEC model" },
+	{ on = [ "g", "v", "d" ],           run = "cd ~/ml/VEC - Vectorization Model/dev",                  desc = "Go to VEC dev" },
+
+# ─── System ─────────────────────────────────────
+	{ on = [ "g", "." ],                run = "cd /usr/",                                               desc = "Go to /usr" },
+	{ on = [ "g", "l" ],                run = "cd /usr/local/",                                         desc = "Go to /usr/local" },
+	{ on = [ "g", "b" ],                run = "cd /usr/local/bin/",                                     desc = "Go to /usr/local/bin" }
 
 # ─── Config ────────────────────────────────────
-	{ on = [ "g", "c", "." ],           run = "cd ~/dotfiles/",                             desc = "Go to dotfiles" },
-	{ on = [ "g", "c", "a" ],           run = "cd ~/dotfiles/alacritty/.config/alacritty/", desc = "Go to alacritty config" },
-	{ on = [ "g", "c", "d", "s" ],      run = "cd ~/dotfiles/dunst/.config/dunst/",         desc = "Go to dunst config" },
-	{ on = [ "g", "c", "d", "w", "l" ], run = "cd ~/dotfiles/dwl/.config/dwl/",             desc = "Go to dwl config" },
-	{ on = [ "g", "c", "d", "w", "m" ], run = "cd ~/dotfiles/dwm/.config/suckless/dwm/",    desc = "Go to dwm config" },
-	{ on = [ "g", "c", "e" ],           run = "cd ~/dotfiles/espanso/.config/espanso/",     desc = "Go to espanso config" },
-	{ on = [ "g", "c", "f", "f" ],      run = "cd ~/dotfiles/fastfetch/.config/fastfetch/", desc = "Go to fastfetch config" },
-	{ on = [ "g", "c", "f", "z" ],      run = "cd ~/dotfiles/fzf/.config/fzf/",             desc = "Go to fzf config" },
-	{ on = [ "g", "c", "l", "z" ],      run = "cd ~/dotfiles/lazygit/.config/lazygit/",     desc = "Go to lazygit config" },
-	{ on = [ "g", "c", "l", "f" ],      run = "cd ~/dotfiles/lf/.config/lf/",               desc = "Go to lf config" },
-	{ on = [ "g", "c", "l", "s", "p" ], run = "cd ~/dotfiles/lsd/.config/lsd/",             desc = "Go to lsd config" },
-	{ on = [ "g", "c", "n" ],           run = "cd ~/dotfiles/nvim/.config/nvim/",           desc = "Go to nvim config" },
-	{ on = [ "g", "c", "p", "l", "y" ], run = "cd ~/dotfiles/polybar/.config/polybar/",     desc = "Go to polybar config" },
-	{ on = [ "g", "c", "s", "c" ],      run = "cd ~/dotfiles/scripts/.scripts/",            desc = "Go to scripts" },
-	{ on = [ "g", "c", "s", "t" ],      run = "cd ~/dotfiles/starship/.config/starship/",   desc = "Go to starship config" },
-	{ on = [ "g", "c", "t" ],           run = "cd ~/dotfiles/tmux/.config/tmux/",           desc = "Go to tmux config" },
-	{ on = [ "g", "c", "x" ],           run = "cd ~/dotfiles/x/",                           desc = "Go to X config" },
-	{ on = [ "g", "c", "z" ],           run = "cd ~/dotfiles/zsh/.config/zsh/",             desc = "Go to zsh config" }
+	{ on = [ "g", "c", "." ],           run = "cd ~/.config/",                                          desc = "Go to ~/.config" },
+	{ on = [ "g", "c", "d" ],           run = "cd ~/dotfiles/",                                         desc = "Go to dotfiles" },
+	{ on = [ "g", "c", "l", "f" ],      run = "cd ~/.config/lf/",                                       desc = "Go to lf config" },
+	{ on = [ "g", "c", "l", "s" ],      run = "cd ~/.config/lsd/",                                      desc = "Go to lsd config" },
+	{ on = [ "g", "c", "n" ],           run = "cd ~/.config/nvim/",                                     desc = "Go to nvim config" },
+	{ on = [ "g", "c", "s" ],           run = "cd ~/.config/starship/",                                 desc = "Go to starship config" },
+	{ on = [ "g", "c", "t" ],           run = "cd ~/.config/tmux/",                                     desc = "Go to tmux config" },
+	{ on = [ "g", "c", "z" ],           run = "cd ~/.config/zsh/",                                      desc = "Go to zsh config" },
+
+	{ on = [ "g", "c", "." ],           run = "cd ~/dotfiles/",                                         desc = "Go to dotfiles" },
+	{ on = [ "g", "c", "a" ],           run = "cd ~/dotfiles/alacritty/.config/alacritty/",             desc = "Go to alacritty config" },
+	{ on = [ "g", "c", "d", "s" ],      run = "cd ~/dotfiles/dunst/.config/dunst/",                     desc = "Go to dunst config" },
+	{ on = [ "g", "c", "d", "w", "l" ], run = "cd ~/dotfiles/dwl/.config/dwl/",                         desc = "Go to dwl config" },
+	{ on = [ "g", "c", "d", "w", "m" ], run = "cd ~/dotfiles/dwm/.config/suckless/dwm/",                desc = "Go to dwm config" },
+	{ on = [ "g", "c", "e" ],           run = "cd ~/dotfiles/espanso/.config/espanso/",                 desc = "Go to espanso config" },
+	{ on = [ "g", "c", "f", "f" ],      run = "cd ~/dotfiles/fastfetch/.config/fastfetch/",             desc = "Go to fastfetch config" },
+	{ on = [ "g", "c", "f", "z" ],      run = "cd ~/dotfiles/fzf/.config/fzf/",                         desc = "Go to fzf config" },
+	{ on = [ "g", "c", "l", "z" ],      run = "cd ~/dotfiles/lazygit/.config/lazygit/",                 desc = "Go to lazygit config" },
+	{ on = [ "g", "c", "l", "f" ],      run = "cd ~/dotfiles/lf/.config/lf/",                           desc = "Go to lf config" },
+	{ on = [ "g", "c", "l", "s", "p" ], run = "cd ~/dotfiles/lsd/.config/lsd/",                         desc = "Go to lsd config" },
+	{ on = [ "g", "c", "n" ],           run = "cd ~/dotfiles/nvim/.config/nvim/",                       desc = "Go to nvim config" },
+	{ on = [ "g", "c", "p", "l", "y" ], run = "cd ~/dotfiles/polybar/.config/polybar/",                 desc = "Go to polybar config" },
+	{ on = [ "g", "c", "s", "c" ],      run = "cd ~/dotfiles/scripts/.scripts/",                        desc = "Go to scripts" },
+	{ on = [ "g", "c", "s", "t" ],      run = "cd ~/dotfiles/starship/.config/starship/",               desc = "Go to starship config" },
+	{ on = [ "g", "c", "t" ],           run = "cd ~/dotfiles/tmux/.config/tmux/",                       desc = "Go to tmux config" },
+	{ on = [ "g", "c", "x" ],           run = "cd ~/dotfiles/x/",                                       desc = "Go to X config" },
+	{ on = [ "g", "c", "z" ],           run = "cd ~/dotfiles/zsh/.config/zsh/",                         desc = "Go to zsh config" }
 
 ]
