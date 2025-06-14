@@ -118,58 +118,35 @@ map q quit
 #  ────────────────────────────────────────────────────────────────────
 #   Movements                                                           
 #  ────────────────────────────────────────────────────────────────────
-# Root
-map   ge    cd  /etc/
-map   gh    cd  /home/marcocamilo/
-map   gu    cd  /usr/
-map   gl    cd  /usr/local
-map   gb    cd  /usr/local/bin
+map gh cd ~
 
-map   gD    cd  ~/Downloads
+map gc. cd ~/.config/
+map gcd cd ~/dotfiles/
+map gclf cd ~/.config/lf/
+map gcls cd ~/.config/lsd/
+map gcn cd ~/.config/nvim/
+map gcs cd ~/.config/starship/
+map gct cd ~/.config/tmux/
+map gcz cd ~/.config/zsh/
 
-# Documents
-map   gd.   cd  ~/Documents
-map   gdac  cd  ~/Documents/Academics/
-map   gdad  cd  ~/Documents/Admin/
-map   gdc   cd  ~/Documents/config/
-map   gdf   cd  ~/Documents/Finance/
-map   gdk   cd  ~/Documents/Kingdom/
-map   gdm   cd  ~/Documents/mac-brain/
-map   gdr   cd  ~/Documents/Resources/
-map   gdz   cd  ~/Documents/Zotero/
+map gn. cd ~/ml/
+map gnr cd ~/ml/reference-notebooks/
+map gno cd ~/ml/optimization-tutorial/
 
-# Data Science
-map   gm.  cd  ~/Documents/ML/
-map   gmc  cd  ~/Documents/ML/Courses/
-map   gmp  cd  ~/Documents/ML/Portfolio/
-map   gmj  cd  ~/Documents/ML/Projects/
-map   gmr  cd  ~/Documents/ML/Resources/
-map   gms  cd  ~/Documents/ML/Sandbox/
-map   gmw  cd  ~/Documents/ML/Website/marcocamilo.com
+map gus. cd ~/ml/USR\ -\ User\ Needs\ Prediction/
+map gusn cd ~/ml/USR\ -\ User\ Needs\ Prediction/notebooks/
+map gusd cd ~/ml/USR\ -\ User\ Needs\ Prediction/data/
 
-# Profession
-map   gdp.   cd  ~/Documents/Profession/
-map   gdpw   cd  ~/Documents/Profession/Work/
-map   gdpf   cd  ~/Documents/Profession/Profile/
-map   gdpp   cd  ~/Documents/Profession/Portfolio/
-map   gdpr   cd  ~/Documents/Profession/Resources/
+map gtc. cd ~/ml/TCM\ -\ Topic\ Clustering\ Model/
+map gtcn cd ~/ml/TCM\ -\ Topic\ Clustering\ Model/notebooks/
+map gtcd cd ~/ml/TCM\ -\ Topic\ Clustering\ Model/data/
 
-# config
-map   gc.   cd  ~/dotfiles/
-map   gca   cd  ~/dotfiles/alacritty/.config/alacritty/
-map   gcds  cd  ~/dotfiles/dunst/.config/dunst/
-map   gcdwl cd  ~/dotfiles/dwl/.config/dwl/
-map   gcdwm cd  ~/dotfiles/dwm/.config/suckless/dwm/
-map   gce   cd  ~/dotfiles/espanso/.config/espanso/
-map   gcff  cd  ~/dotfiles/fastfetch/.config/fastfetch/
-map   gcfz  cd  ~/dotfiles/fzf/.config/fzf/
-map   gclz  cd  ~/dotfiles/lazygit/.config/lazygit/
-map   gclf  cd  ~/dotfiles/lf/.config/lf/
-map   gclsp cd  ~/dotfiles/lsd/.config/lsd/
-map   gcn   cd  ~/dotfiles/nvim/.config/nvim/
-map   gcply cd  ~/dotfiles/polybar/.config/polybar/
-map   gcsc  cd  ~/dotfiles/scripts/.scripts/
-map   gcst  cd  ~/dotfiles/starship/.config/starship/
-map   gct   cd  ~/dotfiles/tmux/.config/tmux/
-map   gcx   cd  ~/dotfiles/x/
-map   gcz   cd  ~/dotfiles/zsh/.config/zsh/
+map gen. cd ~/ml/TENT\ -\ Topic\ Entity\ Recognition/
+
+map gv. cd ~/ml/VEC\ -\ Vectorization\ Model/
+map gvm cd ~/ml/VEC\ -\ Vectorization\ Model/vector-model
+map gvd cd ~/ml/VEC\ -\ Vectorization\ Model/dev
+
+map g. cd /usr/
+map gl cd /usr/local/
+map gb cd /usr/local/bin/
