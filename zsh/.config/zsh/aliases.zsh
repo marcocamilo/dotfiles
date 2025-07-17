@@ -28,6 +28,7 @@ alias lsalt="lsd -l -a --tree --depth=2"
 # ──────────────────────────────────────────────────────────────────────
 alias tl="tldr"
 alias fdh="fd --hidden"
+alias fdhi="fd -H -I"
 alias tr="trashy put"
 alias trl="trashy list"
 alias trr="trashy restore"
