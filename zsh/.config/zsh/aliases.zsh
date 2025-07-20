@@ -11,6 +11,7 @@ alias nf="neofetch"
 
 # confirm before overwriting something
 alias cp="cp -i"
+alias cpr="cp -r"
 alias mv="mv -i"
 alias rmf="rm -rf"
 
