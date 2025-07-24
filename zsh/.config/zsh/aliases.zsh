@@ -11,6 +11,7 @@ alias nf="neofetch"
 
 # confirm before overwriting something
 alias cp="cp -i"
+alias cpr="cp -r"
 alias mv="mv -i"
 alias rmf="rm -rf"
 
@@ -28,6 +29,7 @@ alias lsalt="lsd -l -a --tree --depth=2"
 # ──────────────────────────────────────────────────────────────────────
 alias tl="tldr"
 alias fdh="fd --hidden"
+alias fdhi="fd -H -I"
 alias tr="trashy put"
 alias trl="trashy list"
 alias trr="trashy restore"
