@@ -23,6 +23,10 @@ alias lsat="lsd -a --tree --depth=2"
 alias lsal="lsd -l -a"
 alias lsalt="lsd -l -a --tree --depth=2"
 
+# harlequin
+alias hml="harlequin -a bigquery --project rnd-data-ml --location europe"
+alias hdwh="harlequin -a bigquery --project rnd-data-dw2 --location europe"
+
 # ──────────────────────────────────────────────────────────────────────
 #   UTILITIES                                                          
 # ──────────────────────────────────────────────────────────────────────
