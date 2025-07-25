@@ -39,7 +39,7 @@ prepend_keymap = [
 # ─── System ─────────────────────────────────────
 	{ on = [ "g", "." ],                run = "cd /usr/",                                               desc = "Go to /usr" },
 	{ on = [ "g", "l" ],                run = "cd /usr/local/",                                         desc = "Go to /usr/local" },
-	{ on = [ "g", "b" ],                run = "cd /usr/local/bin/",                                     desc = "Go to /usr/local/bin" }
+	{ on = [ "g", "b" ],                run = "cd /usr/local/bin/",                                     desc = "Go to /usr/local/bin" },
 
 # ─── Config ────────────────────────────────────
 	{ on = [ "g", "c", "." ],           run = "cd ~/.config/",                                          desc = "Go to ~/.config" },
