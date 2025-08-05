@@ -80,6 +80,7 @@ alias uvib="uv init --bare"
 # ──────────────────────────────────────────────────────────────────────
 #   TERRAFORM                                                          
 # ──────────────────────────────────────────────────────────────────────
+alias tfi="terraform init"
 alias tfv="terraform validate"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
