@@ -53,6 +53,7 @@ alias em="emacs -nw"
 alias pistol="~/.go/bin/pistol"
 alias sio="/usr/local/bin/sioyek"
 alias lg="lazygit"
+alias gg="git-graph"
 alias tree="tree --filesfirst"
 alias fzt="fzf-tmux"
 
