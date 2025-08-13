@@ -58,6 +58,7 @@ alias pistol="~/.go/bin/pistol"
 alias sio="/usr/local/bin/sioyek"
 alias lg="lazygit"
 alias gg="git-graph"
+alias ggr="git-graph --model rnd"
 alias tree="tree --filesfirst"
 alias fzt="fzf-tmux"
 

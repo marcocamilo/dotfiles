@@ -21,8 +21,8 @@ order = [
     '^(develop|dev)$',      # Matches exactly `develop` or `dev`
     '^feature.*$',     # Matches everything starting with `feature`
     '^core.*$',
-    '^(infrastructure|infra)$',
     '^infra.*$',
+    '^(infrastructure|infra)$',
 ]
 
 # Colors of branches in terminal output. 
@@ -48,17 +48,21 @@ matches = [
         '^(feature|fork/).*$',
         ['bright_cyan'],
     ],
-        [
-        '^release.*$',
-        ['bright_green'],
+    [
+        '^(core/).*$',
+        ['bright_yellow'],
     ],
-        [
+    [
+        '^(infra/).*$',
+        ['bright_magenta'],
+    ],
+    [
         '^(bugfix|hotfix).*$',
         ['bright_red'],
     ],
     [
         '^tags/.*$',
-        ['bright_green'],
+        ['bright_blue'],
     ],
 ]
 # A list of colors that are used (alternating) for all branches
