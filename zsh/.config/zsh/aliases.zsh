@@ -11,6 +11,7 @@ alias nf="neofetch"
 
 # confirm before overwriting something
 alias cp="cp -i"
+alias cpr="cp -r"
 alias mv="mv -i"
 alias rmf="rm -rf"
 
@@ -32,6 +33,7 @@ alias hdwh="harlequin -a bigquery --project rnd-data-dw2 --location europe"
 # ──────────────────────────────────────────────────────────────────────
 alias tl="tldr"
 alias fdh="fd --hidden"
+alias fdhi="fd -H -I"
 alias tr="trashy put"
 alias trl="trashy list"
 alias trr="trashy restore"
@@ -55,6 +57,7 @@ alias em="emacs -nw"
 alias pistol="~/.go/bin/pistol"
 alias sio="/usr/local/bin/sioyek"
 alias lg="lazygit"
+alias gg="git-graph"
 alias tree="tree --filesfirst"
 alias fzt="fzf-tmux"
 
@@ -82,6 +85,7 @@ alias uvib="uv init --bare"
 # ──────────────────────────────────────────────────────────────────────
 #   TERRAFORM                                                          
 # ──────────────────────────────────────────────────────────────────────
+alias tfi="terraform init"
 alias tfv="terraform validate"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
