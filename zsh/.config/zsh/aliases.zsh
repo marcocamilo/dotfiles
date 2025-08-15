@@ -85,6 +85,7 @@ alias tfi="terraform init"
 alias tfv="terraform validate"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
+alias tfauto="terraform apply --auto-approve"
 
 #  ────────────────────────────────────────────────────────────────────
 #  CONFIGURATION FILES
