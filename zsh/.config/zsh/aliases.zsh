@@ -53,6 +53,7 @@ alias em="emacs -nw"
 alias pistol="~/.go/bin/pistol"
 alias sio="/usr/local/bin/sioyek"
 alias lg="lazygit"
+alias gg="git-graph"
 alias tree="tree --filesfirst"
 alias fzt="fzf-tmux"
 
@@ -80,9 +81,11 @@ alias uvib="uv init --bare"
 # ──────────────────────────────────────────────────────────────────────
 #   TERRAFORM                                                          
 # ──────────────────────────────────────────────────────────────────────
+alias tfi="terraform init"
 alias tfv="terraform validate"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
+alias tfauto="terraform apply --auto-approve"
 
 #  ────────────────────────────────────────────────────────────────────
 #  CONFIGURATION FILES
