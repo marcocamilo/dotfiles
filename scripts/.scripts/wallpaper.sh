@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="$HOME/dotfiles/wallpapers/wallpapers/"
+WALLPAPER_DIR="$HOME/wallpapers/"
 
 # List image files in the directory and let user choose one
-SELECTED_WALLPAPER=$(ls "$WALLPAPER_DIR" | wmenu)
+SELECTED_WALLPAPER=$(ls "$WALLPAPER_DIR" | dmenu)
 
 # If a wallpaper was selected, set it using waypaper
 if [ -n "$SELECTED_WALLPAPER" ]; then

@@ -115,17 +115,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_q,      killclient,     {0} },
   { MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("~/.scripts/x11/logout.sh") },
   { MODKEY|ControlMask|ShiftMask, XK_q,      spawn,          SHCMD("~/.scripts/x11/shutdown.sh") },
-  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
-  { MODKEY,                       XK_Escape, spawn,          SHCMD("~/.scripts/kb-switch.sh") },
-  { MODKEY,                       XK_c,      spawn,          SHCMD("~/.scripts/dmenu-calc") },
 
-  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
-  { MODKEY,                       XK_Escape, spawn,          SHCMD("~/.scripts/kb-switch.sh") },
-  { MODKEY,                       XK_c,      spawn,          SHCMD("~/.scripts/dmenu-calc") },
-  { MODKEY,                       XK_x,      spawn,          SHCMD("normcap") },
-  { MODKEY,                       XK_s,      spawn,          SHCMD("flameshot gui") },
-
-  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
+  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/wallpaper.sh") },
   { MODKEY,                       XK_Escape, spawn,          SHCMD("~/.scripts/kb-switch.sh") },
   { MODKEY,                       XK_c,      spawn,          SHCMD("~/.scripts/dmenu-calc") },
   { MODKEY,                       XK_x,      spawn,          SHCMD("normcap") },
