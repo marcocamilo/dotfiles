@@ -1,0 +1,69 @@
+# RegEx patterns for branch groups by persistence, from most persistent
+# to most short-leved branches. This is used to back-trace branches.
+# Branches not matching any pattern are assumed least persistent.
+persistence = [
+    '^(main)$', # Matches exactly `master` or `main`  or `trunk`
+    '^(core)$',
+    '^(work)$',
+]
+
+# RegEx patterns for visual ordering of branches, from left to right.
+# Here, `master`, `main` or `trunk` are shown left-most, followed by branches
+# starting with `hotfix` or `release`, followed by `develop` or `dev`.
+# Branches not matching any pattern (e.g. starting with `feature`)
+# are displayed further to the right.
+order = [
+    '^(main/).*$',      # Matches exactly `master` or `main` or `trunk`
+    '^(main)$',      # Matches exactly `master` or `main` or `trunk`
+    '^(core)$',
+    '^(core/).*$',
+    '^(work)$',
+    '^(work/).*$',
+]
+
+# Colors of branches in terminal output. 
+# For supported colors, see section Colors (below this listing).
+[terminal_colors]
+# Each entry is composed of a RegEx pattern and a list of colors that
+# will be used alternating (see e.g. `feature...`).
+matches = [
+    [
+        '^(main/).*$',
+        ['blue'],
+    ],
+    [
+        '^(main)$',
+        ['bright_blue'],
+    ],
+    [
+        '^(core)$',
+        ['bright_green'],
+    ],
+    [
+        '^(core/).*$',
+        ['green'],
+    ],
+    [
+        '^(work)$',
+        ['bright_magenta'],
+    ],
+    [
+        '^(work/).*$',
+        ['magenta'],
+    ],
+]
+# A list of colors that are used (alternating) for all branches
+# not matching any of the above pattern. 
+unknown = ['white']
+
+# Colors of branches in SVG output. 
+# Same structure as terminal_colors. 
+# For supported colors, see section Colors (below this listing).
+[svg_colors]
+matches = [
+    [
+        '^(master|main|trunk)$',
+        ['blue'],
+    ],
+]
+unknown = ['gray']
