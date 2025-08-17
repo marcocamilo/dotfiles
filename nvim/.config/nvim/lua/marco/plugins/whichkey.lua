@@ -114,12 +114,11 @@ return {
 				o = { "<cmd>LspStart<cr>", "LSP Start" },
 			},
 			[";"] = {
-				name = "Noice",
-				l = { "<cmd>Noice last<cr>", "See last message" },
-				h = { "<cmd>Telescope notify<cr>", "Message history" },
-				a = { "<cmd>Noice all<cr>", "See all messages" },
-				d = { "<cmd>Noice dismiss<cr>", "Dismiss all messages" },
-				e = { "<cmd>Noice errors<cr>", "See all error messages" },
+				name = "Messages",
+				h = { "<cmd>Telescope notify<cr>", "Notifications (toast)" },
+				a = { "<cmd>Noice all<cr>", "All messages (complete)" },
+				e = { "<cmd>Noice errors<cr>", "Errors only" },
+				d = { "<cmd>Noice dismiss<cr>", "Dismiss all" },
 			},
 			["?"] = {
 				name = "Search",
@@ -194,9 +193,9 @@ return {
 					r = { "<cmd>'<,'>CBlrbox<CR>", "Right aligned text" },
 				},
 			},
-      n = {
-        l = { "<cmd>ObsidianLinkNew<CR>", "New link" }
-      },
+			n = {
+				l = { "<cmd>ObsidianLinkNew<CR>", "New link" },
+			},
 		}
 
 		local wk = require("which-key")
