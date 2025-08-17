@@ -1,58 +1,5 @@
 return {
 	{
-		"lukas-reineke/onedark.nvim",
-		name = "onedark",
-		priority = 1000,
-	},
-	{
-		"bluz71/vim-nightfly-guicolors",
-		name = "nightfly",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"alexanderbluhm/black.nvim",
-		priority = 1000,
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		opts = {
-			flavour = "mocha", -- latte, frappe, macchiato, mocha
-			term_colors = true,
-			transparent_background = false,
-			no_italic = false,
-			no_bold = false,
-			styles = {
-				comments = {},
-				conditionals = {},
-				loops = {},
-				functions = {},
-				keywords = {},
-				strings = {},
-				variables = {},
-				numbers = {},
-				booleans = {},
-				properties = {},
-				types = {},
-			},
-			color_overrides = {
-				all = {
-					text = "#ffffff",
-				},
-				mocha = {
-					base = "#000000",
-					mantle = "#000000",
-					crust = "#000000",
-				},
-				integrations = {
-					headlines = true,
-				},
-			},
-		},
-	},
-	{
 		"folke/tokyonight.nvim",
 		name = "tokyonight",
 		priority = 1000,
@@ -87,23 +34,7 @@ return {
 					colors.fg_sidebar = fg_dark
 				end,
 			})
-			vim.cmd("colorscheme tokyonight")
+      vim.cmd.colorscheme("tokyonight")
 		end,
-	},
-	{
-		"askfiy/visual_studio_code",
-		priority = 1000,
-		opts = {
-			mode = "dark",
-		},
-	},
-	{
-		"projekt0n/github-nvim-theme",
-		name = "github_dark_high_contrast",
-		priority = 1000,
-	},
-	{
-		"shaunsingh/nord.nvim",
-		priority = 1000,
 	},
 }
