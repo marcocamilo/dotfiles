@@ -4,8 +4,7 @@ return {
 	--Tmux and Window Navigation
 	"christoomey/vim-tmux-navigator",
 
-	--LF
-	"ptzz/lf.vim",
+	-- Vim Floaterm
 	"voldikss/vim-floaterm",
 
 	-- Repeat with .
@@ -13,6 +12,9 @@ return {
 
 	-- Kitty Config Highlighting
 	"fladson/vim-kitty",
+
+  -- Dressing
+	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 
 	-- Search Box
 	{
