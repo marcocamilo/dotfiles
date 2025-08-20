@@ -14,6 +14,9 @@ return {
 			{ open = "`", close = "`" },
 			{ open = "<", close = ">" },
 			{ open = "*", close = "*" },
+			{ open = "_", close = "_" },
+			{ open = "$", close = "$" },
+			{ open = "<!--", close = "-->" },
 		},
 		exclude = {},
 		smart_punctuators = {
