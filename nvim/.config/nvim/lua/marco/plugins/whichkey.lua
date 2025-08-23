@@ -1,9 +1,8 @@
 return {
 	"folke/which-key.nvim",
-	event = "VeryLazy",
 	opts = {
 		-- Modern which-key v3 configuration
-		preset = "modern",
+		preset = "classic",
 		delay = 300, -- Delay before showing the popup
 
 		-- Plugin integrations
@@ -24,30 +23,21 @@ return {
 				g = true,
 			},
 		},
-	},
-	-- Window configuration
-	win = {
-		border = "none",
-		position = "bottom",
-		margin = { 1, 0, 1, 0 },
-		padding = { 1, 2, 1, 2 },
-		winblend = 0,
-		zindex = 1000,
-	},
-	-- Layout settings
-	layout = {
-		height = { min = 4, max = 25 },
-		width = { min = 20, max = 50 },
-		spacing = 3,
-		align = "left",
-	},
-	-- Trigger configuration
-	triggers = {
-		{ "<auto>", mode = "nixsotc" },
-		{ "s", mode = { "n", "v" } },
+		-- Layout settings
+		layout = {
+			height = { min = 4, max = 25 },
+			width = { min = 20, max = 50 },
+			spacing = 3,
+			align = "left",
+		},
+		-- Trigger configuration
+		triggers = {
+			{ "<auto>", mode = "nixsotc" },
+			{ "s", mode = { "n", "v" } },
+		},
 	},
 	-- Modern spec-based configuration
-	config = function()
+	init = function()
 		local wk = require("which-key")
 
 		-- Normal mode mappings with <leader>
