@@ -76,9 +76,10 @@ return {
 
 			-- Obsidian
 			{ "<leader>n", group = "Obsidian" },
-			{ "<leader>nn", "<cmd>ObsidianNew<CR>", desc = "Create New Note" },
-			{ "<leader>nb", "<cmd>ObsidianBacklinks<CR>", desc = "Note Backlinks" },
-			{ "<leader>ns", "<cmd>ObsidianSearch<CR>", desc = "Note Search" },
+			{ "<leader>nn", "<cmd>Obsidian new<CR>", desc = "Create New Note" },
+			{ "<leader>nb", "<cmd>Obsidian backlinks<CR>", desc = "Note Backlinks" },
+			{ "<leader>ns", "<cmd>Obsidian search<CR>", desc = "Note Search" },
+			{ "<leader>nr", "<cmd>Obsidian rename<CR>", desc = "Rename Note Link" },
 
 			-- LSP
 			{ "<leader>l", group = "LSP" },
