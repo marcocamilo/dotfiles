@@ -110,7 +110,7 @@ return {
 			{ "<leader>?g", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
 
 			-- Slime integration
-			{ "<leaderw>s", "<Plug>SlimeMotionSend", desc = "Send to iPython with motion" },
+			{ "<leader>s", "<Plug>SlimeMotionSend", desc = "Send to iPython with motion" },
 			{ "<leader>sl", "<cmd>SlimeSendCurrentLine<CR>", desc = "Send Current Line" },
 
 			-- Code
