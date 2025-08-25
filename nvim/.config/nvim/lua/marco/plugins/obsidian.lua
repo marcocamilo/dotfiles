@@ -18,6 +18,7 @@ return {
 	--   end
 	-- end,
 	opts = {
+    legacy_commands = false,
 		ui = { enable = false },
 		workspaces = {
 			{

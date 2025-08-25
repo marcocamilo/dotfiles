@@ -7,7 +7,7 @@ return {
 	},
 	opts = {
 		outline_window = {
-			width = 35,
+			width = 28.5,
 			relative_width = true,
 		},
 		symbol_folding = {

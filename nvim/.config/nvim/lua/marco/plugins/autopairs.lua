@@ -1,78 +1,63 @@
 return {
-	"windwp/nvim-autopairs",
-	event = "InsertEnter",
-	dependencies = "hrsh7th/nvim-cmp",
-	config = function()
-		-- Setup autopairs with essential configurations
-		require("nvim-autopairs").setup({
-			check_ts = true,
-			disable_filetype = { "TelescopePrompt" },
-			ts_config = {
-				lua = { "string", "source" },
-				javascript = { "string", "template_string" },
-			},
-			fast_wrap = {
-				map = "<M-e>",
-				chars = { "{", "[", "(", '"', "'" },
-				pattern = [=[[%'%"%)%>%]%)%}%,]]=],
-				keys = "qwertyuiopzxcvbnmasdfghjkl",
-				check_comma = true,
-				highlight = "PmenuSel",
-				highlight_grey = "LineNr",
-			},
-		})
+  "windwp/nvim-autopairs",
+  event = "InsertEnter",
+  config = function()
+    local npairs = require("nvim-autopairs")
 
-		-- Rules
-		local Rule = require("nvim-autopairs.rule")
-		local npairs = require("nvim-autopairs")
+    npairs.setup({
+      check_ts = true, -- Use treesitter for better pair detection
+      ts_config = {
+        lua = { "string", "source" },
+        javascript = { "string", "template_string" },
+        python = { "string", "f_string" },
+      },
+      disable_filetype = { "TelescopePrompt", "spectre_panel" },
+      fast_wrap = {
+        map = "<M-e>",
+        chars = { "{", "[", "(", '"', "'" },
+        pattern = [=[[%'%"%)%>%]%)%}%,]]=],
+        offset = 0,
+        end_key = "$",
+        keys = "qwertyuiopzxcvbnmasdfghjkl",
+        check_comma = true,
+        highlight = "PmenuSel",
+        highlight_grey = "LineNr",
+      },
+    })
 
-		npairs.add_rules({
-			Rule("*", "*", "markdown")
-				:with_pair(function(opts)
-					-- Only pair when not followed by another *
-					local next_char = opts.line:sub(opts.col + 1, opts.col + 1)
-					return next_char ~= "*"
-				end)
-				:with_move(function(opts)
-					return opts.prev_char:match(".%*") ~= nil
-				end)
-				:use_key("*"),
-		})
+    -- Custom rules for specific filetypes
+    local Rule = require("nvim-autopairs.rule")
+    local cond = require("nvim-autopairs.conds")
 
-		-- Integrate with nvim-cmp for autocompletion
-		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-		require("cmp").event:on(
-			"confirm_done",
-			cmp_autopairs.on_confirm_done({
-				filetypes = {
-					["*"] = {
-						["("] = {
-							kind = {
-								require("cmp").lsp.CompletionItemKind.Function,
-								require("cmp").lsp.CompletionItemKind.Method,
-							},
-						},
-					},
-					lua = {
-						["("] = {
-							kind = {
-								require("cmp").lsp.CompletionItemKind.Function,
-								require("cmp").lsp.CompletionItemKind.Method,
-							},
-							handler = function(char, item, bufnr, rules, commit_character) end,
-						},
-					},
-					rmd = {
-						["{"] = {
-							kind = {
-								require("cmp").lsp.CompletionItemKind.Function,
-								require("cmp").lsp.CompletionItemKind.Method,
-							},
-						},
-					},
-					tex = false, -- Disable autopairs for tex
-			},
-		}))
+    -- Markdown rules
+    npairs.add_rules({
+      -- Rule for single * (italic) - only pair if not preceded by *
+      Rule("*", "*", "markdown")
+          :with_pair(cond.not_before_regex("*", 1))
+          :with_move(function(opts)
+            return opts.prev_char:match(".%*") ~= nil
+          end),
 
-	end,
+      -- Rule for double ** (bold) - pair when preceded by exactly one *
+      Rule("*", "*", "markdown")
+          :with_pair(function(opts)
+            -- Check if we're after exactly one * (for bold)
+            local line = opts.line
+            local col = opts.col
+            return line:sub(col - 1, col - 1) == "*" and line:sub(col - 2, col - 2) ~= "*"
+          end)
+          :with_move(function(opts)
+            -- Move over ** when cursor is between them
+            local line = opts.line
+            local col = opts.col
+            return line:sub(col, col + 1) == "**"
+          end),
+    })
+
+    -- LaTeX rules
+    npairs.add_rules({
+      Rule("$", "$", "tex"):with_pair(cond.not_filetypes({ "vim" })),
+      Rule("\\[", "\\]", "tex"),
+    })
+  end,
 }
