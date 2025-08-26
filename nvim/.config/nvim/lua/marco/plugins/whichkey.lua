@@ -48,7 +48,7 @@ return {
 			{ "<leader>F", "<cmd>Telescope live_grep<CR>", desc = "Find Text" },
 			{
 				"<leader>b",
-				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>i",
 				desc = "Buffers",
 			},
 
