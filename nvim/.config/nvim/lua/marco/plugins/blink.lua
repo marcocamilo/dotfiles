@@ -7,13 +7,14 @@ return {
 		"L3MON4D3/LuaSnip",
 		{
 			"moyiz/blink-emoji.nvim",
-			opts = {
-				trigger = ";",
-			},
-			config = function(_, opts)
+
+			config = function()
+				-- Get the original module
 				local emoji_source = require("blink-emoji")
-				emoji_source.get_trigger_characters = function()
-					return { opts.trigger or ";" }
+
+				-- Override the get_trigger_characters function
+				emoji_source.get_trigger_characters = function(self)
+					return { ";" }
 				end
 			end,
 		},
