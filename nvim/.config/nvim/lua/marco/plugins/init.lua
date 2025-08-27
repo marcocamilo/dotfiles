@@ -13,8 +13,15 @@ return {
 	-- Kitty Config Highlighting
 	"fladson/vim-kitty",
 
-  -- Dressing
+	-- Dressing
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
+
+	-- Mini Surround
+	{
+		"echasnovski/mini.surround",
+		version = "*",
+		config = true,
+	},
 
 	-- Search Box
 	{
@@ -24,14 +31,14 @@ return {
 		},
 	},
 
-  -- Lazygit
-  {
-    "kdheepak/lazygit.nvim",
-    -- optional for floating window border decoration
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    },
-  },
+	-- Lazygit
+	{
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 
 	-- devicons
 	{

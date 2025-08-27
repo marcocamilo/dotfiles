@@ -30,10 +30,9 @@ eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
 # ──────────────────────────────────────────────────────────────────────
-#   CURLIE                                                             
+#   TASK                                                               
 # ──────────────────────────────────────────────────────────────────────
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+eval "$(task --completion zsh)"
 
 #  ────────────────────────────────────────────────────────────────────
 #   STARSHIP                                                           
