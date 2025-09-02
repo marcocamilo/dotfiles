@@ -1,17 +1,17 @@
 return {
-	{
-		"jpalardy/vim-slime",
-		ft = { "python", "quarto", "sh", "bash", "zsh" },
-		init = function()
-			vim.b.slime_cell_delimiter = "# %%"
+  {
+    "jpalardy/vim-slime",
+    ft = { "python", "quarto", "sh", "bash", "zsh" },
+    init = function()
+      vim.b.slime_cell_delimiter = "# %%"
 
-			-- Define a function to check if inside a Python chunk
-			vim.api.nvim_set_var("Quarto_is_in_python_chunk", function()
-				return require("otter.tools.functions").is_otter_language_context("python")
-			end)
+      -- Define a function to check if inside a Python chunk
+      vim.api.nvim_set_var("Quarto_is_in_python_chunk", function()
+        return require("otter.tools.functions").is_otter_language_context("python")
+      end)
 
-			-- Override escape text function for Quarto
-			vim.cmd([[
+      -- Override escape text function for Quarto
+      vim.cmd([[
                 let g:slime_dispatch_ipython_pause = 100
                 function! SlimeOverride_EscapeText_quarto(text)
                     call v:lua.Quarto_is_in_python_chunk()
@@ -23,27 +23,27 @@ return {
                 endfunction
             ]])
 
-			-- Slime settings
-			vim.g.slime_no_mappings = 1
-			vim.g.slime_target = "tmux"
-			vim.g.slime_bracketed_paste = 1
-			vim.g.slime_default_config = { socket_name = "default", target_pane = "2" }
-			vim.g.slime_dont_ask_default = 1
-		end,
-	},
-	{
-		"GCBallesteros/jupytext.nvim",
-		config = true,
-		lazy = false,
-		opts = {
-			style = "hydrogen",
-			custom_language_formatting = {
-				python = {
-					extension = "qmd",
-					style = "quarto",
-					force_ft = "quarto",
-				},
-			},
-		},
-	},
+      -- Slime settings
+      vim.g.slime_no_mappings = 1
+      vim.g.slime_target = "tmux"
+      vim.g.slime_bracketed_paste = 1
+      vim.g.slime_default_config = { socket_name = "default", target_pane = "{last}" }
+      vim.g.slime_dont_ask_default = 1
+    end,
+  },
+  {
+    "GCBallesteros/jupytext.nvim",
+    config = true,
+    lazy = false,
+    opts = {
+      style = "hydrogen",
+      custom_language_formatting = {
+        python = {
+          extension = "qmd",
+          style = "quarto",
+          force_ft = "quarto",
+        },
+      },
+    },
+  },
 }

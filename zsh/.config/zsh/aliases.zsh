@@ -24,6 +24,9 @@ alias lsat="lsd -a --tree --depth=2"
 alias lsal="lsd -l -a"
 alias lsalt="lsd -l -a --tree --depth=2"
 
+# yazi
+alias yz="yazi"
+
 # ──────────────────────────────────────────────────────────────────────
 #   UTILITIES                                                          
 # ──────────────────────────────────────────────────────────────────────

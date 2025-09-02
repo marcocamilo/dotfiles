@@ -1,15 +1,13 @@
 local opt = vim.opt
 
--- ⚡ REDRAW & DISPLAY PERFORMANCE
-opt.ttyfast = true        -- Fast terminal connection for responsive display
-opt.updatetime = 250      -- CursorHold event trigger delay in ms (your 300)
-opt.timeoutlen = 500      -- Mapped sequence completion timeout in ms (your 1000)
-opt.redrawtime = 5000     -- Max time for syntax highlighting before timeout
-
--- 🧠 MEMORY & PROCESSING LIMITS
-opt.maxmempattern = 5000  -- Max memory in KB for pattern matching
-opt.synmaxcol = 240       -- Max column for syntax highlighting
-opt.history = 1000        -- Command lines to remember in history
+-- ⚡ PERFORMANCE OPTIMIZATIONS
+opt.ttyfast = true        -- Fast terminal connection
+opt.updatetime = 250      -- Faster CursorHold events
+opt.timeoutlen = 500      -- Key sequence timeout
+opt.redrawtime = 5000     -- Syntax highlighting timeout
+opt.maxmempattern = 5000  -- Pattern matching memory limit    
+opt.synmaxcol = 240       -- Syntax highlighting column limit 
+opt.history = 1000        -- Command history size             
 
 -- 📱 USER INTERFACE LAYOUT
 opt.showtabline = 0       -- When to show tab pages: 0=never, 1=multiple, 2=always
@@ -26,7 +24,7 @@ opt.numberwidth = 4       -- Min columns for line number display
 opt.signcolumn = "yes"    -- Always show sign column
 opt.cursorline = true     -- Highlight current cursor line
 
--- 🎛️ WINDOW & POPUP BEHAVIOR
+-- 🎛️ POPUP & WINDOW BEHAVIOR
 opt.pumheight = 10        -- Max items in popup menu
 opt.winminheight = 1      -- Min height for non-current windows
 opt.equalalways = false   -- Don't auto-resize windows after split/close
@@ -40,7 +38,8 @@ opt.wrap = false          -- Don't wrap long lines
 opt.linebreak = true      -- Break lines at word boundaries when wrapping
 
 -- 📂 CODE FOLDING CONFIGURATION
-opt.foldmethod = "syntax" -- Fold method: syntax-based folding
+opt.foldmethod = "expr"   -- Use treesitter for folding (more modern)
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.fillchars = {         -- Characters for statuslines and separators
   eob = " ",              -- Empty lines at end of buffer
   fold = " ",             -- Closed fold lines
@@ -60,7 +59,7 @@ opt.conceallevel = 1      -- Conceal level for special syntax
 opt.mouse = "a"           -- Enable mouse in all modes
 opt.backspace = "indent,eol,start" -- Backspace behavior in insert mode
 
--- 🔍 SEARCH & PATTERN MATCHING
+-- 🔍 SEARCH CONFIGURATION
 opt.ignorecase = true     -- Case insensitive search
 opt.smartcase = true      -- Case sensitive if uppercase in pattern
 opt.hlsearch = true       -- Highlight all search matches
@@ -71,7 +70,7 @@ opt.fileencoding = "utf-8" -- File encoding for writing
 opt.clipboard = "unnamedplus" -- Use system clipboard
 opt.report = 1            -- Threshold for reporting changed lines
 
--- 💾 FILE BACKUP & RECOVERY
+-- 💾 BACKUP & RECOVERY
 opt.backup = false        -- Don't create backup files
 opt.writebackup = false   -- Don't create backup before overwrite
 opt.swapfile = false      -- Don't use swap files

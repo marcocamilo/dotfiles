@@ -12,11 +12,21 @@ return {
 			indent = {
 				enabled = true,
 			},
-			-- win_options = {
-			-- 	conceallevel = {
-			-- 		rendered = 2,
-			-- 	},
-			-- },
+			quote = { repeat_linebreak = true },
+			win_options = {
+				showbreak = {
+					default = "",
+					rendered = "  ",
+				},
+				breakindent = {
+					default = false,
+					rendered = true,
+				},
+				breakindentopt = {
+					default = "",
+					rendered = "",
+				},
+			},
 		},
 	},
 	{
@@ -47,6 +57,7 @@ return {
 			vim.g.bullets_enabled_file_types = {
 				"markdown",
 				"quarto",
+				"text",
 			}
 			vim.g.bullets_set_mappings = 0
 			vim.g.bullets_custom_mappings = {
@@ -60,7 +71,14 @@ return {
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && yarn install",
+		build = function(plugin)
+			if vim.fn.executable("npx") then
+				vim.cmd("!cd " .. plugin.dir .. " && cd app && npx --yes yarn install")
+			else
+				vim.cmd([[Lazy load markdown-preview.nvim]])
+				vim.fn["mkdp#util#install"]()
+			end
+		end,
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown", "quarto" }
 			vim.g.mkdp_auto_close = true

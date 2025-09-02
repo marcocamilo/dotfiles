@@ -1,15 +1,21 @@
 return {
 	"NvChad/nvim-colorizer.lua",
-	event = { "BufReadPre", "BufNewFile" },
+	ft = { "css", "html", "javascript", "typescript", "lua", "vim", "toml", "yaml" },
+	cmd = { "ColorizerToggle", "ColorizerAttachToBuffer", "ColorizerDetachFromBuffer" },
 	opts = {
 		filetypes = {
-      "cfg",
+			"cfg",
 			"css",
+			"scss",
 			"html",
 			"lua",
+			"vim",
+			"toml",
 			"python",
-      "cpp",
-      "dosini",
+			"cpp",
+			"yaml",
+			"json",
+			"dosini",
 		},
 	},
 }
