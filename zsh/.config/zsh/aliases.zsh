@@ -28,6 +28,9 @@ alias lsalt="lsd -l -a --tree --depth=2"
 alias hml="harlequin -a bigquery --project rnd-data-ml --location europe"
 alias hdwh="harlequin -a bigquery --project rnd-data-dw2 --location europe"
 
+# yazi
+alias yz="yazi"
+
 # ──────────────────────────────────────────────────────────────────────
 #   UTILITIES                                                          
 # ──────────────────────────────────────────────────────────────────────
