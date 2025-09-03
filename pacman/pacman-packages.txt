@@ -1,105 +1,205 @@
-1password 8.10.60-27
-alacritty 0.15.1-1
-baobab 47.0-1
-base 3-2
-base-devel 1-2
-bat 0.25.0-4
-efibootmgr 18-3
-epiphany 47.3.1-1
-evince 46.3.1-2
-feh 3.10.3-1
-firefox 135.0.1-1
-fzf 0.60.0-1
-gdm 47.0-2
-git 2.48.1-2
-github-cli 2.67.0-1
-gnome-backgrounds 47.0-1
-gnome-calculator 47.1-1
-gnome-calendar 47.0-1
-gnome-characters 47.0-1
-gnome-clocks 47.0-1
-gnome-color-manager 3.36.2-1
-gnome-connections 47.2.1-1
-gnome-console 47.1-1
-gnome-contacts 47.1.1-1
-gnome-control-center 47.4-1
-gnome-disk-utility 46.1-1
-gnome-font-viewer 47.0-1
-gnome-keyring 1:46.2-1
-gnome-logs 45.0-1
-gnome-maps 47.4-1
-gnome-menus 3.36.0-3
-gnome-music 1:47.1-2
-gnome-remote-desktop 47.3-1
-gnome-session 47.0.1-1
-gnome-settings-daemon 47.2-1
-gnome-shell 1:47.4-1
-gnome-shell-extensions 47.4-1
-gnome-software 47.4-1
-gnome-system-monitor 47.1-1
-gnome-text-editor 47.3-1
-gnome-tour 47.0-2
-gnome-user-docs 47.2-1
-gnome-user-share 47.2-1
-gnome-weather 47.0-1
-grilo-plugins 1:0.3.16-1
-grub 2:2.12-3
-gst-plugin-pipewire 1:1.2.7-1
-gvfs 1.56.1-3
-gvfs-afc 1.56.1-3
-gvfs-dnssd 1.56.1-3
-gvfs-goa 1.56.1-3
-gvfs-google 1.56.1-3
-gvfs-gphoto2 1.56.1-3
-gvfs-mtp 1.56.1-3
-gvfs-nfs 1.56.1-3
-gvfs-onedrive 1.56.1-3
-gvfs-smb 1.56.1-3
-gvfs-wsdd 1.56.1-3
-intel-ucode 20250211-1
-lazygit 0.47.1-1
-less 1:668-1
-lf 34-1
-libpulse 17.0+r43+g3e2bb8a1e-1
-linux 6.13.3.arch1-1
-linux-firmware 20250210.5bc5868b-1
-loupe 47.4-1
-lsd 1.1.5-1
-malcontent 0.13.0-1
-nautilus 47.2-1
-neovim 0.10.4-2
-networkmanager 1.50.2-1
-npm 11.1.0-2
-orca 47.3-1
-pipewire 1:1.2.7-1
-pipewire-alsa 1:1.2.7-1
-pipewire-jack 1:1.2.7-1
-pipewire-pulse 1:1.2.7-1
-ripgrep 14.1.1-1
-rygel 1:0.44.1-1
-simple-scan 46.0-2
-snapshot 47.1-1
-starship 1.22.1-1
-stow 2.4.1-1
-sushi 46.0-2
-tecla 47.0-1
-tmux 3.5_a-1
-totem 43.1-1
-tree-sitter-cli 0.25.1-1
-ttf-meslo-nerd 3.3.0-1
-uv 0.6.2-1
-wireplumber 0.5.8-1
-xclip 0.13-6
-xcompmgr 1.1.10-2
-xdg-desktop-portal-gnome 47.3-1
-xdg-user-dirs-gtk 0.14-1
-xorg-server 21.1.15-1
-xorg-xinit 1.4.3-1
-xorg-xrandr 1.5.3-1
-xorg-xsetroot 1.1.3-2
-yay-bin 12.4.2-1
-yay-bin-debug 12.4.2-1
-yelp 42.2-2
-zoxide 0.9.7-1
-zram-generator 1.2.1-1
-zsh 5.9-5
+1password
+alacritty
+amd-ucode
+baobab
+base
+base-devel
+bat
+bc
+betterlockscreen
+bluez-utils
+btop
+btrfs-progs
+cmatrix
+csvlens
+curlie
+direnv
+docker
+docker-buildx
+duf
+dunst
+dust
+dysk
+efibootmgr
+emote
+epiphany
+espanso-x11
+evince
+fastfetch
+fd
+feh
+firefox
+flameshot
+fzf
+fzf-kill
+gdm
+git
+git-delta
+github-cli
+glow
+gnome-backgrounds
+gnome-calculator
+gnome-calendar
+gnome-characters
+gnome-clocks
+gnome-color-manager
+gnome-connections
+gnome-console
+gnome-contacts
+gnome-control-center
+gnome-disk-utility
+gnome-font-viewer
+gnome-keyring
+gnome-logs
+gnome-maps
+gnome-menus
+gnome-music
+gnome-remote-desktop
+gnome-session
+gnome-settings-daemon
+gnome-shell
+gnome-shell-extensions
+gnome-software
+gnome-system-monitor
+gnome-text-editor
+gnome-tour
+gnome-tweaks
+gnome-user-docs
+gnome-user-share
+gnome-weather
+gnu-netcat
+google-chrome
+google-cloud-cli
+grilo-plugins
+grub
+grub-btrfs
+gst-plugin-pipewire
+gvfs
+gvfs-afc
+gvfs-dnssd
+gvfs-goa
+gvfs-google
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+gvfs-onedrive
+gvfs-smb
+gvfs-wsdd
+htop
+interception-caps2esc
+iw
+iwd
+j4-dmenu-desktop
+jdk11-openjdk
+jq
+jre
+kustomize
+lazydocker
+lazygit
+less
+lf
+libpulse
+libreoffice-fresh
+linutil
+linux
+linux-firmware
+loupe
+lsd
+lsof
+ly
+malcontent
+masterpdfeditor
+msty-bin
+nano
+nautilus
+ncdu
+neovim
+network-manager-applet
+networkmanager
+nodejs-nativefier
+normcap
+notion-app-electron
+noto-fonts
+npm
+nvm
+obsidian
+open
+orca
+pacman-contrib
+pandoc-cli
+papirus-icon-theme
+paru
+paru-debug
+pcloud-drive
+peek
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+polybar-dwm-git
+python-pywlroots
+qutebrowser
+rofi
+rsync
+rustup
+rygel
+simple-scan
+sioyek-appimage
+smartmontools
+snap-pac
+snapper
+snapper-rollback
+snapshot
+sof-firmware
+spotify
+standardnotes-desktop
+stow
+sushi
+swaybg
+tabiew
+tecla
+terraform
+thunderbird
+ticktick
+tlrc
+tmux
+totem
+trashy
+ttf-jetbrains-mono
+ttf-meslo-nerd
+ttf-ms-win11-auto
+ttf-nerd-fonts-symbols
+ueberzugpp
+ufw
+vim
+vulkan-radeon
+waybar
+waypaper
+wdisplays-git
+wget
+wireless_tools
+wireplumber
+wlr-randr
+wmenu
+woff2-font-awesome
+wofi
+xclip
+xdg-desktop-portal-gnome
+xdg-desktop-portal-wlr
+xdg-user-dirs-gtk
+xdg-utils
+xf86-video-amdgpu
+xf86-video-ati
+xorg-server
+xorg-xdpyinfo
+xorg-xinit
+xorg-xrandr
+xorg-xsetroot
+yay-debug
+yazi
+yelp
+zotero
+zoxide
+zram-generator
+zsh
+zsh-syntax-highlighting
