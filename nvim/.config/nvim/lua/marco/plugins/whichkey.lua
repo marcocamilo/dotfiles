@@ -109,6 +109,34 @@ return {
 			{ "<leader>?f", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
 			{ "<leader>?g", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
 
+			-- Enhanced git group with navigation and management
+			{ "<leader>g", group = "Git" },
+			-- Git hunks (staging, reset, preview)
+			{ "<leader>gh", group = "Git Hunks" },
+			{ "<leader>ghs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage hunk", mode = { "n", "v" } },
+			{ "<leader>ghr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset hunk", mode = { "n", "v" } },
+			{ "<leader>ghS", "<cmd>Gitsigns stage_buffer<cr>", desc = "Stage buffer" },
+			{ "<leader>ghu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Undo stage hunk" },
+			{ "<leader>ghR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Reset buffer" },
+			{ "<leader>ghp", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview hunk inline" },
+			{ "<leader>ghP", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" },
+			-- Git blame
+			{ "<leader>gb", group = "Git Blame" },
+			{ "<leader>gbb", function() require("gitsigns").blame_line({ full = true }) end, desc = "Blame line" },
+			{ "<leader>gbB", function() require("gitsigns").blame() end, desc = "Blame buffer" },
+			{ "<leader>gbt", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle line blame" },
+			-- Git diff
+			{ "<leader>gd", group = "Git Diff" },
+			{ "<leader>gdd", "<cmd>Gitsigns diffthis<cr>", desc = "Diff this" },
+			{ "<leader>gdD", function() require("gitsigns").diffthis("~") end, desc = "Diff this ~" },
+			{ "<leader>gdt", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Toggle deleted" },
+			-- Git toggles
+			{ "<leader>gt", group = "Git Toggles" },
+			{ "<leader>gts", "<cmd>Gitsigns toggle_signs<cr>", desc = "Toggle signs" },
+			{ "<leader>gtn", "<cmd>Gitsigns toggle_numhl<cr>", desc = "Toggle number highlight" },
+			{ "<leader>gtl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight" },
+			{ "<leader>gtw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff" },
+
 			-- Slime integration
 			{ "<leader>s", "<Plug>SlimeMotionSend", desc = "Send to iPython with motion" },
 			{ "<leader>sl", "<cmd>SlimeSendCurrentLine<CR>", desc = "Send Current Line" },
@@ -197,15 +225,6 @@ return {
 
 			-- Quick access variations
 			{ "<leader>gw", "<cmd>Telescope grep_string<CR>", desc = "Grep word under cursor" },
-			{
-				"<leader>gW",
-				function()
-					require("telescope.builtin").grep_string({
-						search = vim.fn.expand("<cWORD>"), -- WORD includes punctuation
-					})
-				end,
-				desc = "Grep WORD under cursor",
-			},
 		})
 
 		-- Visual mode mappings

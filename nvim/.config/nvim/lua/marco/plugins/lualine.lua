@@ -78,9 +78,9 @@ return {
 			"diff",
 			colored = true,
 			diff_color = {
-				-- added = { fg = colors.green },
+				added = { fg = colors.green },
 				modified = { fg = "FFFF33" },
-				-- removed = { fg = colors.red },
+				removed = { fg = colors.red },
 			},
 			symbols = { added = " ", modified = " ", removed = " " },
 			cond = hide_in_width,
