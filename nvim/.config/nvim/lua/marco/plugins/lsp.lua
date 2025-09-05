@@ -35,6 +35,7 @@ return {
 				"mdformat",
 				"clang-format",
 				"biome",
+        "sqruff",
 
 				-- Linters
 				"eslint_d",

@@ -13,6 +13,7 @@ return {
       lua = { "stylua" },
       markdown = { "mdformat" },
       python = { "ruff_fix", "ruff_format", "isort" },
+      sql = { "sqruff" },
       yaml = { "prettier" },
     },
   },
