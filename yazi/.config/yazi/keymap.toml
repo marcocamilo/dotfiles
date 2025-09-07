@@ -15,6 +15,7 @@ prepend_keymap = [
 
 # ─── Documents ─────────────────────────────────
 	{ on = [ "g", "d", "." ],           run = "cd ~/Documents",                             desc = "Go to Documents" },
+	{ on = [ "g", "D", "." ],           run = "cd ~/Downloads",                             desc = "Go to Downloads" },
 	{ on = [ "g", "d", "a", "c" ],      run = "cd ~/Documents/Academics/",                  desc = "Go to Academics" },
 	{ on = [ "g", "d", "a", "d" ],      run = "cd ~/Documents/Admin/",                      desc = "Go to Admin" },
 	{ on = [ "g", "d", "c" ],           run = "cd ~/Documents/config/",                     desc = "Go to config" },
