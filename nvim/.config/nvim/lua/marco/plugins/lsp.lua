@@ -24,17 +24,17 @@ return {
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = { "williamboman/mason.nvim" },
-		event = "VeryLazy",
 		opts = {
 			ensure_installed = {
 				-- Formatters
-				"prettier",
-				"stylua",
-				"ruff",
+				"biome",
+				"clang-format",
 				"isort",
 				"mdformat",
-				"clang-format",
-				"biome",
+				"prettier",
+				"ruff",
+				"stylua",
+        "sqruff",
 
 				-- Linters
 				"eslint_d",
