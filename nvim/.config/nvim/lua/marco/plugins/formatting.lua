@@ -4,10 +4,10 @@ return {
   cmd = { "ConformInfo" },
   opts = {
     formatters_by_ft = {
-      cpp = { "clang-format" },
-      javascript = { "prettier" },
       css = { "prettier" },
+      cpp = { "clang-format" },
       html = { "prettier" },
+      javascript = { "prettier" },
       json = { "biome" },
       jsonc = { "biome" },
       lua = { "stylua" },
