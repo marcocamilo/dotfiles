@@ -13,7 +13,7 @@ transset .50 &
 dunst &
 
 # pCloud
-/home/marcocamilo/opt/pcloud &
+/bin/pcloud &
 
 # Polybar
 (sleep 2 && polybar) &
