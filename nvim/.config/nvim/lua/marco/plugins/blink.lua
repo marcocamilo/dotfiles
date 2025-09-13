@@ -59,7 +59,7 @@ return {
 				"emoji",
 			},
 
-			per_filetype = { markdown = { "obsidian", "obsidian_new", "obsidian_tags" } },
+			per_filetype = { markdown = { "lsp", "path", "snippets", "emoji", "obsidian", "obsidian_new", "obsidian_tags" } },
 
 			providers = {
 				emoji = {
