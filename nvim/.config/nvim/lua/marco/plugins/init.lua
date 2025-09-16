@@ -16,6 +16,9 @@ return {
 	-- Dressing
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 
+  -- vim-python-pep8-indent
+  { "Vimjas/vim-python-pep8-indent" },
+
 	-- Mini Surround
 	{
 		"echasnovski/mini.surround",
