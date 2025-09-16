@@ -7,7 +7,7 @@ return {
 			heading = {
 				position = "inline",
 				border = true,
-				border_virtual = true,
+				border_virtual = false,
 			},
 			indent = {
 				enabled = true,

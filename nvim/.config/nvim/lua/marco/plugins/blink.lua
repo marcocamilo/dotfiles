@@ -25,7 +25,7 @@ return {
 	---@type blink.cmp.Config
 	opts = {
 
-    -- Disable in DressingInput
+		-- Disable in DressingInput
 		enabled = function()
 			return not vim.tbl_contains({}, vim.bo.filetype)
 				and vim.bo.buftype ~= "nofile"
@@ -56,11 +56,10 @@ return {
 				"path",
 				"snippets",
 				"otter",
-				"obsidian",
-				"obsidian_new",
-				"obsidian_tags",
 				"emoji",
 			},
+
+			per_filetype = { markdown = { "lsp", "path", "snippets", "emoji", "obsidian", "obsidian_new", "obsidian_tags" } },
 
 			providers = {
 				emoji = {
