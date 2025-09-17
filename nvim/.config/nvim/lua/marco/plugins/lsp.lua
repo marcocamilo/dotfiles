@@ -34,7 +34,7 @@ return {
 				"prettier",
 				"ruff",
 				"stylua",
-        "sqruff",
+        "sqlfluff",
 
 				-- Linters
 				"eslint_d",
