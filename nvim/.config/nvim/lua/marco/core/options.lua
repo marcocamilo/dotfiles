@@ -95,3 +95,5 @@ opt.formatoptions:remove({ "c", "r", "o" }) -- Remove auto-commenting
 opt.shortmess:append("c")  -- Hide completion match messages
 opt.whichwrap:append("<,>,[,],h,l") -- Keys that wrap to next/prev line
 opt.iskeyword:append("-") -- Treat hyphenated words as single words
+
+vim.lsp.log.set_level("off")
