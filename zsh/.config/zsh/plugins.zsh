@@ -12,10 +12,4 @@ export FZF_DEFAULT_OPTS='--preview "batcat --style=numbers --color=always --line
 
 # Bind Ctrl+f to fzf-file-widget
 bindkey '^F' fzf-file-widget
-#
-# export FZF_CTRL_R_OPTS="
-#   --preview 'echo {}' --preview-window up:3:hidden:wrap
-#   --bind 'ctrl-/:toggle-preview'
-#   --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-#   --color header:italic
-#   --header 'Press CTRL-Y to copy command into clipboard'"
+export FZF_COMPLETION_TRIGGER=';'
