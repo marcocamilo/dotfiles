@@ -116,9 +116,10 @@ static const Key keys[] = {
   { MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("~/.scripts/x11/logout.sh") },
   { MODKEY|ControlMask|ShiftMask, XK_q,      spawn,          SHCMD("~/.scripts/x11/shutdown.sh") },
 
-  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/wallpaper.sh") },
+  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
   { MODKEY,                       XK_Escape, spawn,          SHCMD("~/.scripts/kb-switch.sh") },
   { MODKEY,                       XK_c,      spawn,          SHCMD("~/.scripts/dmenu-calc") },
+  { MODKEY,                       XK_d,      spawn,          SHCMD("~/.scripts/file-search.sh") },
   { MODKEY,                       XK_x,      spawn,          SHCMD("normcap") },
   { MODKEY,                       XK_s,      spawn,          SHCMD("flameshot gui") },
   { MODKEY,                       XK_e,      spawn,          SHCMD("emote") },
@@ -146,6 +147,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_l,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_h,      movestack,      {.i = -1 } },
+
+  { MODKEY,                       XK_w,      spawn,          SHCMD("~/.scripts/change-wallpaper.sh") },
+  { MODKEY,                       XK_Escape, spawn,          SHCMD("~/.scripts/kb-switch.sh") },
 
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
