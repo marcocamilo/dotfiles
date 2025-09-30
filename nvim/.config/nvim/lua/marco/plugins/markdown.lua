@@ -6,7 +6,7 @@ return {
 			file_types = { "markdown", "quarto" },
 			heading = {
 				position = "inline",
-				border = true,
+				border = false,
 				border_virtual = false,
 			},
 			indent = {
