@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 #include <X11/XF86keysym.h>
-#define BROWSER "google-chrome-stable"
+#define BROWSER "zen-browser"
 
 /* appearance */
 static const unsigned int borderpx = 0; /* border pixel of windows */
