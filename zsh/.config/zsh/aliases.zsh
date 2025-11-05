@@ -30,6 +30,7 @@ alias hdwh="harlequin -a bigquery --project rnd-data-dw2 --location europe"
 
 # yazi
 alias yz="yazi"
+alias yy="yz"
 
 # ──────────────────────────────────────────────────────────────────────
 #   UTILITIES                                                          
