@@ -26,6 +26,7 @@ alias lsalt="lsd -l -a --tree --depth=2"
 
 # yazi
 alias yz="yazi"
+alias yy="yz"
 
 # ──────────────────────────────────────────────────────────────────────
 #   UTILITIES                                                          
