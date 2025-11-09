@@ -28,6 +28,7 @@ prepend_keymap = [
 # ─── ML ────────────────────────────────────────
 	{ on = [ "g", "m", "." ],           run = "cd ~/Documents/ML/",                         desc = "Go to ML" },
 	{ on = [ "g", "m", "c" ],           run = "cd ~/Documents/ML/Courses/",                 desc = "Go to ML/Courses" },
+	{ on = [ "g", "m", "l" ],           run = "cd ~/Documents/ML/Lab/",                     desc = "Go to ML/Lab" },
 	{ on = [ "g", "m", "p" ],           run = "cd ~/Documents/ML/Portfolio/",               desc = "Go to ML/Portfolio" },
 	{ on = [ "g", "m", "j" ],           run = "cd ~/Documents/ML/Projects/",                desc = "Go to ML/Projects" },
 	{ on = [ "g", "m", "r" ],           run = "cd ~/Documents/ML/Resources/",               desc = "Go to ML/Resources" },
