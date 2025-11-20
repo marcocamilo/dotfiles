@@ -51,7 +51,7 @@ return {
 		daily_notes = {
 			folder = "daily/",
 		},
-		disable_frontmatter = true,
+    frontmatter = { enabled = false },
 		note_id_func = function(title)
 			if title ~= nil then
 				title = title
