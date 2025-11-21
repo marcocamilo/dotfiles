@@ -139,6 +139,7 @@ return {
 
 			-- Slime integration
 			{ "<leader>s", "<Plug>SlimeMotionSend", desc = "Send to iPython with motion" },
+      { "<leader>sgg", "ggV''<Plug>SlimeRegionSend<CR><cmd-O><cmd-O>", desc = "Send to iPython with motion" },
 			{ "<leader>sl", "<cmd>SlimeSendCurrentLine<CR>", desc = "Send Current Line" },
 
 			-- Code
