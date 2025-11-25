@@ -171,7 +171,7 @@ format = '[$symbol$branch]($style) '
 
 [gcloud]
 symbol = "󱇶 "
-format = '[$symbol$account]($style)  '
+format = '[$symbol$active]($style) '
 style = "bold blue"
 
 [git_branch]
