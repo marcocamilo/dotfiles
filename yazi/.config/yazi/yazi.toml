@@ -27,7 +27,7 @@ image_filter    = "triangle"
 image_quality   = 75
 sixel_fraction  = 15
 ueberzug_scale  = 15
-ueberzug_offset = [ -1232, -30, 0, 0 ]
+ueberzug_offset = [ -1806, -30, 0, 0 ]
 
 [plugin]
 fetchers = [
