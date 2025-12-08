@@ -10,6 +10,7 @@ source $ZSH/plugins.zsh
 source $ZSH/functions.zsh
 source $ZSH/options.zsh
 source $ZSH/aliases.zsh
+source ~/.dbt-completion.bash
 
 # neofetch
 unset ZSH_AUTOSUGGEST_USE_ASYNC
