@@ -1,15 +1,17 @@
 #!/bin/sh
 
 # Set DPI automatically
-if [ -z "$XFT_DPI" ]; then
-    SCREEN_HEIGHT=$(xdpyinfo | awk '/dimensions:/ {print $2}' | cut -d 'x' -f2)
-    if [ "$SCREEN_HEIGHT" -gt 1440 ]; then
-        DPI=192
-    elif [ "$SCREEN_HEIGHT" -gt 1080 ]; then
-        DPI=144
-    else
-        DPI=110
-    fi
+if ! xrdb -query | grep -q Xft.dpi; then
+    # Get X server physical DPI
+    PHYSICAL_DPI=$(xdpyinfo | awk '/resolution:/ {print int($2)}')
+    
+    # Set scaling factor for readability on large screens
+    SCALE=1.5   # ~1.25x scaling; adjust 1.0–1.5 as needed
+    
+    # Compute final DPI
+    DPI=$(printf "%.0f" "$(echo "$PHYSICAL_DPI * $SCALE" | bc)")
+    
+    # Apply
     echo "Xft.dpi: $DPI" | xrdb -merge
 fi
 
