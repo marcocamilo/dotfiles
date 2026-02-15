@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Set DPI automatically
+if ! xrdb -query | grep -q Xft.dpi; then
+    # Get X server physical DPI
+    PHYSICAL_DPI=$(xdpyinfo | awk '/resolution:/ {print int($2)}')
+    
+    # Set scaling factor for readability on large screens
+    SCALE=1.5   # ~1.25x scaling; adjust 1.0–1.5 as needed
+    
+    # Compute final DPI
+    DPI=$(printf "%.0f" "$(echo "$PHYSICAL_DPI * $SCALE" | bc)")
+    
+    # Apply
+    echo "Xft.dpi: $DPI" | xrdb -merge
+fi
+
+# Set keyboard configs
+xset r rate 200 30 &
+setxkbmap -layout us -model pc104 -option ctrl:nocaps,ctrl:ralt_rctrl
+
+# Set mouse acceleration
+xinput --set-prop 11 'libinput Accel Speed' 0.8 &
+
+# Start shared background applications
+~/.scripts/startup.sh &
