@@ -6,11 +6,12 @@ return {
 			file_types = { "markdown", "quarto" },
 			heading = {
 				position = "inline",
-				border = false,
+				border = true,
 				border_virtual = false,
 			},
 			indent = {
 				enabled = true,
+        skip_heading = true,
 			},
 			quote = { repeat_linebreak = true },
 			win_options = {
