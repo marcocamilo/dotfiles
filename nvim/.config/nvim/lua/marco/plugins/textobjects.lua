@@ -1,94 +1,144 @@
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
-	event = "VeryLazy",
+	branch = "main",
 	dependencies = "nvim-treesitter/nvim-treesitter",
+	event = "VeryLazy",
 	config = function()
-		vim.defer_fn(function()
-			require("nvim-treesitter.configs").setup({
-				textobjects = {
-					select = {
-						enable = true,
-						lookahead = true,
-						keymaps = {
-							["af"] = { query = "@function.outer", desc = "Select outer function" },
-							["if"] = { query = "@function.inner", desc = "Select inner function" },
-							["ac"] = { query = "@class.outer", desc = "Select outer class" },
-							["ic"] = { query = "@class.inner", desc = "Select inner class" },
-							["aa"] = { query = "@parameter.outer", desc = "Select outer argument" },
-							["ia"] = { query = "@parameter.inner", desc = "Select inner argument" },
-							["al"] = { query = "@loop.outer", desc = "Select outer loop" },
-							["il"] = { query = "@loop.inner", desc = "Select inner loop" },
-							["ai"] = { query = "@conditional.outer", desc = "Select outer conditional" },
-							["ii"] = { query = "@conditional.inner", desc = "Select inner conditional" },
-							["ab"] = { query = "@block.outer", desc = "Select outer block" },
-							["ib"] = { query = "@block.inner", desc = "Select inner block" },
-							["ak"] = { query = "@call.outer", desc = "Select outer call" },
-							["ik"] = { query = "@call.inner", desc = "Select inner call" },
-							["as"] = { query = "@statement.outer", desc = "Select outer statement" },
-							["is"] = { query = "@statement.inner", desc = "Select inner statement" },
-							["am"] = { query = "@comment.outer", desc = "Select outer comment" },
-							["im"] = { query = "@comment.inner", desc = "Select inner comment" },
-						},
-					},
-					move = {
-						enable = true,
-						set_jumps = true,
-						goto_next_start = {
-							["]f"] = { query = "@function.outer", desc = "Next function start" },
-							["]c"] = { query = "@class.outer", desc = "Next class start" },
-							["]a"] = { query = "@parameter.inner", desc = "Next argument start" },
-							["]k"] = { query = "@call.outer", desc = "Next call start" },
-							["]l"] = { query = "@loop.outer", desc = "Next loop start" },
-							["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
-							["]s"] = { query = "@statement.outer", desc = "Next statement start" },
-							["]b"] = { query = "@block.outer", desc = "Next block start" },
-							["]m"] = { query = "@comment.outer", desc = "Next comment start" },
-						},
-						goto_next_end = {
-							["]F"] = { query = "@function.outer", desc = "Next function end" },
-							["]C"] = { query = "@class.outer", desc = "Next class end" },
-							["]A"] = { query = "@parameter.inner", desc = "Next argument end" },
-							["]K"] = { query = "@call.outer", desc = "Next call end" },
-							["]L"] = { query = "@loop.outer", desc = "Next loop end" },
-							["]I"] = { query = "@conditional.outer", desc = "Next conditional end" },
-							["]S"] = { query = "@statement.outer", desc = "Next statement end" },
-							["]B"] = { query = "@block.outer", desc = "Next block end" },
-							["]M"] = { query = "@comment.outer", desc = "Next comment end" },
-						},
-						goto_previous_start = {
-							["[f"] = { query = "@function.outer", desc = "Previous function start" },
-							["[c"] = { query = "@class.outer", desc = "Previous class start" },
-							["[a"] = { query = "@parameter.inner", desc = "Previous argument start" },
-							["[k"] = { query = "@call.outer", desc = "Previous call start" },
-							["[l"] = { query = "@loop.outer", desc = "Previous loop start" },
-							["[i"] = { query = "@conditional.outer", desc = "Previous conditional start" },
-							["[s"] = { query = "@statement.outer", desc = "Previous statement start" },
-							["[b"] = { query = "@block.outer", desc = "Previous block start" },
-							["[m"] = { query = "@comment.outer", desc = "Previous comment start" },
-						},
-						goto_previous_end = {
-							["[F"] = { query = "@function.outer", desc = "Previous function end" },
-							["[C"] = { query = "@class.outer", desc = "Previous class end" },
-							["[A"] = { query = "@parameter.inner", desc = "Previous argument end" },
-							["[K"] = { query = "@call.outer", desc = "Previous call end" },
-							["[L"] = { query = "@loop.outer", desc = "Previous loop end" },
-							["[I"] = { query = "@conditional.outer", desc = "Previous conditional end" },
-							["[S"] = { query = "@statement.outer", desc = "Previous statement end" },
-							["[B"] = { query = "@block.outer", desc = "Previous block end" },
-							["[M"] = { query = "@comment.outer", desc = "Previous comment end" },
-						},
-					},
-					swap = {
-						enable = true,
-						swap_next = {
-							["<leader>sn"] = { query = "@parameter.inner", desc = "Swap next parameter" },
-						},
-						swap_previous = {
-							["<leader>sp"] = { query = "@parameter.inner", desc = "Swap previous parameter" },
-						},
-					},
+		-- Setup module options
+		require("nvim-treesitter-textobjects").setup({
+			select = {
+				lookahead = true,
+				selection_modes = {
+					["@parameter.outer"] = "v",
+					["@function.outer"] = "V",
+					["@class.outer"] = "<c-v>",
 				},
-			})
-		end, 0)
+				include_surrounding_whitespace = false,
+			},
+			move = {
+				set_jumps = true,
+			},
+		})
+
+		-- SELECT (visual + operator-pending)
+		local select_maps = {
+			{ "af", "@function.outer", "Select outer function" },
+			{ "if", "@function.inner", "Select inner function" },
+			{ "ac", "@class.outer", "Select outer class" },
+			{ "ic", "@class.inner", "Select inner class" },
+			{ "aa", "@parameter.outer", "Select outer argument" },
+			{ "ia", "@parameter.inner", "Select inner argument" },
+			{ "al", "@loop.outer", "Select outer loop" },
+			{ "il", "@loop.inner", "Select inner loop" },
+			{ "ai", "@conditional.outer", "Select outer conditional" },
+			{ "ii", "@conditional.inner", "Select inner conditional" },
+			{ "ab", "@block.outer", "Select outer block" },
+			{ "ib", "@block.inner", "Select inner block" },
+			{ "ak", "@call.outer", "Select outer call" },
+			{ "ik", "@call.inner", "Select inner call" },
+			{ "as", "@statement.outer", "Select outer statement" },
+			{ "is", "@statement.inner", "Select inner statement" },
+			{ "am", "@comment.outer", "Select outer comment" },
+			{ "im", "@comment.inner", "Select inner comment" },
+		}
+
+		local select_mod = require("nvim-treesitter-textobjects.select")
+		for _, map in ipairs(select_maps) do
+			vim.keymap.set({ "x", "o" }, map[1], function()
+				select_mod.select_textobject(map[2], "textobjects")
+			end, { desc = map[3] })
+		end
+
+		-- MOVE (normal + visual + operator-pending)
+		local move_mod = require("nvim-treesitter-textobjects.move")
+
+		local move_maps = {
+			{
+				"f",
+				"@function.outer",
+				"Next function start",
+				"Next function end",
+				"Previous function start",
+				"Previous function end",
+			},
+			{ "c", "@class.outer", "Next class start", "Next class end", "Previous class start", "Previous class end" },
+			{
+				"a",
+				"@parameter.inner",
+				"Next argument start",
+				"Next argument end",
+				"Previous argument start",
+				"Previous argument end",
+			},
+			{ "k", "@call.outer", "Next call start", "Next call end", "Previous call start", "Previous call end" },
+			{ "l", "@loop.outer", "Next loop start", "Next loop end", "Previous loop start", "Previous loop end" },
+			{
+				"i",
+				"@conditional.outer",
+				"Next conditional start",
+				"Next conditional end",
+				"Previous conditional start",
+				"Previous conditional end",
+			},
+			{
+				"s",
+				"@statement.outer",
+				"Next statement start",
+				"Next statement end",
+				"Previous statement start",
+				"Previous statement end",
+			},
+			{ "b", "@block.outer", "Next block start", "Next block end", "Previous block start", "Previous block end" },
+			{
+				"m",
+				"@comment.outer",
+				"Next comment start",
+				"Next comment end",
+				"Previous comment start",
+				"Previous comment end",
+			},
+		}
+
+		for _, map in ipairs(move_maps) do
+			local key, query = map[1], map[2]
+
+			vim.keymap.set({ "n", "x", "o" }, "]" .. key, function()
+				move_mod.goto_next_start(query, "textobjects")
+			end, { desc = map[3] })
+
+			vim.keymap.set({ "n", "x", "o" }, "]" .. key:upper(), function()
+				move_mod.goto_next_end(query, "textobjects")
+			end, { desc = map[4] })
+
+			vim.keymap.set({ "n", "x", "o" }, "[" .. key, function()
+				move_mod.goto_previous_start(query, "textobjects")
+			end, { desc = map[5] })
+
+			vim.keymap.set({ "n", "x", "o" }, "[" .. key:upper(), function()
+				move_mod.goto_previous_end(query, "textobjects")
+			end, { desc = map[6] })
+		end
+
+		-- SWAP
+		local swap_mod = require("nvim-treesitter-textobjects.swap")
+
+		vim.keymap.set("n", "<leader>sn", function()
+			swap_mod.swap_next("@parameter.inner")
+		end, { desc = "Swap next parameter" })
+
+		vim.keymap.set("n", "<leader>sp", function()
+			swap_mod.swap_previous("@parameter.inner")
+		end, { desc = "Swap previous parameter" })
+
+		----------------------------------------------------------------------
+		-- REPEATABLE MOVES (optional — uncomment if you want ; and , support)
+		----------------------------------------------------------------------
+		-- local ts_repeat = require("nvim-treesitter-textobjects.repeatable_move")
+		-- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat.repeat_last_move_next)
+		-- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat.repeat_last_move_previous)
+		-- vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat.builtin_f_expr, { expr = true })
+		-- vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat.builtin_F_expr, { expr = true })
+		-- vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat.builtin_t_expr, { expr = true })
+		-- vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat.builtin_T_expr, { expr = true })
 	end,
 }
