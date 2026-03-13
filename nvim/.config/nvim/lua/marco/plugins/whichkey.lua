@@ -44,11 +44,30 @@ return {
 		wk.add({
 			-- File operations
 			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
-			{ "<leader>f", "<cmd>Telescope find_files<CR>", desc = "Find files" },
-			{ "<leader>F", "<cmd>Telescope live_grep<CR>", desc = "Find Text" },
+			{
+				"<leader>f",
+				function()
+					Snacks.picker.files()
+				end,
+				desc = "Find files",
+			},
+			{
+				"<leader>F",
+				function()
+					Snacks.picker.grep()
+				end,
+				desc = "Find Text",
+			},
 			{
 				"<leader>b",
-				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>i",
+				function()
+					Snacks.picker.buffers({
+						on_show = function()
+							vim.cmd.stopinsert()
+						end,
+						sort_lastused = true,
+					})
+				end,
 				desc = "Buffers",
 			},
 
@@ -106,25 +125,73 @@ return {
 			-- LSP
 			{ "<leader>l", group = "LSP" },
 			{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
-			{ "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Buffer Diagnostics" },
+			{
+				"<leader>ld",
+				function()
+					Snacks.picker.diagnostics_buffer()
+				end,
+				desc = "Buffer Diagnostics",
+			},
 			{ "<leader>lD", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Line Diagnostics" },
-			{ "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
+			{
+				"<leader>lw",
+				function()
+					Snacks.picker.diagnostics()
+				end,
+				desc = "Workspace Diagnostics",
+			},
 			{ "<leader>lf", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", desc = "Format buffer" },
 			{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
 			{ "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action" },
 			{ "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "Quickfix" },
 			{ "<leader>lR", "<cmd>LspRestart<CR>", desc = "Restart LSP" },
-			{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
-			{ "<leader>lS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace Symbols" },
-			{ "<leader>lt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Type Definitions" },
-			{ "<leader>lr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-			{ "<leader>lg", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
+			{
+				"<leader>ls",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "Document Symbols",
+			},
+			{
+				"<leader>lS",
+				function()
+					Snacks.picker.lsp_workspace_symbols()
+				end,
+				desc = "Workspace Symbols",
+			},
+			{
+				"<leader>lt",
+				function()
+					Snacks.picker.lsp_type_definitions()
+				end,
+				desc = "Type Definitions",
+			},
+			{
+				"<leader>lr",
+				function()
+					Snacks.picker.lsp_references()
+				end,
+				desc = "References",
+			},
+			{
+				"<leader>lg",
+				function()
+					Snacks.picker.lsp_definitions()
+				end,
+				desc = "Go to Definition",
+			},
 			{ "<leader>lx", "<cmd>LspStop<cr>", desc = "LSP Stop" },
 			{ "<leader>lo", "<cmd>LspStart<cr>", desc = "LSP Start" },
 
 			-- Messages
 			{ "<leader>;", group = "Messages" },
-			{ "<leader>;h", "<cmd>Telescope notify<cr>", desc = "Notifications" },
+			{
+				"<leader>;h",
+				function()
+					Snacks.picker.notifications()
+				end,
+				desc = "Notifications",
+			},
 			{ "<leader>;a", "<cmd>Noice all<cr>", desc = "All messages" },
 			{ "<leader>;e", "<cmd>Noice errors<cr>", desc = "Errors only" },
 			{ "<leader>;d", "<cmd>Noice dismiss<cr>", desc = "Dismiss all" },
@@ -143,14 +210,56 @@ return {
 
 			-- Search group
 			{ "<leader>?", group = "Search" },
-			{ "<leader>?c", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
-			{ "<leader>?h", "<cmd>Telescope help_tags<cr>", desc = "Find Help" },
-			{ "<leader>?R", "<cmd>Telescope registers<cr>", desc = "Registers" },
-			{ "<leader>?k", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
-			{ "<leader>?C", "<cmd>Telescope commands<cr>", desc = "Commands" },
+			{
+				"<leader>?c",
+				function()
+					Snacks.picker.colorschemes()
+				end,
+				desc = "Colorscheme",
+			},
+			{
+				"<leader>?h",
+				function()
+					Snacks.picker.help()
+				end,
+				desc = "Find Help",
+			},
+			{
+				"<leader>?R",
+				function()
+					Snacks.picker.registers()
+				end,
+				desc = "Registers",
+			},
+			{
+				"<leader>?k",
+				function()
+					Snacks.picker.keymaps()
+				end,
+				desc = "Keymaps",
+			},
+			{
+				"<leader>?C",
+				function()
+					Snacks.picker.commands()
+				end,
+				desc = "Commands",
+			},
 			{ "<leader>?s", "<cmd>set spell!<cr>", desc = "Spell check" },
-			{ "<leader>?f", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
-			{ "<leader>?g", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
+			{
+				"<leader>?f",
+				function()
+					Snacks.picker.recent()
+				end,
+				desc = "Recent Files",
+			},
+			{
+				"<leader>?g",
+				function()
+					Snacks.picker.git_files()
+				end,
+				desc = "Git Files",
+			},
 
 			-- Search and Replace (grug-far)
 			{ "<leader>?r", group = "Replace" },
@@ -260,8 +369,7 @@ return {
 			{
 				"gf",
 				function()
-					-- Create operator function for motion-based searching
-					local function grep_operator(type)
+					_G.snacks_grep_operator = function(type)
 						local saved_reg = vim.fn.getreg('"')
 						local saved_regtype = vim.fn.getregtype('"')
 
@@ -270,29 +378,22 @@ return {
 						elseif type == "line" then
 							vim.cmd("normal! `[V`]y")
 						elseif type == "block" then
-							vim.cmd("normal! `[\022`]y") -- \022 is Ctrl-V
+							vim.cmd("normal! `[\022`]y")
 						else
 							return
 						end
 
 						local search_term = vim.fn.getreg('"')
 						vim.fn.setreg('"', saved_reg, saved_regtype)
-
-						-- Clean up the search term
 						search_term = search_term:gsub("\n", "\\n")
 						search_term = vim.trim(search_term)
 
 						if search_term ~= "" then
-							require("telescope.builtin").grep_string({
-								search = search_term,
-								use_regex = false,
-							})
+							Snacks.picker.grep({ search = search_term })
 						end
 					end
 
-					-- Set up the operator function
-					_G.telescope_grep_operator = grep_operator
-					vim.o.operatorfunc = "v:lua.telescope_grep_operator"
+					vim.o.operatorfunc = "v:lua.snacks_grep_operator"
 					return "g@"
 				end,
 				expr = true,
@@ -300,7 +401,13 @@ return {
 			},
 
 			-- Quick access variations
-			{ "<leader>gw", "<cmd>Telescope grep_string<CR>", desc = "Grep word under cursor" },
+			{
+				"<leader>gw",
+				function()
+					Snacks.picker.grep_word()
+				end,
+				desc = "Grep word under cursor",
+			},
 		})
 
 		-- Visual mode mappings
@@ -314,7 +421,13 @@ return {
 			{ "<leader>tsp", "<cmd>ToggleTermSendCurrentLine<CR>", desc = "Send Line" },
 
 			-- Search
-			{ "gf", "<cmd>Telescope grep_string<CR>", desc = "Find Word Under Cursor" },
+			{
+				"gf",
+				function()
+					Snacks.picker.grep_word()
+				end,
+				desc = "Grep selection",
+			},
 			-- Search and Replace (grug-far)
 			{
 				"<leader>r",
