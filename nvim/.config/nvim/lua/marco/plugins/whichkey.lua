@@ -97,6 +97,18 @@ return {
 			{ "<leader>;e", "<cmd>Noice errors<cr>", desc = "Errors only" },
 			{ "<leader>;d", "<cmd>Noice dismiss<cr>", desc = "Dismiss all" },
 
+			-- UI Toggles
+			{ "<leader>u", group = "UI" },
+			{
+				"<leader>ut",
+				function()
+					require("treesitter-context").toggle()
+					local enabled = require("treesitter-context.config").enabled
+					vim.notify((enabled and "Enabled" or "Disabled") .. " Treesitter Context", vim.log.levels.INFO)
+				end,
+				desc = "Toggle Treesitter Context",
+			},
+
 			-- Search group
 			{ "<leader>?", group = "Search" },
 			{ "<leader>?c", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
@@ -122,13 +134,31 @@ return {
 			{ "<leader>ghP", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" },
 			-- Git blame
 			{ "<leader>gb", group = "Git Blame" },
-			{ "<leader>gbb", function() require("gitsigns").blame_line({ full = true }) end, desc = "Blame line" },
-			{ "<leader>gbB", function() require("gitsigns").blame() end, desc = "Blame buffer" },
+			{
+				"<leader>gbb",
+				function()
+					require("gitsigns").blame_line({ full = true })
+				end,
+				desc = "Blame line",
+			},
+			{
+				"<leader>gbB",
+				function()
+					require("gitsigns").blame()
+				end,
+				desc = "Blame buffer",
+			},
 			{ "<leader>gbt", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle line blame" },
 			-- Git diff
 			{ "<leader>gd", group = "Git Diff" },
 			{ "<leader>gdd", "<cmd>Gitsigns diffthis<cr>", desc = "Diff this" },
-			{ "<leader>gdD", function() require("gitsigns").diffthis("~") end, desc = "Diff this ~" },
+			{
+				"<leader>gdD",
+				function()
+					require("gitsigns").diffthis("~")
+				end,
+				desc = "Diff this ~",
+			},
 			{ "<leader>gdt", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Toggle deleted" },
 			-- Git toggles
 			{ "<leader>gt", group = "Git Toggles" },
@@ -139,7 +169,7 @@ return {
 
 			-- Slime integration
 			{ "<leader>s", "<Plug>SlimeMotionSend", desc = "Send to iPython with motion" },
-      { "<leader>sgg", "ggV''<Plug>SlimeRegionSend<CR><cmd-O><cmd-O>", desc = "Send to iPython with motion" },
+			{ "<leader>sgg", "ggV''<Plug>SlimeRegionSend<CR><cmd-O><cmd-O>", desc = "Send to iPython with motion" },
 			{ "<leader>sl", "<cmd>SlimeSendCurrentLine<CR>", desc = "Send Current Line" },
 
 			-- Code
