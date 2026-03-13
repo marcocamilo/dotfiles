@@ -145,13 +145,37 @@ return {
 			{ "<leader>?", group = "Search" },
 			{ "<leader>?c", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
 			{ "<leader>?h", "<cmd>Telescope help_tags<cr>", desc = "Find Help" },
-			{ "<leader>?r", "<cmd>SearchBoxReplace confirm=native<cr>", desc = "Search and Replace" },
 			{ "<leader>?R", "<cmd>Telescope registers<cr>", desc = "Registers" },
 			{ "<leader>?k", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
 			{ "<leader>?C", "<cmd>Telescope commands<cr>", desc = "Commands" },
 			{ "<leader>?s", "<cmd>set spell!<cr>", desc = "Spell check" },
 			{ "<leader>?f", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
 			{ "<leader>?g", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
+
+			-- Search and Replace (grug-far)
+			{ "<leader>?r", group = "Replace" },
+			{
+				"<leader>?rp",
+				function()
+					local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+					require("grug-far").open({
+						transient = true,
+						prefills = {
+							filesFilter = ext and ext ~= "" and "*." .. ext or nil,
+						},
+					})
+				end,
+				desc = "Replace (project)",
+			},
+			{
+				"<leader>?rf",
+				function()
+					require("grug-far").open({
+						prefills = { paths = vim.fn.expand("%") },
+					})
+				end,
+				desc = "Replace (current file)",
+			},
 
 			-- Enhanced git group with navigation and management
 			{ "<leader>g", group = "Git" },
@@ -291,6 +315,14 @@ return {
 
 			-- Search
 			{ "gf", "<cmd>Telescope grep_string<CR>", desc = "Find Word Under Cursor" },
+			-- Search and Replace (grug-far)
+			{
+				"<leader>r",
+				function()
+					require("grug-far").with_visual_selection({ prefills = { paths = vim.fn.expand("%") } })
+				end,
+				desc = "Replace (selection)",
+			},
 
 			-- Slime
 			{ "<leader>s", "<Plug>SlimeRegionSend<CR>", desc = "Send to iPython" },

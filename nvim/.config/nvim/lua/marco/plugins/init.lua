@@ -16,8 +16,8 @@ return {
 	-- Dressing
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 
-  -- vim-python-pep8-indent
-  { "Vimjas/vim-python-pep8-indent" },
+	-- vim-python-pep8-indent
+	{ "Vimjas/vim-python-pep8-indent" },
 
 	-- Mini Surround
 	{
@@ -26,13 +26,8 @@ return {
 		config = true,
 	},
 
-	-- Search Box
-	{
-		"VonHeikemen/searchbox.nvim",
-		dependencies = {
-			{ "MunifTanjim/nui.nvim" },
-		},
-	},
+	-- grug-far
+	{ "MagicDuck/grug-far.nvim", cmd = "GrugFar" },
 
 	-- Lazygit
 	{
