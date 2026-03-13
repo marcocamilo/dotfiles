@@ -53,4 +53,14 @@ return {
 		"nikvdp/ejs-syntax",
 		ft = "ejs",
 	},
+
+	-- Treesitter context
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		event = "BufReadPost",
+		opts = {
+			mode = "cursor",
+			max_lines = 3,
+		},
+	},
 }
