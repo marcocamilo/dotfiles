@@ -1,39 +1,29 @@
 return {
-	"stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
-	cmd = { "ConformInfo" },
-	opts = {
-		formatters_by_ft = {
-			css = { "prettier" },
-			cpp = { "clang-format" },
-			html = { "prettier" },
-			javascript = { "prettier" },
-			json = { "biome" },
-			jsonc = { "biome" },
-			lua = { "stylua" },
-			markdown = { "mdformat" },
-			python = { "ruff_fix", "ruff_format", "isort" },
-			sql = { "sqlfluff" },
-			yaml = { "prettier" },
-		},
-		formatters = {
-			sqlfluff = {
-				command = "sqlfluff",
-				args = {
-					"fix",
-					"$FILENAME",
-				},
-			},
-		},
-	},
-	keys = {
-		{
-			"<leader>mp",
-			function()
-				require("conform").format({ async = true, lsp_fallback = true })
-			end,
-			mode = { "n", "v" },
-			desc = "Make pretty with formatter",
-		},
-	},
+  "stevearc/conform.nvim",
+  event = { "BufReadPre", "BufNewFile" },
+  cmd = { "ConformInfo" },
+  opts = {
+    formatters_by_ft = {
+      css = { "prettier" },
+      cpp = { "clang-format" },
+      html = { "prettier" },
+      javascript = { "prettier" },
+      json = { "biome" },
+      lua = { "stylua" },
+      markdown = { "mdformat" },
+      python = { "ruff_fix", "ruff_format", "isort" },
+      sql = { "sqlfluff" },
+      yaml = { "prettier" },
+    },
+  },
+  keys = {
+    {
+      "<leader>mp",
+      function()
+        require("conform").format({ async = true, lsp_fallback = true })
+      end,
+      mode = { "n", "v" },
+      desc = "Make pretty with formatter",
+    },
+  },
 }

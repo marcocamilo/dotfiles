@@ -34,7 +34,7 @@ return {
 				"prettier",
 				"ruff",
 				"stylua",
-        "sqlfluff",
+				"sqlfluff",
 
 				-- Linters
 				"eslint_d",
@@ -60,7 +60,7 @@ return {
 				"lua_ls",
 				"pyright",
 				"ruff",
-				"marksman",
+				"markdown_oxide",
 				"html",
 				"cssls",
 				"ts_ls",
@@ -146,10 +146,21 @@ return {
 				-- Ruff (Python linting)
 				ruff = { init_options = { settings = { args = {} } } },
 
-				-- Markdown
-				marksman = {
-					filetypes = { "markdown", "quarto" },
-					root_dir = require("lspconfig.util").root_pattern(".git", ".marksman.toml", "_quarto.yml"),
+				-- Markdown (markdown-oxide: backlinks, wiki-links, codelens)
+				markdown_oxide = {
+					capabilities = vim.tbl_deep_extend(
+						"force",
+						vim.lsp.protocol.make_client_capabilities(),
+						require("blink.cmp").get_lsp_capabilities(),
+						{
+							workspace = {
+								didChangeWatchedFiles = {
+									dynamicRegistration = true,
+								},
+							},
+						}
+					),
+					filetypes = { "markdown" },
 				},
 
 				-- LaTeX
@@ -162,7 +173,7 @@ return {
 			for server, config in pairs(servers) do
 				config.capabilities = capabilities
 				config.on_attach = on_attach
-        vim.lsp.enable(server, config)
+				vim.lsp.enable(server, config)
 			end
 		end,
 	},
