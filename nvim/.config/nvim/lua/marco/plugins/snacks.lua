@@ -27,7 +27,9 @@ return {
       },
     },
     notifier = {
-      enabled = false, -- you already have nvim-notify
+      enabled = true,
+      top_down = false,
+      timeout = 3000,
     },
     dashboard = {
       enabled = false, -- you don't use snacks dashboard
