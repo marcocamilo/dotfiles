@@ -122,66 +122,30 @@ return {
         desc = "Completed tasks",
       },
 
-			-- LSP
-			{ "<leader>l", group = "LSP" },
-			{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
-			{
-				"<leader>ld",
-				function()
-					Snacks.picker.diagnostics_buffer()
-				end,
-				desc = "Buffer Diagnostics",
-			},
-			{ "<leader>lD", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Line Diagnostics" },
-			{
-				"<leader>lw",
-				function()
-					Snacks.picker.diagnostics()
-				end,
-				desc = "Workspace Diagnostics",
-			},
-			{ "<leader>lf", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", desc = "Format buffer" },
-			{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
-			{ "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action" },
-			{ "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "Quickfix" },
-			{ "<leader>lR", "<cmd>LspRestart<CR>", desc = "Restart LSP" },
-			{
-				"<leader>ls",
-				function()
-					Snacks.picker.lsp_symbols()
-				end,
-				desc = "Document Symbols",
-			},
-			{
-				"<leader>lS",
-				function()
-					Snacks.picker.lsp_workspace_symbols()
-				end,
-				desc = "Workspace Symbols",
-			},
-			{
-				"<leader>lt",
-				function()
-					Snacks.picker.lsp_type_definitions()
-				end,
-				desc = "Type Definitions",
-			},
-			{
-				"<leader>lr",
-				function()
-					Snacks.picker.lsp_references()
-				end,
-				desc = "References",
-			},
-			{
-				"<leader>lg",
-				function()
-					Snacks.picker.lsp_definitions()
-				end,
-				desc = "Go to Definition",
-			},
-			{ "<leader>lx", "<cmd>LspStop<cr>", desc = "LSP Stop" },
-			{ "<leader>lo", "<cmd>LspStart<cr>", desc = "LSP Start" },
+      -- LSP Navigation (g-prefix, fast access)
+      { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Go to Definition" },
+      { "gr", function() Snacks.picker.lsp_references() end, desc = "Go to References" },
+      { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Go to Implementation" },
+      { "gt", function() Snacks.picker.lsp_type_definitions() end, desc = "Go to Type Definition" },
+      { "gD", function() vim.lsp.buf.declaration() end, desc = "Go to Declaration" },
+      { "K", function() vim.lsp.buf.hover() end, desc = "Hover Documentation" },
+      { "gK", function() vim.lsp.buf.signature_help() end, desc = "Signature Help" },
+
+      -- LSP Actions (leader-prefix, less frequent)
+      { "<leader>l", group = "LSP" },
+      { "<leader>la", function() vim.lsp.buf.code_action() end, desc = "Code Action" },
+      { "<leader>ld", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
+      { "<leader>lD", function() vim.diagnostic.open_float() end, desc = "Line Diagnostics" },
+      { "<leader>lw", function() Snacks.picker.diagnostics() end, desc = "Workspace Diagnostics" },
+      { "<leader>lf", function() vim.lsp.buf.format({ async = true }) end, desc = "Format Buffer" },
+      { "<leader>li", "<cmd>LspInfo<cr>", desc = "LSP Info" },
+      { "<leader>ll", function() vim.lsp.codelens.run() end, desc = "CodeLens Action" },
+      { "<leader>ln", function() vim.lsp.buf.rename() end, desc = "Rename Symbol" },
+      { "<leader>ls", function() Snacks.picker.lsp_symbols() end, desc = "Document Symbols" },
+      { "<leader>lS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
+      { "<leader>lR", "<cmd>LspRestart<CR>", desc = "Restart LSP" },
+      { "<leader>lx", "<cmd>LspStop<cr>", desc = "LSP Stop" },
+      { "<leader>lo", "<cmd>LspStart<cr>", desc = "LSP Start" },
 
 			-- Messages
 			{ "<leader>;", group = "Messages" },
