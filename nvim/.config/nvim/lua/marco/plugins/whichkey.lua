@@ -44,22 +44,9 @@ return {
 		wk.add({
 			-- File operations
 			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
-			{
-				"<leader>f",
-				function()
-					Snacks.picker.files()
-				end,
-				desc = "Find files",
-			},
-			{
-				"<leader>F",
-				function()
-					Snacks.picker.grep()
-				end,
-				desc = "Find Text",
-			},
-			{
-				"<leader>b",
+			{ "<leader>f", function() Snacks.picker.files() end, desc = "Find files", },
+			{ "<leader>F", function() Snacks.picker.grep() end, desc = "Find Text", },
+			{ "<leader>b",
 				function()
 					Snacks.picker.buffers({
 						on_show = function()
@@ -117,21 +104,14 @@ return {
 
 			-- Messages
 			{ "<leader>;", group = "Messages" },
-			{
-				"<leader>;h",
-				function()
-					Snacks.picker.notifications()
-				end,
-				desc = "Notifications",
-			},
+			{ "<leader>;h", function() Snacks.picker.notifications() end, desc = "Notifications", },
 			{ "<leader>;a", "<cmd>Noice all<cr>", desc = "All messages" },
 			{ "<leader>;e", "<cmd>Noice errors<cr>", desc = "Errors only" },
 			{ "<leader>;d", "<cmd>Noice dismiss<cr>", desc = "Dismiss all" },
 
 			-- UI Toggles
 			{ "<leader>u", group = "UI" },
-			{
-				"<leader>ut",
+			{ "<leader>ut",
 				function()
 					require("treesitter-context").toggle()
 					local enabled = require("treesitter-context.config").enabled
@@ -142,61 +122,18 @@ return {
 
 			-- Search group
 			{ "<leader>?", group = "Search" },
-			{
-				"<leader>?c",
-				function()
-					Snacks.picker.colorschemes()
-				end,
-				desc = "Colorscheme",
-			},
-			{
-				"<leader>?h",
-				function()
-					Snacks.picker.help()
-				end,
-				desc = "Find Help",
-			},
-			{
-				"<leader>?R",
-				function()
-					Snacks.picker.registers()
-				end,
-				desc = "Registers",
-			},
-			{
-				"<leader>?k",
-				function()
-					Snacks.picker.keymaps()
-				end,
-				desc = "Keymaps",
-			},
-			{
-				"<leader>?C",
-				function()
-					Snacks.picker.commands()
-				end,
-				desc = "Commands",
-			},
+			{ "<leader>?c", function() Snacks.picker.colorschemes() end, desc = "Colorscheme", },
+			{ "<leader>?h", function() Snacks.picker.help() end, desc = "Find Help", },
+			{ "<leader>?R", function() Snacks.picker.registers() end, desc = "Registers", },
+			{ "<leader>?k", function() Snacks.picker.keymaps() end, desc = "Keymaps", },
+			{ "<leader>?C", function() Snacks.picker.commands() end, desc = "Commands", },
 			{ "<leader>?s", "<cmd>set spell!<cr>", desc = "Spell check" },
-			{
-				"<leader>?f",
-				function()
-					Snacks.picker.recent()
-				end,
-				desc = "Recent Files",
-			},
-			{
-				"<leader>?g",
-				function()
-					Snacks.picker.git_files()
-				end,
-				desc = "Git Files",
-			},
+			{ "<leader>?f", function() Snacks.picker.recent() end, desc = "Recent Files", },
+			{ "<leader>?g", function() Snacks.picker.git_files() end, desc = "Git Files", },
 
 			-- Search and Replace (grug-far)
 			{ "<leader>?r", group = "Replace" },
-			{
-				"<leader>?rp",
+			{ "<leader>?rp",
 				function()
 					local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
 					require("grug-far").open({
@@ -218,7 +155,7 @@ return {
 				desc = "Replace (current file)",
 			},
 
-			-- Enhanced git group with navigation and management
+			-- Git
 			{ "<leader>g", group = "Git" },
 			-- Git hunks (staging, reset, preview)
 			{ "<leader>gh", group = "Git Hunks" },
@@ -231,31 +168,13 @@ return {
 			{ "<leader>ghP", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" },
 			-- Git blame
 			{ "<leader>gb", group = "Git Blame" },
-			{
-				"<leader>gbb",
-				function()
-					require("gitsigns").blame_line({ full = true })
-				end,
-				desc = "Blame line",
-			},
-			{
-				"<leader>gbB",
-				function()
-					require("gitsigns").blame()
-				end,
-				desc = "Blame buffer",
-			},
+			{ "<leader>gbb", function() require("gitsigns").blame_line({ full = true }) end, desc = "Blame line", },
+			{ "<leader>gbB", function() require("gitsigns").blame() end, desc = "Blame buffer", },
 			{ "<leader>gbt", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle line blame" },
 			-- Git diff
 			{ "<leader>gd", group = "Git Diff" },
 			{ "<leader>gdd", "<cmd>Gitsigns diffthis<cr>", desc = "Diff this" },
-			{
-				"<leader>gdD",
-				function()
-					require("gitsigns").diffthis("~")
-				end,
-				desc = "Diff this ~",
-			},
+			{ "<leader>gdD", function() require("gitsigns").diffthis("~") end, desc = "Diff this ~", },
 			{ "<leader>gdt", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Toggle deleted" },
 			-- Git toggles
 			{ "<leader>gt", group = "Git Toggles" },
@@ -344,13 +263,7 @@ return {
 			},
 
 			-- Quick access variations
-			{
-				"<leader>gw",
-				function()
-					Snacks.picker.grep_word()
-				end,
-				desc = "Grep word under cursor",
-			},
+			{ "<leader>gw", function() Snacks.picker.grep_word() end, desc = "Grep word under cursor", },
 		})
 
 		-- Visual mode mappings
@@ -364,13 +277,7 @@ return {
 			{ "<leader>tsp", "<cmd>ToggleTermSendCurrentLine<CR>", desc = "Send Line" },
 
 			-- Search
-			{
-				"gf",
-				function()
-					Snacks.picker.grep_word()
-				end,
-				desc = "Grep selection",
-			},
+			{ "gf", function() Snacks.picker.grep_word() end, desc = "Grep selection", },
 			-- Search and Replace (grug-far)
 			{
 				"<leader>r",
@@ -389,10 +296,6 @@ return {
 			{ "<leader>cbl", "<cmd>'<,'>CBllbox<CR>", desc = "Left aligned text" },
 			{ "<leader>cbc", "<cmd>'<,'>CBlcbox<CR>", desc = "Center aligned text" },
 			{ "<leader>cbr", "<cmd>'<,'>CBlrbox<CR>", desc = "Right aligned text" },
-
-			-- Obsidian
-			{ "<leader>n", group = "Obsidian" },
-			{ "<leader>nl", "<cmd>ObsidianLinkNew<CR>", desc = "New link" },
 		})
 	end,
 }
