@@ -8,12 +8,48 @@ return {
 				position = "inline",
 				border = true,
 				border_virtual = false,
+				sign = false,
+				icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+				backgrounds = {
+					"Headline1Bg",
+					"Headline2Bg",
+					"Headline3Bg",
+					"Headline4Bg",
+					"Headline5Bg",
+					"Headline6Bg",
+				},
+				foregrounds = {
+					"Headline1Fg",
+					"Headline2Fg",
+					"Headline3Fg",
+					"Headline4Fg",
+					"Headline5Fg",
+					"Headline6Fg",
+				},
 			},
 			indent = {
 				enabled = true,
-        skip_heading = true,
+				skip_heading = false,
 			},
 			quote = { repeat_linebreak = true },
+			checkbox = {
+				enabled = true,
+				position = "inline",
+				unchecked = {
+					icon = "   󰄱 ",
+					highlight = "RenderMarkdownUnchecked",
+				},
+				checked = {
+					icon = "   󰱒 ",
+					highlight = "RenderMarkdownChecked",
+				},
+			},
+			link = {
+				image = "󰥶 ",
+			},
+			code = {
+				style = "full",
+			},
 			win_options = {
 				showbreak = {
 					default = "",

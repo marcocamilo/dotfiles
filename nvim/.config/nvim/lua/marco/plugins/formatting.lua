@@ -9,7 +9,6 @@ return {
       html = { "prettier" },
       javascript = { "prettier" },
       json = { "biome" },
-      jsonc = { "biome" },
       lua = { "stylua" },
       markdown = { "mdformat" },
       python = { "ruff_fix", "ruff_format", "isort" },
