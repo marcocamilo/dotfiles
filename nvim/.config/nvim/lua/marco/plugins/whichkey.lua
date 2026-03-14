@@ -61,7 +61,7 @@ return {
 			-- Quick access
 			{ "<leader>L", "<cmd>Lazy<CR>", desc = "Lazy" },
 			{ "<leader>M", "<cmd>Mason<CR>", desc = "Mason" },
-			{ "<leader>lg", "<cmd>LazyGit<CR>", desc = "LazyGit" },
+			{ "<leader>lg", "<cmd>lua Snacks.lazygit()<CR>", desc = "LazyGit" },
 			{ "<leader>o", "<cmd>Outline<CR>", desc = "Toggle Outline" },
 
 			-- Markdown
