@@ -67,15 +67,47 @@ return {
 			-- Markdown
 			{ "<leader>m", group = "Markdown" },
 			{ "<leader>mv", "<cmd>MarkdownPreviewToggle<CR>", desc = "Markdown Preview" },
-			{ "<leader>mh", "<cmd>MarkdownHeaders<CR>", desc = "Markdown Headers" },
-			{ "<leader>mt", "<cmd>MDInsertToc<CR>", desc = "Insert TOC" },
 
-			-- Obsidian
-			{ "<leader>n", group = "Obsidian" },
-			{ "<leader>nn", "<cmd>Obsidian new<CR>", desc = "Create New Note" },
-			{ "<leader>nb", "<cmd>Obsidian backlinks<CR>", desc = "Note Backlinks" },
-			{ "<leader>ns", "<cmd>Obsidian search<CR>", desc = "Note Search" },
-			{ "<leader>nr", "<cmd>Obsidian rename<CR>", desc = "Rename Note Link" },
+      -- Tasks
+      { "<leader>t", group = "Tasks" },
+      { "<leader>tt", function()
+          Snacks.picker.grep({
+            prompt = " ",
+            search = "^\\s*- \\[ \\]",
+            regex = true,
+            live = false,
+            dirs = { vim.fn.getcwd() },
+            glob = "*.md",
+            args = { "--no-ignore" },
+            on_show = function() vim.cmd.stopinsert() end,
+            finder = "grep",
+            format = "file",
+            show_empty = true,
+            supports_live = false,
+            layout = "ivy",
+          })
+        end,
+        desc = "Pending tasks",
+      },
+      { "<leader>tc", function()
+          Snacks.picker.grep({
+            prompt = " ",
+            search = "^\\s*- \\[x\\]",
+            regex = true,
+            live = false,
+            dirs = { vim.fn.getcwd() },
+            glob = "*.md",
+            args = { "--no-ignore" },
+            on_show = function() vim.cmd.stopinsert() end,
+            finder = "grep",
+            format = "file",
+            show_empty = true,
+            supports_live = false,
+            layout = "ivy",
+          })
+        end,
+        desc = "Completed tasks",
+      },
 
       -- LSP Navigation (g-prefix, fast access)
       { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Go to Definition" },
@@ -198,26 +230,15 @@ return {
 
 			-- Tools group
 			{ "<leader>t", group = "Tools" },
+
 			-- VimTeX subgroup
-			{ "<leader>tx", group = "VimTeX" },
-			{ "<leader>txc", "<cmd>VimtexCompile<CR>", desc = "VimTeX Compile" },
-			{ "<leader>txq", "<cmd>VimtexStop<CR>", desc = "VimTeX Stop" },
-			{ "<leader>txv", "<cmd>VimtexView<CR>", desc = "VimTeX View" },
-			{ "<leader>txl", "<cmd>VimtexLog<CR>", desc = "VimTeX Log" },
-			{ "<leader>txi", "<cmd>VimtexInfo<CR>", desc = "VimTeX Info" },
-			{ "<leader>txe", "<cmd>VimtexErrors<CR>", desc = "VimTeX Errors" },
-			-- Terminal
-			{
-				"<leader>tv",
-				"<cmd>ToggleTerm direction=vertical size=55 name=vertical<CR>",
-				desc = "Toggle Term Vertical",
-			},
-			{
-				"<leader>th",
-				"<cmd>ToggleTerm direction=horizontal name=horizontal<CR>",
-				desc = "Toggle Term Horizontal",
-			},
-			{ "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", desc = "Toggle Term Center" },
+			{ "<leader>x", group = "VimTeX" },
+			{ "<leader>xc", "<cmd>VimtexCompile<CR>", desc = "VimTeX Compile" },
+			{ "<leader>xq", "<cmd>VimtexStop<CR>", desc = "VimTeX Stop" },
+			{ "<leader>xv", "<cmd>VimtexView<CR>", desc = "VimTeX View" },
+			{ "<leader>xl", "<cmd>VimtexLog<CR>", desc = "VimTeX Log" },
+			{ "<leader>xi", "<cmd>VimtexInfo<CR>", desc = "VimTeX Info" },
+			{ "<leader>xe", "<cmd>VimtexErrors<CR>", desc = "VimTeX Errors" },
 
 			-- Quarto group
 			{ "<leader>4", group = "Quarto" },
