@@ -29,15 +29,6 @@ return {
 	-- grug-far
 	{ "MagicDuck/grug-far.nvim", cmd = "GrugFar" },
 
-	-- Lazygit
-	{
-		"kdheepak/lazygit.nvim",
-		-- optional for floating window border decoration
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
-
 	-- devicons
 	{
 		"nvim-tree/nvim-web-devicons",
